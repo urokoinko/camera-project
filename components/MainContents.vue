@@ -1,4 +1,15 @@
 <script setup lang="ts">
+import { ScrollTrigger } from 'gsap/all'; 
+
+// gsap.registerPlugin(ScrollTrigger);
+
+
+    
+    gsap.to('.box-Lpic', {
+        scrollTrigger: '.box-Lpic', 
+    x: 500
+});
+
 
 </script>
 
@@ -22,29 +33,37 @@
             </div>
             <div class="contents-box02  box-innerR">
                 <div class="box-Rpic cb-pic">
-                    <img src="../assets/img/A7306925.jpg" alt="">
+                    <img src="../assets/img/DSC00230.jpg" alt="">
                 </div>
                 <div class="box-textR">
 
                     <h3>ブライダル</h3>
                     <p>結婚式での撮影や、前撮りを承ります。</p>
+                    <div class="more">
+                        <PartsContentsMore />
+                    </div>
+
                 </div>
 
             </div>
             <div class="contents-box03  box-innerL">
                 <div class="box-Lpic cb-pic">
-                    <img src="../assets/img/A7306925.jpg" alt="">
+                    <img src="../assets/img/A7303423.jpg" alt="">
                 </div>
                 <div class="box-textL">
 
                     <h3>ポートレート</h3>
                     <p>宣材写真・アーティスト写真など、<br>ご要望に沿った撮影を承ります。</p>
+                    <div class="more">
+                        <PartsContentsMore />
+                    </div>
+
                 </div>
 
             </div>
             <div class="contents-box04 box-innerR">
                 <div class="box-Rpic cb-pic">
-                    <img src="../assets/img/A7306925.jpg" alt="">
+                    <img src="../assets/img/IMG_0270.jpg" alt="">
                 </div>
                 <div class="box-textR">
 
@@ -52,6 +71,10 @@
                     <p>MVや企業向けムービーなど承ります。<br>
                         行事やイベントにも対応しておりますので<br>
                         お気軽にご相談下さい。</p>
+                </div>
+
+                <div class="more">
+                    <PartsContentsMore />
                 </div>
 
             </div>
@@ -65,7 +88,15 @@
 <style scoped>
 .main-contents {
     margin-top: 410px;
+}
+
+.main-contents-inner {
     font-family: var(--font_text);
+
+}
+
+.contents-box01 {
+    margin-top: 180px;
 }
 
 .box-innerL {
@@ -81,17 +112,28 @@
     display: flex
 }
 
-.box-inner h3 {
+
+.main-contents h3 {
     font-size: 32px;
+    font-weight: 500;
 }
 
-.box-inner p {
+.main-contents p {
     font-size: 18px;
+    font-weight: 400;
+    padding-top: 25px;
+    text-align: left;
 }
 
 .cb-pic {
     width: 732px;
     height: 480px;
+}
+
+.cb-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .box-textL,
@@ -109,7 +151,120 @@
     text-align: right;
 }
 
+.box-Lpic {
+    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.3);
+}
+
+.box-Rpic {
+    box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.3);
+}
+
+.more {
+    padding-top: 40px;
+}
+
+.contents-box02 .more {
+    padding-right: 30px;
+}
+
+.contents-box04 .more {
+    padding-right: -30px;
+    padding-left: 10px;
+    padding-top: 150px;
+}
+
+
+/* スクロール　アニメーション */
+.fade-left{
+    animation: fadeLeftAnime 0.5s forwards;
+    opacity: 0;
+}
+@keyframes fadeLeftAnime {
+    from{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 .box-Lpic{
-    box-shadow: 10px 10px 4px rgba(0, 0, 0 ,0.7);
+    opacity: 0;
+}
+
+/* モバイル設定 */
+@media (max-width:430px) {
+    .main-contents {
+        margin-left: 5px;
+        padding-right: 5px;
+    }
+
+    .main-contents h3 {
+        font-size: 18px
+    }
+
+    .main-contents p {
+        font-size: 16px
+    }
+
+    .box-textL,
+    .box-textR {
+        text-align: center;
+        padding-top: 35px;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .box-innerL {
+        display: flex;
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 190px;
+    }
+
+    .box-innerR {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 190px;
+    }
+
+    .contents-box01 {
+        margin-top: 90px;
+    }
+
+    .box-innerL p,
+    .box-innerR p {
+        padding-top: 40px;
+    }
+
+    .cb-pic {
+        max-width: 350px;
+        max-height: 240px;
+    }
+
+    .box-Lpic {
+        box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .box-Rpic {
+        box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .more {
+        padding-left: 50px;
+    }
+
+    .contents-box02 .more {
+    padding-right: 0px;
+}
+    .contents-box04 .more {
+        padding-right: 0px;
+        padding-left: 45px;
+        padding-top: 30px;
+    }
+
 }
 </style>

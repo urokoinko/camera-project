@@ -1,4 +1,8 @@
-<script setup>
+<script setup lang="ts">
+import type { TransitionProps } from 'vue'
+
+const {$gsap: gsap} = useNuxtApp()
+
 useHead({
   link:[
   {
