@@ -1,21 +1,95 @@
 <script setup lang="ts">
-import { ScrollTrigger } from 'gsap/all'; 
+import { gsap } from 'gsap';
+import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
+const {$gsap} = useNuxtApp()
 
-// gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+onMounted(()=>{
 
 
-    
-    gsap.to('.box-Lpic', {
-        scrollTrigger: '.box-Lpic', 
-    x: 500
-});
+
+        $gsap.fromTo(
+            '.contents-box01' , // アニメーションさせる要素
+            {
+                y: 300, // アニメーション開始前の縦位置(下に100px)
+                autoAlpha: 0, // アニメーション開始前は透明
+            },
+            {
+                y: 0, // アニメーション後の縦位置(上に100px)
+                autoAlpha: 1, // アニメーション後に出現(透過率0)
+                duration: 1,
+                ease:'power1.out',
+                scrollTrigger: {
+                    trigger: ".contents-box01", // アニメーションが始まるトリガーとなる要素
+                    toggleActions: "play none none reverse", // 上スクロールで戻る
+                    start: "top center", // アニメーションの開始位置
+                },
+            }
+        );
+        $gsap.fromTo(
+            '.contents-box02' , // アニメーションさせる要素
+            {
+                y: 300, // アニメーション開始前の縦位置(下に100px)
+                autoAlpha: 0, // アニメーション開始前は透明
+            },
+            {
+                y: 0, // アニメーション後の縦位置(上に100px)
+                autoAlpha: 1, // アニメーション後に出現(透過率0)
+                duration: 1.5,
+                ease:'power1.out',
+                scrollTrigger: {
+                    trigger: ".contents-box02", // アニメーションが始まるトリガーとなる要素
+                    toggleActions: "play none none reverse", // 上スクロールで戻る
+                    start: "top center", // アニメーションの開始位置
+                },
+            }
+        );
+        $gsap.fromTo(
+            '.contents-box03' , // アニメーションさせる要素
+            {
+                y: 300, // アニメーション開始前の縦位置(下に100px)
+                autoAlpha: 0, // アニメーション開始前は透明
+            },
+            {
+                y: 0, // アニメーション後の縦位置(上に100px)
+                autoAlpha: 1, // アニメーション後に出現(透過率0)
+                duration: 1.5,
+                ease:'power1.out',
+                scrollTrigger: {
+                    trigger: ".contents-box03", // アニメーションが始まるトリガーとなる要素
+                    toggleActions: "play none none reverse", // 上スクロールで戻る
+                    start: "top center", // アニメーションの開始位置
+                },
+            }
+        );
+        $gsap.fromTo(
+            '.contents-box04' , // アニメーションさせる要素
+            {
+                y: 300, // アニメーション開始前の縦位置(下に100px)
+                autoAlpha: 0, // アニメーション開始前は透明
+            },
+            {
+                y: 0, // アニメーション後の縦位置(上に100px)
+                autoAlpha: 1, // アニメーション後に出現(透過率0)
+                duration: 1.5,
+                ease:'power1.out',
+                scrollTrigger: {
+                    trigger: ".contents-box04", // アニメーションが始まるトリガーとなる要素
+                    toggleActions: "play none none reverse", // 上スクロールで戻る
+                    start: "top center", // アニメーションの開始位置
+                },
+            }
+        );
+})
+
 
 
 </script>
 
 <template>
     <div class="main-contents">
-        <div class="main-contents-inner">
+        <div class="main-contents-inner" ref="main">
             <h2 class="section-title">撮影メニュー</h2>
 
             <div class="contents-box01 box-innerL">
@@ -175,23 +249,7 @@ import { ScrollTrigger } from 'gsap/all';
 
 
 /* スクロール　アニメーション */
-.fade-left{
-    animation: fadeLeftAnime 0.5s forwards;
-    opacity: 0;
-}
-@keyframes fadeLeftAnime {
-    from{
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-    to{
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-.box-Lpic{
-    opacity: 0;
-}
+
 
 /* モバイル設定 */
 @media (max-width:430px) {
@@ -258,8 +316,9 @@ import { ScrollTrigger } from 'gsap/all';
     }
 
     .contents-box02 .more {
-    padding-right: 0px;
-}
+        padding-right: 0px;
+    }
+
     .contents-box04 .more {
         padding-right: 0px;
         padding-left: 45px;

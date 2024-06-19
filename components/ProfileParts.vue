@@ -20,9 +20,10 @@
 
 <style scoped>
 .profile {
-    margin-top: 140px;
-    margin-bottom: 180px;
+    padding-top: 140px;
+    padding-bottom: 180px;
     text-align: center;
+    background-color: #fff;
 }
 
 .profile-text {

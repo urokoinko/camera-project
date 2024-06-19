@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import type { TransitionProps } from 'vue'
 
-const {$gsap: gsap} = useNuxtApp()
 
 useHead({
   link:[
@@ -15,6 +13,7 @@ useHead({
   }
   ],
 
+
 })
 
 </script>
@@ -26,6 +25,10 @@ useHead({
 </template>
 
 <style>
+html{
+  font-size: 10px;
+}
+
 .zen-kaku-gothic-new-bold {
   font-family: "Zen Kaku Gothic New", sans-serif;
   font-weight: 700;
