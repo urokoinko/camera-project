@@ -32,8 +32,8 @@ onMounted(() => {
 
     $gsap.to('.section03', {
         // アニメーション終了時
-        height: '-0px',
-        top: '-300px',
+        height: '0px',
+        top: '-200px',
         scrollTrigger: {
             trigger: '.section03-height',
             start: 'top 50% center',
@@ -73,6 +73,7 @@ onMounted(() => {
         </div>
 
     </div>
+    <div class="blunk"></div>
     <Bgimg02 />
 
     <QandAParts />
@@ -135,7 +136,11 @@ onMounted(() => {
 
 
 /* 背景　スクロールアニメーション02 */
-
+.blunk{
+    width: 100%;
+    height: 300px;
+    content: '';
+}
 
 
 /* モバイル設定 */

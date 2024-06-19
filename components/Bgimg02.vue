@@ -1,10 +1,31 @@
 <script setup>
-import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
-const {$gsap} = useNuxtApp()
+// import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
+const { $gsap } = useNuxtApp()
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 
+
+onMounted(() => {
+
+    let tl = $gsap.timeline({
+
+        scrollTrigger: {
+            trigger: '.bg-img02',
+            scrub: 0.5,
+            start: 'top top',
+            end: '+=3000',
+            pin: 0,
+            markers: true
+        }
+    })
+
+    tl.to('.bg-img02 img.img01', {opacity: 0, y:-20}, "<")
+    .from('img.img02', {opacity: 0, y:-20}, '<')
+    .to('img.img02', {opacity: 1, y:-20}, "<");
+
+
+})
 
 
 </script>
@@ -20,24 +41,25 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 <style scoped>
 .bg-img02{
-
+    padding-top: 100px;
 }
 .bg-img02-images {
     position: relative;
     width: auto;
-    height: 150vh;
-    padding-top: 10vh;
+    height: 100vh;
+    /* padding-top: 20vh; */
 }
 
 .bg-img02-images img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
 }
-.bg-img02-images img:not(:first-child){
+
+.bg-img02-images img:not(:first-child) {
     position: absolute;
     top: 0;
     right: 0;
 }
-
 </style>
