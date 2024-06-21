@@ -41,14 +41,14 @@
 }
 
 .footer-nav ul {
-    padding-top: 70px;
+    padding-top: 100px;
     display: flex;
     justify-content: center;
     gap: 30px;
 }
 
 .footer-nav {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 100;
 }
 
@@ -61,7 +61,8 @@
 
 small {
     display: block;
-    padding-top: 130px
+    padding-top: 110px;
+    font-size: 14px;
 }
 
 .footer-treeR,
@@ -105,7 +106,41 @@ small {
     z-index: 1000;
 }
 
-/* モバイル設定 */
+/* レスポンシブ設定 */
+@media (max-width:800px) {
+    .footer{
+        margin-top: 10vw;
+    }
+    .footer-nav ul{
+        font-size: 14px;
+        padding-top: 15vw;
+    }
+    small {
+        font-size: 12px;
+        padding-top: 90px;
+    }
+    .footer-treeR::before {
+        right: 30%;
+        width: 110px;
+        height: 126px;
+        background: url(../assets/img/camera_tree_blue.png) no-repeat;
+        background-size: contain;
+        z-index: 1000;
+    }
+
+    .footer-treeR::after {
+        right: 50px;
+        width: 184px;
+        height: 184px;
+    }
+
+    .footer-treeL::after {
+        left: 100px;
+        width: 130px;
+        height: 140px;
+    }
+    
+}
 @media (max-width:430px) {
     .footer-bg {
         height: 500px;

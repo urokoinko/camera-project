@@ -35,6 +35,11 @@
 }
 
 
+@media (max-width:800px) {
+    .contact-inner p{
+        font-size: 20px;
+    }
+}
 @media (max-width:430px) {
     .contant{
         background-color: rgba(255, 251, 215, 0.5);

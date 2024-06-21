@@ -12,7 +12,7 @@ function navFunc() {
     <div class="header">
         <div class="header-inner">
             <div class="site-logo">
-                <a href="#"><img src="../assets/img/camera_saite_logo.png" alt=""></a>
+                <a href="#"><img src="../assets/img/camera_saite_logo.svg" alt=""></a>
             </div>
             <div class="header-menu">
                 <ul>

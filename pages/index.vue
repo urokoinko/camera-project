@@ -14,12 +14,6 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 onMounted(() => {
 
-    let windowSize = window.innerWidth;
-
-
-    
-
-
     /* 背景　スクロールアニメーション01 */
 
     $gsap.to('.scrollAnime', {
@@ -34,6 +28,8 @@ onMounted(() => {
         }
     });
 
+    /* 背景　スクロールアニメーション02 */
+
     $gsap.to('.section03', {
         // アニメーション終了時
         height: '100vh',
@@ -47,10 +43,6 @@ onMounted(() => {
         }
     });
 
-
-
-
-
 });
 
 </script>
@@ -63,27 +55,20 @@ onMounted(() => {
         <MainSlide />
     </div>
     <div class="scrollAnime"></div>
-
     <div class="section01">
         <MainContents />
     </div>
-    
     <div class="section02">
         <div class="section02-height">
-            
-            <Bgimg01 class=""/>
+            <Bgimg01 />
         </div>
     </div>
-    <!-- <div class="scrollAnime-bottom"></div> -->
     <div class="section03">
         <div class="section03-height">
             <ProfileParts />
         </div>
-
     </div>
-    <div class="blunk"></div>
     <Bgimg02 />
-
     <QandAParts />
     <ContactParts />
     <FooterPart />
@@ -124,40 +109,30 @@ onMounted(() => {
 .section02 {
     position: relative;
     height: 220vh;
-    
 }
 
 .section02-height {
     position: relative;
-    margin: 0;
     width: auto;
     height: 100vh;
-    display: block;
 }
-.section03-height {
-    position: relative;
-    margin: 0;
-    
-}
+
+/* 背景　スクロールアニメーション01 */
 
 .section03{
     position: relative;
     z-index: 10;
     width: 100%;
-    height: 100vh;
-}
-
-
-
-/* 背景　スクロールアニメーション02 */
-.blunk{
-    width: 100%;
-    height: 300px;
-    content: '';
+    height: 60vh;
 }
 
 
 /* モバイル設定 */
+@media (max-width:800px) {
+    .section-title {
+        font-size: 26px;
+    }
+}
 @media (max-width:430px) {
     .section-title {
         font-size: 20px;

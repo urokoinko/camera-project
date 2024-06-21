@@ -40,7 +40,7 @@ onMounted(()=>{
         <div class="main-catch">
             <div class="mc-text">
                 <p><span>思い出</span>は、<br class="m-br">日々の流れに<br class="m-br">まぎれてしまうから</p>
-                <p>１度しか来ない大切なひとときを、<span>大切な人</span>と<br class="m-br">振り返れるように</p>
+                <p>１度しか来ない大切なひとときを、<span>大切な人</span>と<br class="m-br subm-br">振り返れるように</p>
                 <p><span>かたち</span>にして残しませんか？</p>
             </div>
         </div>
@@ -110,11 +110,11 @@ onMounted(()=>{
 .mc-text::before {
     position: absolute;
     top: -100px;
-    left: -150px;
+    left: -10vw;
     content: '';
     width: 200px;
     height: 200px;
-    background: url(../assets/img/camera_saite_pic2.png) no-repeat;
+    background: url(../assets/img/camera_saite_pic2.svg) no-repeat;
     background-size: contain;
 }
 
@@ -122,10 +122,10 @@ onMounted(()=>{
     position: absolute;
     content: '';
     top: 20px;
-    right: 0px;
+    right: -10vw;
     width: 200px;
     height: 300px;
-    background: url(../assets/img/camera_saite_pic.png) no-repeat;
+    background: url(../assets/img/camera_saite_pic.svg) no-repeat;
     background-size: contain;
     z-index: -1;
 }
@@ -155,16 +155,13 @@ onMounted(()=>{
     }
 
     .mc-text::before {
-        top: -100px;
-        left: -100px;
-        content: '';
         width: 150px;
         height: 150px;
     }
 
     .mc-text::after {
         top: 20px;
-        right: -50px;
+        right: -15vw;
         width: 200px;
         height: 200px;
     }
@@ -177,29 +174,36 @@ onMounted(()=>{
     .main-catch p span {
         font-size: 36px;
     }
+    .subm-br{
+        display: block;
+    }
+    .mc-text::before {
+        top: -50px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .mc-text::after {
+        top: 20px;
+        right: -15vw;
+        width: 150px;
+        height: 150px;
+    }
 
 }
 @media (max-width:430px) {
 
     /* メインスライドショー */
-    .main-slide-inner {
-        width: auto;
-        height: 410px;
-        object-fit: cover;
+    .mainSlide-inner{
+        height: 70vh;
     }
-
-
     .main-catch {
-        top: 160px;
-        right: 0;
+        top: 55vh;
         width: 75%;
-        padding: 30px;
-        font-family: var(--font_catch);
-        background-color: rgba(255, 255, 255, 0.6);
     }
-
 
     .main-catch p {
+        max-width: 90%;
         line-height: 1.2;
         font-size: 16px
     }
@@ -209,19 +213,19 @@ onMounted(()=>{
     }
 
     .mc-text::before {
-        top: 100px;
-        left: -10px;
+        top: 150px;
+        left: -10vw;
         transform: rotate(-80deg);
         content: '';
-        width: 100px;
-        height: 200px;
+        width: 80px;
+        height: 80px;
     }
 
     .mc-text::after {
         top: 20px;
-        right: -20px;
+        right: -10vw;
         width: 90px;
-        height: 140px;
+        height: 120px;
     }
 
     .m-br {

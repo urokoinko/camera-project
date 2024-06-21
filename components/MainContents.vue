@@ -13,6 +13,13 @@ onMounted(() => {
 
     contentsArray.forEach((content) => {
 
+        let windowSize = window.innerWidth;
+        let  start = 'bottom bottom';
+
+        if(windowSize < 800){   //800px以下でアニメーションの開始位置を変える
+            start = 'top bottom';
+        }
+        
         $gsap.fromTo(
             content, // アニメーションさせる要素
             {
@@ -27,7 +34,7 @@ onMounted(() => {
                 scrollTrigger: {
                     trigger: content, // アニメーションが始まるトリガーとなる要素
                     toggleActions: "play none none reverse", // 上スクロールで戻る
-                    start: "bottom bottom", // アニメーションの開始位置
+                    start: start, // アニメーションの開始位置
                 },
             }
         );
@@ -43,6 +50,11 @@ onMounted(() => {
         flippedY = false;
 
     $gsap.to('#motionSVG', {
+        keyframes:{
+            '0%':{autoAlpha: 1},
+            '99%':{autoAlpha: 1},
+            '100%':{autoAlpha: 0},
+        },
         scrollTrigger: {
             trigger: '#motionPath',
             start: 'top center',
@@ -194,14 +206,17 @@ onMounted(() => {
 
             </div>
 
-            <svg class="scroll-motiom" xmlns="http://www.w3.org/2000/svg" data-name="レイヤー 2"
-                viewBox="0 0 1125.56 3240.95">
-                <path id="motionPath" class="scroll-motiom"
-                    d="M816.9.5c-414.94 35.43-542.88 134.55-552 168-32 117.33 159.36 165.33 248 165.33 93.33 0 431.12-21.67 552 162.67 320 488-736.3 542.17-829.33 576-29.33 10.67-245.55 40.28-234.67 248 16 305.33 396 325.61 517.59 339.55 178.41 20.45 202.41 28.45 319.75 71.12 88.99 32.36 178.67 130.67 186.67 216 26.97 287.64-288 402.67-416 448-123.58 43.77-245.33 34.67-261.33 117.33-16.25 83.94 71.41 141.63 194.67 208 104 56 138.49 143.37 133.33 264-2.67 62.33-43.38 133.83-293.33 256"
-                    data-name="レイヤー 1" style="fill:none;stroke:#000;stroke-miterlimit:10" />
+
+            <svg class="scroll-motion" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 775.17 4984.6">
+                <path id="motionPath" class="scroll-motion"
+                    d="M736.69.36c-122.66 120-714.73 84-702.66 326.66 5.47 110.04 437.54 50.53 501.33 172 97.33 185.34-562.23 264.03-533.33 492 24 189.33 488 264 650.67 410.67 153.57 138.46 6.25 432.18-165.33 506.67-172 74.67-561.33 266.67-434.67 566.67 85.16 201.7 284.65 236.84 381.33 248 104 12 222.67 50.67 284 144 103.68 157.78 64 424-110.67 608-154.18 162.42-703.68 89.41-592 356 41.33 98.67 234.55 90.63 413.33 152 89.33 30.67 285.33 177.33 174.67 382.67-163.75 303.83-645.33 281.33-460 618.67"
+                    style="fill:none;stroke:#000;stroke-miterlimit:10" data-name="レイヤー 1" />
             </svg>
+
+
+
             <svg xmlns="http://www.w3.org/2000/svg" id="motionSVG" data-name="レイヤー 2" viewBox="0 0 216.38 231.58"
-                width="100px">
+                width="10vw">
                 <g id="leaf">
                     <path
                         d="M214.55 2.24c4.81 4.23 3.27 112.39-44.15 164.18-61.76 67.44-152.15 65.63-169 65-2.64-25.07-5.9-90.07 35-148 48.94-69.32 167-91 178.15-81.18Z"
@@ -224,24 +239,31 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.cls-2 {
-    stroke-width: 0;
-    fill: #ff9
-}
 
-
+/* メインコンテンツ設定 */
 
 .main-contents {
     position: relative;
     padding-top: 50vh;
 }
 
-.scroll-motiom {
+
+/* メインコンテンツ　スクロールアニメーション */
+.scroll-motion {
     position: absolute;
-    top: 40vh;
+    top: 25vh;
+    width: 100%;
+    height: 120%;
     z-index: -1;
-    display: none;
+    opacity: 0;
 }
+
+.cls-2 {
+    stroke-width: 0;
+    fill: #ff9
+}
+
+/* メインコンテンツ　インナー */
 
 .main-contents-inner {
     font-family: var(--font_text);
@@ -325,19 +347,19 @@ onMounted(() => {
     padding-right: 30px;
 }
 
-.contents-box04 .more {
-    padding-right: -30px;
+.contents-box04 .more{
+    margin-right: -180px;
     padding-left: 10px;
     padding-top: 150px;
 }
 
 
-/* スクロール　アニメーション */
 
+/* レスポンシブ設定 */
 
-/* モバイル設定 */
-@media (max-width:430px) {
+@media (max-width:800px) {
     .main-contents {
+        padding-top: 30vh;
         margin-left: 5px;
         padding-right: 5px;
     }
@@ -383,8 +405,9 @@ onMounted(() => {
     }
 
     .cb-pic {
-        max-width: 350px;
-        max-height: 240px;
+        width: 90%;
+        height: 40vh;
+        max-height: 600px;
     }
 
     .box-Lpic {
@@ -407,6 +430,14 @@ onMounted(() => {
         padding-right: 0px;
         padding-left: 45px;
         padding-top: 30px;
+    }
+
+}
+
+@media (max-width:430px) {
+    .cb-pic {
+        max-width: 350px;
+        max-height: 240px;
     }
 
 }

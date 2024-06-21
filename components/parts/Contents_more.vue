@@ -18,10 +18,8 @@
     left: -15px;
     width: 180px;
     height: 60px;
-    background-image: url(@/assets/img/camera_tree_line.png) ;
-    background-repeat: no-repeat;
+    background: url(@/assets/img/camera_tree_line.png) no-repeat;
     background-size: contain;
-
 }
 
 /* モバイル設定 */

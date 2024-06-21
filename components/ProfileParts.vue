@@ -19,8 +19,8 @@
 </template>
 
 <style scoped>
+/* プロフィール設定 */
 .profile {
-    padding-top: 140px;
     padding-bottom: 180px;
     text-align: center;
     background-color: #fff;
@@ -49,19 +49,35 @@
 }
 
 .profile-img {
-    padding-top: 23px;
-    width: 247px;
+    width: 245px;
     height: 245px;
     border-radius: 50%;
     background-color: #adadad;
-    margin: 0 auto
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 
+@media (max-width:800px) {
+    .profile-text h4 {
+        font-size: 20px;
+    }
+    .insta {
+        font-size: 20px;
+        padding-top: 47px;
+    }
+}
 @media (max-width:430px) {
     .profile-text h4 {
         font-size: 16px;
     }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
 
     .profile-text p {
         font-size: 14px;
