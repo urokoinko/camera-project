@@ -48,6 +48,7 @@
 }
 
 .footer-nav {
+    font-size: 16px;
     font-weight: 100;
 }
 

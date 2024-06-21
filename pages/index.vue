@@ -14,30 +14,34 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 onMounted(() => {
 
+    let windowSize = window.innerWidth;
+
+
+    
+
 
     /* 背景　スクロールアニメーション01 */
 
     $gsap.to('.scrollAnime', {
         // アニメーション終了時
         height: 0,
-        top: '-200px',
+        top: '-300px',
         scrollTrigger: {
             trigger: '.section02-height',
-            start: 'top 30% center',
+            start: 'top 40% center',
             end: 'top -500px top',
             scrub: true,
-            // markers: true,
         }
     });
 
     $gsap.to('.section03', {
         // アニメーション終了時
-        height: '0px',
+        height: '100vh',
         top: '-200px',
         scrollTrigger: {
-            trigger: '.section03-height',
-            start: 'top 50% center',
-            end: 'top -200px top',
+            trigger: '.section02-height',
+            start: 'center center',
+            end: 'bottom -500px bottom',
             scrub: true,
             markers: true,
         }
@@ -52,8 +56,12 @@ onMounted(() => {
 </script>
 
 <template>
-    <HeaderParts />
-    <MainSlide />
+    <div class="header-section">
+        <HeaderParts />
+    </div>
+    <div class="slide-section">
+        <MainSlide />
+    </div>
     <div class="scrollAnime"></div>
 
     <div class="section01">
@@ -89,11 +97,17 @@ onMounted(() => {
     font-size: 36px;
 }
 
+.slide-section{
+    position: relative;
+    z-index: 100;
+}
+
 /* 背景　スクロールアニメーション01 */
 .section01 {
     position: relative;
     z-index: 10;
     padding-bottom: 100px;
+    background-color: #fff;
 }
 
 .scrollAnime {
@@ -109,7 +123,7 @@ onMounted(() => {
 
 .section02 {
     position: relative;
-    height: 1500px;
+    height: 220vh;
     
 }
 

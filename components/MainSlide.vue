@@ -1,11 +1,41 @@
 <script setup>
+const {$gsap} = useNuxtApp()
 
+onMounted(()=>{
+
+    // スライドショーアニメーション
+    const slideShow = document.querySelector('.mainSlide-inner');
+    const slideShow_img = slideShow.querySelectorAll('.slide-img');
+    const delay = 2;
+    const duration = 10;
+
+    const tl = $gsap.timeline({
+        repeat:-1,
+        delay: delay,
+        defaults:{
+            duration: duration,
+            ease: 'power3.out'
+        }
+    });
+
+    tl.to(slideShow_img[0],{opacity: 0})
+    .to(slideShow_img[1],{ opacity: 1}, '<')
+    .to(slideShow_img[1],{ opacity: 0})
+    .to(slideShow_img[2],{ opacity: 1}, '<')
+    .to(slideShow_img[2],{ opacity: 0})
+    .to(slideShow_img[0],{ opacity: 1}, '<');
+    
+    
+})
+    
 </script>
 
 <template>
-    <div class="main-slide">
+    <div id="main-slide">
         <div class="mainSlide-inner">
-            <img src="../assets/img/A7409484.jpg" alt="">
+            <img class="slide-img" src="../assets/img/A7409484.jpg" alt="">
+            <img class="slide-img" src="../assets/img/A7304492.jpg" alt="">
+            <img class="slide-img" src="../assets/img/DSC01849.jpg" alt="">
         </div>
         <div class="main-catch">
             <div class="mc-text">
@@ -21,27 +51,45 @@
 
 <style scoped>
 /* メインスライドショー */
-.main-slide {
-    position: relative;
+#main-slide {
     width: auto;
     z-index: 10;
 }
 
+.mainSlide-inner{
+    width: auto;
+    height: 80vh;
+    position: relative;
+}
+.slide-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.slide-img:nth-child(2),
+.slide-img:nth-child(3){
+    opacity: 0;
+}
+
+
 .mainSlide-inner img {
     width: 100%;
-    /* height: 100%; */
-    max-height: 1000px;
+    height: 100%;
     object-fit: cover;
 }
 
+
 /* メインキャッチコピー */
-.main-slide {
+#main-slide{
     position: relative;
 }
 
 .main-catch {
     position: absolute;
-    bottom: -200px;
+    top: 90%;
     right: 0;
     width: 80%;
     text-align: left;
@@ -92,24 +140,14 @@
 
 /* モバイル設定 */
 
-@media (max-width:1440px) {
 
-    /* スライドショー */
-    .mainSlide-inner img {
-        width: 100%;
-        height: 600px;
-        object-fit: cover;
-    }
-}
 
 @media (max-width:1024px) {
 
     /* メインキャッチ */
     .main-catch {
-        bottom: -180px;
         font-size: 20px;
-        width: 75%;
-        padding: 40px;
+        padding: 30px;
     }
 
     .main-catch p span {

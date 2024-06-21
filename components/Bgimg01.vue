@@ -7,8 +7,6 @@
 <style scoped>
 .bg-img01{
     width:auto;
-    max-height: 200vh;
-    padding-top: 10vh;
 }
 .bg-img01 img{
     width: 100%;

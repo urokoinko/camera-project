@@ -14,7 +14,7 @@ onMounted(() => {
             trigger: '.bg-img02',
             scrub: 0.5,
             start: 'top top',
-            end: '+=3000',
+            end: '+=1500',
             pin: 0,
             markers: true
         }
@@ -40,21 +40,17 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.bg-img02{
-    padding-top: 100px;
-}
+
 .bg-img02-images {
     position: relative;
     width: auto;
     height: 100vh;
-    /* padding-top: 20vh; */
 }
 
 .bg-img02-images img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top;
 }
 
 .bg-img02-images img:not(:first-child) {
