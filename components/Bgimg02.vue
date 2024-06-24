@@ -1,21 +1,21 @@
 <script setup>
-// import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
+
 const { $gsap } = useNuxtApp()
-
-// gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
 
 
 onMounted(() => {
 
     let tl = $gsap.timeline({
 
+        defaults:{
+            duration: 900
+        },
         scrollTrigger: {
             trigger: '.bg-img02',
-            scrub: 0.5,
-            start: 'top top',
+            scrub: true,
+            start: '+=1',
             end: '+=1500',
-            pin: 0,
+            pin: !0,
             markers: true
         }
     })
@@ -27,12 +27,11 @@ onMounted(() => {
 
 })
 
-
 </script>
 
 <template>
     <div class="bg-img02">
-        <div class="bg-img02-images">
+        <div class="bg-img02-images" >
             <img class="img01" src="../assets/img/A7306778.jpg" alt="">
             <img class="img02" src="../assets/img/A7306792.jpg" alt="">
         </div>

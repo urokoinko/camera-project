@@ -1,6 +1,3 @@
-<script setup>
-
-</script>
 
 <template>
     <div class="profile">
@@ -23,7 +20,6 @@
 .profile {
     padding-bottom: 180px;
     text-align: center;
-    background-color: #fff;
 }
 
 .profile-text {

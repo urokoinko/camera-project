@@ -32,16 +32,17 @@ onMounted(() => {
 
     $gsap.to('.section03', {
         // アニメーション終了時
-        height: '100vh',
+        // height: ,
         top: '-200px',
         scrollTrigger: {
             trigger: '.section02-height',
             start: 'center center',
             end: 'bottom -500px bottom',
-            scrub: true,
+            scrub: 0.5,
             markers: true,
         }
     });
+
 
 });
 
@@ -76,6 +77,21 @@ onMounted(() => {
 </template>
 
 <style>
+.section{
+    position: relative;
+}
+.section__pin{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    
+    background-color: rgba(0, 0, 0, 0.25);
+    z-index: 10;
+}
+
 .section-title {
     font-family: var(--font_title);
     text-align: center;
@@ -103,18 +119,19 @@ onMounted(() => {
     z-index: 5;
     left: 0;
     background-color: #fff;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.25);
 }
 
 .section02 {
     position: relative;
-    height: 220vh;
+    width: auto;
+    height: 200vh;
 }
 
 .section02-height {
     position: relative;
     width: auto;
-    height: 100vh;
+    height: 200vh;
 }
 
 /* 背景　スクロールアニメーション01 */
@@ -124,6 +141,9 @@ onMounted(() => {
     z-index: 10;
     width: 100%;
     height: 60vh;
+    background-color: #fff;
+    padding-top: 200px;
+    box-shadow: 0 -30px 30px -30px rgba(0, 0, 0, 0.25);
 }
 
 
