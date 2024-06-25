@@ -14,12 +14,12 @@ onMounted(() => {
     contentsArray.forEach((content) => {
 
         let windowSize = window.innerWidth;
-        let  start = 'bottom bottom';
+        let start = 'bottom bottom';
 
-        if(windowSize < 800){   //800px以下でアニメーションの開始位置を変える
+        if (windowSize < 800) {   //800px以下でアニメーションの開始位置を変える
             start = 'top bottom';
         }
-        
+
         $gsap.fromTo(
             content, // アニメーションさせる要素
             {
@@ -50,10 +50,10 @@ onMounted(() => {
         flippedY = false;
 
     $gsap.to('#motionSVG', {
-        keyframes:{
-            '0%':{autoAlpha: 1},
-            '99%':{autoAlpha: 1},
-            '100%':{autoAlpha: 0},
+        keyframes: {
+            '0%': { autoAlpha: 1 },
+            '99%': { autoAlpha: 1 },
+            '100%': { autoAlpha: 0 },
         },
         scrollTrigger: {
             trigger: '#motionPath',
@@ -150,7 +150,6 @@ onMounted(() => {
                     <img src="../assets/img/A7306925.jpg" alt="">
                 </div>
                 <div class="box-textL">
-
                     <h3>家族写真</h3>
                     <p>お宮参り・七五三・マタニティフォトなど、<br>ご家族の記念撮影を承ります。</p>
                     <div class="more">
@@ -163,28 +162,23 @@ onMounted(() => {
                     <img src="../assets/img/DSC00230.jpg" alt="">
                 </div>
                 <div class="box-textR">
-
                     <h3>ブライダル</h3>
                     <p>結婚式での撮影や、前撮りを承ります。</p>
                     <div class="more">
                         <PartsContentsMore />
                     </div>
-
                 </div>
-
             </div>
             <div class="contents-box03  box-innerL box-inner">
                 <div class="box-Lpic cb-pic">
                     <img src="../assets/img/A7303423.jpg" alt="">
                 </div>
                 <div class="box-textL">
-
                     <h3>ポートレート</h3>
                     <p>宣材写真・アーティスト写真など、<br>ご要望に沿った撮影を承ります。</p>
                     <div class="more">
                         <PartsContentsMore />
                     </div>
-
                 </div>
 
             </div>
@@ -193,16 +187,15 @@ onMounted(() => {
                     <img src="../assets/img/IMG_0270.jpg" alt="">
                 </div>
                 <div class="box-textR">
-
                     <h3>動画撮影</h3>
                     <p>MVや企業向けムービーなど承ります。<br>
                         行事やイベントにも対応しておりますので<br>
                         お気軽にご相談下さい。</p>
+                    <div class="more">
+                        <PartsContentsMore />
+                    </div>
                 </div>
 
-                <div class="more">
-                    <PartsContentsMore />
-                </div>
 
             </div>
 
@@ -239,7 +232,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
 /* メインコンテンツ設定 */
 
 .main-contents {
@@ -281,13 +273,15 @@ onMounted(() => {
     display: flex;
     align-items: center;
     margin-bottom: 190px;
+    padding-right: 5vw;
 }
 
 .box-innerR {
     flex-direction: row-reverse;
     align-items: center;
     margin-bottom: 190px;
-    display: flex
+    display: flex;
+    padding-left: 5vw;
 }
 
 
@@ -305,9 +299,7 @@ onMounted(() => {
 
 .cb-pic {
     width: 55vw;
-    height: 35vw;
-    max-width: 732px;
-    max-height: 480px;
+    aspect-ratio: 1.5 / 1;
 }
 
 .cb-pic img {
@@ -323,11 +315,11 @@ onMounted(() => {
 }
 
 .box-textL {
-    padding-left: 80px;
+    padding-left: 5vw;
 }
 
 .box-textR {
-    padding-right: 80px;
+    padding-right: 5vw;
     text-align: right;
 }
 
@@ -343,15 +335,10 @@ onMounted(() => {
     padding-top: 40px;
 }
 
-.contents-box02 .more {
+.box-innerR .more {
     padding-right: 30px;
 }
 
-.contents-box04 .more{
-    margin-right: -180px;
-    padding-left: 10px;
-    padding-top: 150px;
-}
 
 
 
@@ -359,9 +346,9 @@ onMounted(() => {
 
 @media (max-width:800px) {
     .main-contents {
-        padding-top: 30vh;
-        margin-left: 5px;
-        padding-right: 5px;
+        padding-top: 40vh;
+        margin-left: 5vw;
+        padding-right: 5vw;
     }
 
     .main-contents h3 {
@@ -386,6 +373,7 @@ onMounted(() => {
         flex-direction: column;
         align-items: center;
         margin-bottom: 190px;
+        padding: 0;
     }
 
     .box-innerR {
@@ -393,6 +381,8 @@ onMounted(() => {
         flex-direction: column;
         align-items: center;
         margin-bottom: 190px;
+        padding: 0;
+
     }
 
     .contents-box01 {
@@ -406,8 +396,6 @@ onMounted(() => {
 
     .cb-pic {
         width: 90%;
-        height: 40vh;
-        max-height: 600px;
     }
 
     .box-Lpic {
@@ -426,18 +414,21 @@ onMounted(() => {
         padding-right: 0px;
     }
 
-    .contents-box04 .more {
-        padding-right: 0px;
-        padding-left: 45px;
-        padding-top: 30px;
+    #motionSVG {
+        display: none;
     }
+
+    .scroll-motion {
+        display: none;
+    }
+
 
 }
 
 @media (max-width:430px) {
     .cb-pic {
-        max-width: 350px;
-        max-height: 240px;
+        max-width: 90%;
+        max-height: 200px;
     }
 
 }

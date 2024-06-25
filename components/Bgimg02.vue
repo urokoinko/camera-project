@@ -8,19 +8,19 @@ onMounted(() => {
     let tl = $gsap.timeline({
 
         defaults:{
-            duration: 900
+            duration: 1000
         },
         scrollTrigger: {
             trigger: '.bg-img02',
             scrub: true,
             start: '+=1',
-            end: '+=1500',
+            end: '+=2000',
             pin: !0,
-            markers: true
         }
     })
 
-    tl.to('.bg-img02 img.img01', {opacity: 0, y:-20}, "<")
+    tl.from('.bg-img02 img.img01', {opacity: 1, y:-20}, "<")
+    .to('.bg-img02 img.img01', {opacity: 0, y:-20}, "<")
     .from('img.img02', {opacity: 0, y:-20}, '<')
     .to('img.img02', {opacity: 1, y:-20}, "<");
 
@@ -43,7 +43,7 @@ onMounted(() => {
 .bg-img02-images {
     position: relative;
     width: auto;
-    height: 100vh;
+    height: 90vh;
 }
 
 .bg-img02-images img {
@@ -57,4 +57,6 @@ onMounted(() => {
     top: 0;
     right: 0;
 }
+
+
 </style>

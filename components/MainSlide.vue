@@ -3,6 +3,8 @@ const {$gsap} = useNuxtApp()
 
 onMounted(()=>{
 
+
+
     // スライドショーアニメーション
     const slideShow = document.querySelector('.mainSlide-inner');
     const slideShow_img = slideShow.querySelectorAll('.slide-img');
@@ -26,7 +28,7 @@ onMounted(()=>{
     .to(slideShow_img[0],{ opacity: 1}, '<');
     
     
-})
+});
     
 </script>
 
@@ -39,8 +41,8 @@ onMounted(()=>{
         </div>
         <div class="main-catch">
             <div class="mc-text">
-                <p><span>思い出</span>は、<br class="m-br">日々の流れに<br class="m-br">まぎれてしまうから</p>
-                <p>１度しか来ない大切なひとときを、<span>大切な人</span>と<br class="m-br subm-br">振り返れるように</p>
+                <p><span>思い出</span>は、<br class="m-br ">日々の流れに<br class="m-br">まぎれてしまうから</p>
+                <p>１度しか来ない大切なひとときを、<br class="subm-br"><span>大切な人</span>と<br class="m-br subm-br">振り返れるように</p>
                 <p><span>かたち</span>にして残しませんか？</p>
             </div>
         </div>
@@ -107,25 +109,27 @@ onMounted(()=>{
     z-index: 2;
 }
 
+
 .mc-text::before {
     position: absolute;
     top: -100px;
     left: -10vw;
     content: '';
-    width: 200px;
+    width: 170px;
     height: 200px;
-    background: url(../assets/img/camera_saite_pic2.svg) no-repeat;
+    background: url(../assets/img/camera_site_pic2.svg) no-repeat;
     background-size: contain;
+    overflow: hidden;
 }
 
 .mc-text::after {
     position: absolute;
     content: '';
     top: 20px;
-    right: -10vw;
-    width: 200px;
+    right: 0;
+    width: 170px;
     height: 300px;
-    background: url(../assets/img/camera_saite_pic.svg) no-repeat;
+    background: url(../assets/img/camera_site_pic.svg) no-repeat;
     background-size: contain;
     z-index: -1;
 }
@@ -138,7 +142,7 @@ onMounted(()=>{
     display: none;
 }
 
-/* モバイル設定 */
+/* レスポンシブ設定 */
 
 
 
@@ -161,8 +165,7 @@ onMounted(()=>{
 
     .mc-text::after {
         top: 20px;
-        right: -15vw;
-        width: 200px;
+        width: 100px;
         height: 200px;
     }
     
@@ -183,22 +186,31 @@ onMounted(()=>{
         height: 100px;
     }
 
-    .mc-text::after {
-        top: 20px;
-        right: -15vw;
-        width: 150px;
-        height: 150px;
+    .mc-text {
+        position: relative;
     }
+    .mc-text::after {
+    background: none;
+    position: absolute;
+    content: '';
+    top: 100px;
+    left: 300px;
+    width: 130px;
+    height: 150px;
+    background: url(../assets/img/camera_site_mPic2.svg) no-repeat;
+    background-size: contain;
+
+}
 
 }
 @media (max-width:430px) {
 
     /* メインスライドショー */
     .mainSlide-inner{
-        height: 70vh;
+        height: 50vh;
     }
     .main-catch {
-        top: 55vh;
+        top: 50vh;
         width: 75%;
     }
 

@@ -4,7 +4,7 @@
 </div>
 </template>
 
-<style>
+<style scoped>
 /* more　設定 */
 .more a{
     position: relative;

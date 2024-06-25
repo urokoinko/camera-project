@@ -4,7 +4,7 @@
     
 </template>
 
-<style>
+<style scoped>
 button{
     font-family: var(--font_text);
     font-size: 18px;

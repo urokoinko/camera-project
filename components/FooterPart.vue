@@ -1,6 +1,3 @@
-<script setup>
-
-</script>
 
 <template>
     <div class="footer">
@@ -9,10 +6,12 @@
             <div class="footer-treeL"></div>
             <div class="footer-bg">
                 <div class="footer-nav">
-                    <ul>
+                    <ul class="nav-ul01">
                         <li class="footer-navitem"><a href="#">撮影メニュー</a></li>
                         <li class="footer-navitem"><a href="#">料金表</a></li>
                         <li class="footer-navitem"><a href="#">カメラマンについて</a></li>
+                    </ul>
+                    <ul class="nav-ul02">
                         <li class="footer-navitem"><a href="#">Q＆A</a></li>
                         <li class="footer-navitem"><a href="#">お問い合わせ</a></li>
                     </ul>
@@ -21,6 +20,7 @@
                 <small class="footer-copy">&copy; Hachi</small>
             </div>
         </div>
+        
 
     </div>
 
@@ -37,7 +37,6 @@
 .footer-inner {
     margin: 0 auto;
     max-width: 1440px;
-
 }
 
 .footer-nav ul {
@@ -48,8 +47,15 @@
 }
 
 .footer-nav {
+    display: flex;
+    justify-content: center;
+
     font-size: 18px;
     font-weight: 100;
+}
+
+.nav-ul02 li:first-child{
+    padding-left: 20px;
 }
 
 .footer-bg {
@@ -106,6 +112,26 @@ small {
     z-index: 1000;
 }
 
+/* ページトップボタン */
+.footer{
+    position: relative;
+}
+#page-top{
+    position: absolute;
+    bottom: 60px;
+    right: 40px;
+}
+
+@media (max-width:430px) {
+    #page-top{
+        width: 60px;
+        height: 60px;
+    }
+}
+
+
+
+
 /* レスポンシブ設定 */
 @media (max-width:800px) {
     .footer{
@@ -141,6 +167,16 @@ small {
     }
     
 }
+@media (max-width:600px) {
+    .footer-nav{
+        flex-direction: column;
+        padding-top: 60px;
+    }
+    .footer-nav ul{
+        padding: 10px;
+    }
+ 
+    }
 @media (max-width:430px) {
     .footer-bg {
         height: 500px;

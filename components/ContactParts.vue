@@ -1,6 +1,3 @@
-<script setup>
-
-</script>
 
 <template>
 <div class="contact">
@@ -43,7 +40,6 @@
 @media (max-width:430px) {
     .contant{
         background-color: rgba(255, 251, 215, 0.5);
-
     }
         .contact-inner h2{
             padding-top: 50px;

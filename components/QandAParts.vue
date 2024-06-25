@@ -113,6 +113,7 @@ onMounted(() => {
 .QandA {
     margin: 50vh auto;
     max-width: 760px;
+    padding: 0 5vw;
 }
 
 .QandA h2 {

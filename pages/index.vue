@@ -28,20 +28,30 @@ onMounted(() => {
         }
     });
 
-    /* 背景　スクロールアニメーション02 */
-
     $gsap.to('.section03', {
         // アニメーション終了時
         // height: ,
-        top: '-200px',
+        top: '-300px',
         scrollTrigger: {
             trigger: '.section02-height',
             start: 'center center',
             end: 'bottom -500px bottom',
             scrub: 0.5,
-            markers: true,
         }
     });
+
+
+
+    // ページトップに戻る
+    const pageTopBtn = document.getElementById('page-top-btn');
+
+    pageTopBtn.addEventListener('click', () => {
+
+        window.scroll({
+            top: 0,
+            behavior: "smooth",
+        });
+    })
 
 
 });
@@ -49,45 +59,60 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="header-section">
-        <HeaderParts />
-    </div>
-    <div class="slide-section">
-        <MainSlide />
-    </div>
-    <div class="scrollAnime"></div>
-    <div class="section01">
-        <MainContents />
-    </div>
-    <div class="section02">
-        <div class="section02-height">
-            <Bgimg01 />
+    <div class="site">
+
+        <div class="header-section">
+            <HeaderParts />
+        </div>
+        <div class="slide-section">
+            <MainSlide />
+        </div>
+        <div class="scrollAnime"></div>
+        <div class="section01">
+            <MainContents />
+        </div>
+        <div class="section02">
+            <div class="section02-height">
+                <Bgimg01 />
+            </div>
+        </div>
+        <div class="section03">
+            <div class="section03-height">
+                <ProfileParts />
+            </div>
+        </div>
+        <div class="section04">
+            <Bgimg02 />
+        </div>
+        <QandAParts />
+        <ContactParts />
+        <div class="fp">
+            <FooterPart/>
+            <button class="page-top" id="page-top-btn">
+                <img src="../assets/img/page_top.svg" alt="">
+            </button>
         </div>
     </div>
-    <div class="section03">
-        <div class="section03-height">
-            <ProfileParts />
-        </div>
-    </div>
-    <Bgimg02 />
-    <QandAParts />
-    <ContactParts />
-    <FooterPart />
+        
 
 </template>
 
 <style>
-.section{
+.site{
+    overflow: hidden;
+}
+.section {
     position: relative;
 }
-.section__pin{
+
+.section__pin {
     position: absolute;
     top: 0;
     left: 0;
     display: block;
     width: 100%;
     height: 100%;
-    
+
     background-color: rgba(0, 0, 0, 0.25);
     z-index: 10;
 }
@@ -98,7 +123,7 @@ onMounted(() => {
     font-size: 36px;
 }
 
-.slide-section{
+.slide-section {
     position: relative;
     z-index: 100;
 }
@@ -125,18 +150,12 @@ onMounted(() => {
 .section02 {
     position: relative;
     width: auto;
-    height: 200vh;
-}
-
-.section02-height {
-    position: relative;
-    width: auto;
-    height: 200vh;
+    height: 100%;
 }
 
 /* 背景　スクロールアニメーション01 */
 
-.section03{
+.section03 {
     position: relative;
     z-index: 10;
     width: 100%;
@@ -147,15 +166,42 @@ onMounted(() => {
 }
 
 
+/* ページトップボタン */
+.fp{
+    position: relative;
+}
+.page-top {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1100;
+}
+.page-top:hover {
+    opacity: 0.7;
+}
+
+
 /* モバイル設定 */
+
 @media (max-width:800px) {
     .section-title {
         font-size: 26px;
     }
+
 }
 @media (max-width:430px) {
     .section-title {
         font-size: 20px;
     }
+
+    .section02 {
+        width: auto;
+        height: 200vh;
+    }
+
+    .scrollAnime {
+        height: 50vh;
+    }
+
 }
 </style>

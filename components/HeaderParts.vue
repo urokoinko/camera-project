@@ -1,6 +1,6 @@
 <script setup>
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
+// ハンバーガーメニュー開け閉め
 
 function navFunc() {
     document.querySelector('html').classList.toggle('open');
@@ -12,7 +12,7 @@ function navFunc() {
     <div class="header">
         <div class="header-inner">
             <div class="site-logo">
-                <a href="#"><img src="../assets/img/camera_saite_logo.svg" alt=""></a>
+                <a href="#"><img src="../assets/img/camera_site_logo.svg" alt=""></a>
             </div>
             <div class="header-menu">
                 <ul>
@@ -40,8 +40,6 @@ function navFunc() {
             </ul>
         </nav>
     </div>
-    <!-- <font-awesome-icon icon="fa-brands fa-instagram" /> -->
-
 </template>
 
 <style scoped>

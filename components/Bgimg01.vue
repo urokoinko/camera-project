@@ -7,16 +7,17 @@
 
 <style scoped>
 .bg-img01{
-    /* padding-top: 200px; */
-    /* padding-bottom: 200px; */
     overflow: hidden;
     position: relative;
     width: auto;
-    height: 200vh;
+    height: 100%;
     object-fit: cover;
 }
-/* .bg-img01 img{
-    width: 100%;
-    height: 100vh;
-} */
+
+@media (max-width:430px) {
+    .bg-img01{
+        height: 100vh;
+        width: auto;
+    }
+}
 </style>
