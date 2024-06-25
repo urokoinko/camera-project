@@ -2,6 +2,12 @@
 
 
 export default defineNuxtConfig({
+  router:{
+    // base: '/camera-project/'
+  },
+  generate:{
+    // dir:'docs'
+  },
   devtools: { enabled: true },
   css:[
     "@/assets/main.css",
