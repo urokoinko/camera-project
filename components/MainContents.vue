@@ -294,7 +294,6 @@ onMounted(() => {
     font-size: 18px;
     font-weight: 400;
     padding-top: 25px;
-    text-align: left;
 }
 
 .cb-pic {
@@ -315,6 +314,7 @@ onMounted(() => {
 }
 
 .box-textL {
+    text-align: left;
     padding-left: 5vw;
 }
 
@@ -410,7 +410,7 @@ onMounted(() => {
         padding-left: 50px;
     }
 
-    .contents-box02 .more {
+    .box-innerR .more {
         padding-right: 0px;
     }
 
@@ -426,6 +426,10 @@ onMounted(() => {
 }
 
 @media (max-width:430px) {
+    .main-contents {
+        padding-top: 70vh;
+    }
+
     .cb-pic {
         max-width: 90%;
         max-height: 200px;

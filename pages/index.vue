@@ -1,7 +1,6 @@
 <script setup lang="ts">
 useHead({
     title: '出張カメラマン',
-
 })
 
 import { gsap } from 'gsap';
@@ -18,11 +17,11 @@ onMounted(() => {
 
     let windowSize = window.innerWidth;
     let top = '-300px';
-    // let end = 'top -500px top';
+    let end = 'bottom -500px bottom';
 
     if (windowSize < 430) {   //800px以下でアニメーションの開始位置を変える
         top = '-100px'
-        // end = 'bottom bottom';
+        end = 'bottom bottom';
     }
 
     $gsap.to('.scrollAnime', {
@@ -44,7 +43,7 @@ onMounted(() => {
         scrollTrigger: {
             trigger: '.section02-height',
             start: 'center center',
-            end: 'bottom -200px bottom',
+            end: end,
             scrub: true,
         }
     });
@@ -69,7 +68,6 @@ onMounted(() => {
 
 <template>
     <div class="site">
-
         <div class="header-section">
             <HeaderParts />
         </div>
@@ -102,8 +100,6 @@ onMounted(() => {
             </button>
         </div>
     </div>
-
-
 </template>
 
 <style>
@@ -122,7 +118,6 @@ onMounted(() => {
     display: block;
     width: 100%;
     height: 100%;
-
     background-color: rgba(0, 0, 0, 0.25);
     z-index: 10;
 }
@@ -172,6 +167,7 @@ onMounted(() => {
     height: 60vh;
     background-color: #fff;
     padding-top: 200px;
+    padding-bottom: 200px;
     box-shadow: 0 -30px 30px -30px rgba(0, 0, 0, 0.25);
 }
 
@@ -199,7 +195,6 @@ onMounted(() => {
     .section-title {
         font-size: 26px;
     }
-
 }
 
 @media (max-width:430px) {
@@ -215,6 +210,11 @@ onMounted(() => {
     .scrollAnime {
         height: 50vh;
     }
-
+}
+@media (max-width:390px) {
+    .section02 {
+        width: auto;
+        height: 90vh;
+    }
 }
 </style>

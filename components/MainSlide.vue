@@ -215,7 +215,6 @@ onMounted(()=>{
     }
 
     .main-catch p {
-        max-width: 90%;
         line-height: 1.2;
         font-size: 16px
     }
@@ -225,8 +224,8 @@ onMounted(()=>{
     }
 
     .mc-text::before {
-        top: 150px;
-        left: -10vw;
+        top: 200px;
+        left: -15vw;
         transform: rotate(-80deg);
         content: '';
         width: 80px;
@@ -235,7 +234,7 @@ onMounted(()=>{
 
     .mc-text::after {
         top: 20px;
-        right: -10vw;
+        left: 50vw;
         width: 90px;
         height: 120px;
     }

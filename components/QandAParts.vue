@@ -169,9 +169,13 @@ onMounted(() => {
 
 /* レスポンシブ設定 */
 @media (max-width: 800px) {
+    .QandA {
+        max-width: 600px;
+    }
     .faq-header {
         font-size: 20px;
         padding: 5px 20px 5px;
+        margin-top: 25px;
     }
 
     .faq-header::before {

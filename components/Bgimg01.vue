@@ -16,7 +16,7 @@
 
 @media (max-width:430px) {
     .bg-img01{
-        height: 150vh;
+        height: 140vh;
         width: auto;
     }
 }

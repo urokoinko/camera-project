@@ -58,5 +58,12 @@ onMounted(() => {
     right: 0;
 }
 
+@media (max-width:430px) {
+    .bg-img02-images img {
+        height: 70vh;
+
+    }
+}
+
 
 </style>
