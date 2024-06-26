@@ -1,7 +1,7 @@
 <script setup>
-const {$gsap} = useNuxtApp()
+const { $gsap } = useNuxtApp()
 
-onMounted(()=>{
+onMounted(() => {
 
 
 
@@ -12,24 +12,24 @@ onMounted(()=>{
     const duration = 5;
 
     const tl = $gsap.timeline({
-        repeat:-1,
+        repeat: -1,
         delay: delay,
-        defaults:{
+        defaults: {
             duration: duration,
             ease: 'power3.out'
         }
     });
 
-    tl.to(slideShow_img[0],{opacity: 0})
-    .to(slideShow_img[1],{ opacity: 1}, '<')
-    .to(slideShow_img[1],{ opacity: 0})
-    .to(slideShow_img[2],{ opacity: 1}, '<')
-    .to(slideShow_img[2],{ opacity: 0})
-    .to(slideShow_img[0],{ opacity: 1}, '<');
-    
-    
+    tl.to(slideShow_img[0], { opacity: 0 })
+        .to(slideShow_img[1], { opacity: 1 }, '<')
+        .to(slideShow_img[1], { opacity: 0 })
+        .to(slideShow_img[2], { opacity: 1 }, '<')
+        .to(slideShow_img[2], { opacity: 0 })
+        .to(slideShow_img[0], { opacity: 1 }, '<');
+
+
 });
-    
+
 </script>
 
 <template>
@@ -58,12 +58,13 @@ onMounted(()=>{
     z-index: 10;
 }
 
-.mainSlide-inner{
+.mainSlide-inner {
     width: auto;
     height: 80vh;
     position: relative;
 }
-.slide-img{
+
+.slide-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -71,8 +72,9 @@ onMounted(()=>{
     justify-content: center;
     align-items: center;
 }
+
 .slide-img:nth-child(2),
-.slide-img:nth-child(3){
+.slide-img:nth-child(3) {
     opacity: 0;
 }
 
@@ -85,7 +87,7 @@ onMounted(()=>{
 
 
 /* メインキャッチコピー */
-#main-slide{
+#main-slide {
     position: relative;
 }
 
@@ -120,6 +122,8 @@ onMounted(()=>{
     background: url(../assets/img/camera_site_pic2.svg) no-repeat;
     background-size: contain;
     overflow: hidden;
+    z-index: -1;
+
 }
 
 .mc-text::after {
@@ -168,47 +172,57 @@ onMounted(()=>{
         width: 100px;
         height: 200px;
     }
-    
+
 }
+
 @media (max-width:800px) {
-    .main-catch{
+    .main-catch {
         font-size: 16px;
     }
+
     .main-catch p span {
         font-size: 36px;
     }
-    .subm-br{
+
+    .subm-br {
         display: block;
     }
+
     .mc-text::before {
         top: -50px;
         width: 100px;
         height: 100px;
+        z-index: -1;
+
     }
 
     .mc-text {
         position: relative;
     }
+
     .mc-text::after {
-    background: none;
-    position: absolute;
-    content: '';
-    top: 100px;
-    left: 300px;
-    width: 130px;
-    height: 150px;
-    background: url(../assets/img/camera_site_mPic2.svg) no-repeat;
-    background-size: contain;
+        background: none;
+        position: absolute;
+        content: '';
+        top: 100px;
+        left: 300px;
+        width: 130px;
+        height: 150px;
+        background: url(../assets/img/camera_site_mPic2.svg) no-repeat;
+        background-size: contain;
+        z-index: -1;
+
+    }
 
 }
 
-}
 @media (max-width:430px) {
 
     /* メインスライドショー */
-    .mainSlide-inner{
+    .mainSlide-inner {
         height: 50vh;
     }
+
     .main-catch {
         top: 50vh;
         width: 75%;
@@ -230,6 +244,8 @@ onMounted(()=>{
         content: '';
         width: 80px;
         height: 80px;
+        z-index: -1;
+
     }
 
     .mc-text::after {
@@ -237,6 +253,8 @@ onMounted(()=>{
         left: 50vw;
         width: 90px;
         height: 120px;
+        z-index: -1;
+
     }
 
     .m-br {
