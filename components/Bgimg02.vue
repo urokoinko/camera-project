@@ -12,9 +12,9 @@ onMounted(() => {
         },
         scrollTrigger: {
             trigger: '.bg-img02',
-            scrub: true,
+            scrub: 0.7,
             start: '+=1',
-            end: '+=2000',
+            end: '+=1200',
             pin: !0,
         }
     })

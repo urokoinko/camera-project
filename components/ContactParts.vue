@@ -5,7 +5,7 @@
         <h2 class="section-title">お問い合わせ</h2>
         <p>ご予約やご不明点など<br>お気軽にお問い合わせください。</p>
         <div class="contact-button">
-            <PartsButtonparts>お問い合わせはこちら</PartsButtonparts>
+            <PartsButtonparts class="button">お問い合わせはこちら</PartsButtonparts>
         </div>
     </div>
 </div>
@@ -29,6 +29,10 @@
 }
 .contact-button{
     padding-top: 80px;
+}
+.button:hover{
+    transition: 0.3s;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 

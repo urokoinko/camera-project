@@ -52,6 +52,8 @@ function navFunc() {
     height: 50px;
     background-color: rgba(255, 255, 255, 0.6);
     z-index: 1000;
+    display: flex;
+    align-items: center;
 }
 
 .header-inner {
@@ -92,6 +94,9 @@ function navFunc() {
     transition: 0.3s;
 }
 
+.header-menu a:hover {
+    opacity: 1;
+}
 .header-menu a:hover::after {
     transform: scale(1, 1);
 }

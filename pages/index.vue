@@ -16,6 +16,15 @@ onMounted(() => {
 
     /* 背景　スクロールアニメーション01 */
 
+    let windowSize = window.innerWidth;
+    let top = '-300px';
+    // let end = 'top -500px top';
+
+    if (windowSize < 430) {   //800px以下でアニメーションの開始位置を変える
+        top = '-100px'
+        // end = 'bottom bottom';
+    }
+
     $gsap.to('.scrollAnime', {
         // アニメーション終了時
         height: 0,
@@ -31,12 +40,12 @@ onMounted(() => {
     $gsap.to('.section03', {
         // アニメーション終了時
         // height: ,
-        top: '-300px',
+        top: top,
         scrollTrigger: {
             trigger: '.section02-height',
             start: 'center center',
-            end: 'bottom -500px bottom',
-            scrub: 0.5,
+            end: 'bottom -200px bottom',
+            scrub: true,
         }
     });
 
@@ -87,20 +96,21 @@ onMounted(() => {
         <QandAParts />
         <ContactParts />
         <div class="fp">
-            <FooterPart/>
+            <FooterPart />
             <button class="page-top" id="page-top-btn">
                 <img src="../assets/img/page_top.svg" alt="">
             </button>
         </div>
     </div>
-        
+
 
 </template>
 
 <style>
-.site{
+.site {
     overflow: hidden;
 }
+
 .section {
     position: relative;
 }
@@ -167,15 +177,17 @@ onMounted(() => {
 
 
 /* ページトップボタン */
-.fp{
+.fp {
     position: relative;
 }
+
 .page-top {
     position: absolute;
     bottom: 40px;
     right: 40px;
     z-index: 1100;
 }
+
 .page-top:hover {
     opacity: 0.7;
 }
@@ -189,6 +201,7 @@ onMounted(() => {
     }
 
 }
+
 @media (max-width:430px) {
     .section-title {
         font-size: 20px;
@@ -196,7 +209,7 @@ onMounted(() => {
 
     .section02 {
         width: auto;
-        height: 200vh;
+        max-height: 700px;
     }
 
     .scrollAnime {

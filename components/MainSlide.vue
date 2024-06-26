@@ -9,7 +9,7 @@ onMounted(()=>{
     const slideShow = document.querySelector('.mainSlide-inner');
     const slideShow_img = slideShow.querySelectorAll('.slide-img');
     const delay = 2;
-    const duration = 10;
+    const duration = 5;
 
     const tl = $gsap.timeline({
         repeat:-1,
