@@ -137,7 +137,7 @@ onMounted(() => {
     right: 20px;
     width: 25px;
     height: 25px;
-    background: url(../assets/img/arrow.png) no-repeat;
+    background: url(../public/img/arrow.png) no-repeat;
     background-size: contain;
     z-index: 10;
     transition: 1s;

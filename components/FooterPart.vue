@@ -83,7 +83,7 @@ small {
     right: 290px;
     width: 147px;
     height: 169px;
-    background: url(../assets/img/camera_tree_blue.png) no-repeat;
+    background: url(../public/img/camera_tree_blue.png) no-repeat;
     background-size: contain;
     z-index: 1000;
 }
@@ -95,7 +95,7 @@ small {
     right: 100px;
     width: 248px;
     height: 248px;
-    background: url(../assets/img/camera_tree.png) no-repeat;
+    background: url(../public/img/camera_tree.png) no-repeat;
     background-size: contain;
     z-index: 1000;
 }
@@ -107,7 +107,7 @@ small {
     left: 180px;
     width: 147px;
     height: 169px;
-    background: url(../assets/img/camera_tree_green.png) no-repeat;
+    background: url(../public/img/camera_tree_green.png) no-repeat;
     background-size: contain;
     z-index: 1000;
 }
@@ -149,7 +149,7 @@ small {
         right: 30%;
         width: 110px;
         height: 126px;
-        background: url(../assets/img/camera_tree_blue.png) no-repeat;
+        background: url(../public/img/camera_tree_blue.png) no-repeat;
         background-size: contain;
         z-index: 1000;
     }
@@ -195,7 +195,7 @@ small {
         right: 40%;
         width: 110px;
         height: 126px;
-        background: url(../assets/img/camera_tree_blue.png) no-repeat;
+        background: url(../public/img/camera_tree_blue.png) no-repeat;
         background-size: contain;
         z-index: 1000;
     }
@@ -207,7 +207,7 @@ small {
         right: 0;
         width: 184px;
         height: 184px;
-        background: url(../assets/img/camera_tree.png) no-repeat;
+        background: url(../public/img/camera_tree.png) no-repeat;
         background-size: contain;
         z-index: 1000;
     }
@@ -219,7 +219,7 @@ small {
         left: 20px;
         width: 130px;
         height: 140px;
-        background: url(../assets/img/camera_tree_green.png) no-repeat;
+        background: url(../public/img/camera_tree_green.png) no-repeat;
         background-size: contain;
         z-index: 1000;
     }

@@ -35,9 +35,9 @@ onMounted(() => {
 <template>
     <div id="main-slide">
         <div class="mainSlide-inner">
-            <img class="slide-img" src="../assets/img/A7409484.jpg" alt="">
-            <img class="slide-img" src="../assets/img/A7304492.jpg" alt="">
-            <img class="slide-img" src="../assets/img/DSC01849.jpg" alt="">
+            <img class="slide-img" src="../public/img/A7409484.jpg" alt="">
+            <img class="slide-img" src="../public/img/A7304492.jpg" alt="">
+            <img class="slide-img" src="../public/img/DSC01849.jpg" alt="">
         </div>
         <div class="main-catch">
             <div class="mc-text">
@@ -119,7 +119,7 @@ onMounted(() => {
     content: '';
     width: 170px;
     height: 200px;
-    background: url(../assets/img/camera_site_pic2.svg) no-repeat;
+    background: url(../public/img/camera_site_pic2.svg) no-repeat;
     background-size: contain;
     overflow: hidden;
     z-index: -1;
@@ -133,7 +133,7 @@ onMounted(() => {
     right: 0;
     width: 170px;
     height: 300px;
-    background: url(../assets/img/camera_site_pic.svg) no-repeat;
+    background: url(../public/img/camera_site_pic.svg) no-repeat;
     background-size: contain;
     z-index: -1;
 }
@@ -208,7 +208,7 @@ onMounted(() => {
         left: 300px;
         width: 130px;
         height: 150px;
-        background: url(../assets/img/camera_site_mPic2.svg) no-repeat;
+        background: url(../public/img/camera_site_mPic2.svg) no-repeat;
         background-size: contain;
         z-index: -1;
 

@@ -1,5 +1,4 @@
 <script setup>
-
 const { $gsap } = useNuxtApp()
 
 
@@ -32,8 +31,8 @@ onMounted(() => {
 <template>
     <div class="bg-img02">
         <div class="bg-img02-images" >
-            <img class="img01" src="../assets/img/A7306778.jpg" alt="">
-            <img class="img02" src="../assets/img/A7306792.jpg" alt="">
+            <img class="img01" src="../public/img/A7306778.jpg" alt="">
+            <img class="img02" src="../public/img/A7306792.jpg" alt="">
         </div>
     </div>
 </template>
@@ -64,6 +63,4 @@ onMounted(() => {
 
     }
 }
-
-
 </style>

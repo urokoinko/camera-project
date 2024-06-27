@@ -1,57 +1,31 @@
 <script setup lang="ts">
-
+const SITE_TITLE = "出張カメラマン";
 
 useHead({
-  link:[
-  {
-    rel:"preconnect",
-    href:"https://fonts.gstatic.com"
-  },
-  {
-    rel:"stylesheet",
-    href:"https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Zen+Kaku+Gothic+New:wght@700&family=Zen+Maru+Gothic:wght@400;500&display=swap"
-  }
+  titleTemplate:(titleChunk: strig|undefined): string =>{
+        let title = SITE_TITLE;
+        if(titleChunk != undefined){
+          title = `${titleChunk}｜${SITE_TITLE}`;
+        }
+        return title
+    },
+  link: [
+    {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com"
+    },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Zen+Kaku+Gothic+New:wght@700&family=Zen+Maru+Gothic:wght@400;500&display=swap"
+    }
   ],
-
-
-})
-
+});
 </script>
 
 <template>
-  <NuxtLayout>
-    <NuxtPage />
-  </NuxtLayout>
+  <div class="site">
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
-
-<style>
-html{
-  font-size: 10px;
-}
-
-.zen-kaku-gothic-new-bold {
-  font-family: "Zen Kaku Gothic New", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-.zen-maru-gothic-regular {
-  font-family: "Zen Maru Gothic", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.zen-maru-gothic-medium {
-  font-family: "Zen Maru Gothic", serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-
-.kiwi-maru-regular {
-  font-family: "Kiwi Maru", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-</style>

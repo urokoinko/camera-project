@@ -1,8 +1,4 @@
 <script setup lang="ts">
-useHead({
-    title: '出張カメラマン',
-})
-
 import { gsap } from 'gsap';
 const { $gsap } = useNuxtApp()
 import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
@@ -47,87 +43,42 @@ onMounted(() => {
             scrub: true,
         }
     });
-
-
-
-    // ページトップに戻る
-    const pageTopBtn = document.getElementById('page-top-btn');
-
-    pageTopBtn.addEventListener('click', () => {
-
-        window.scroll({
-            top: 0,
-            behavior: "smooth",
-        });
-    })
-
-
 });
-
 </script>
 
 <template>
-    <div class="site">
-        <div class="header-section">
-            <HeaderParts />
-        </div>
-        <div class="slide-section">
-            <MainSlide />
-        </div>
-        <div class="scrollAnime"></div>
-        <div class="section01">
-            <MainContents />
-        </div>
-        <div class="section02">
-            <div class="section02-height">
-                <Bgimg01 />
-            </div>
-        </div>
-        <div class="section03">
-            <div class="section03-height">
-                <ProfileParts />
-            </div>
-        </div>
-        <div class="section04">
-            <Bgimg02 />
-        </div>
-        <QandAParts />
-        <ContactParts />
-        <div class="fp">
-            <FooterPart />
-            <button class="page-top" id="page-top-btn">
-                <img src="../assets/img/page_top.svg" alt="">
-            </button>
+    <div class="slide-section">
+        <MainSlide />
+    </div>
+    <div class="scrollAnime"></div>
+    <div class="section01">
+        <MainContents />
+    </div>
+    <div class="section02">
+        <div class="section02-height">
+            <Bgimg01 />
         </div>
     </div>
+    <div class="section03">
+        <div class="section03-height">
+            <ProfileParts />
+        </div>
+    </div>
+    <div class="section04">
+        <Bgimg02 />
+    </div>
+    <QandAParts />
 </template>
 
 <style>
-.site {
-    overflow: hidden;
-}
-
-.section {
-    position: relative;
-}
-
-.section__pin {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.25);
-    z-index: 10;
-}
-
+/* トップページ設定 */
 .section-title {
     font-family: var(--font_title);
     text-align: center;
     font-size: 36px;
 }
 
+/* スライドショー */
 .slide-section {
     position: relative;
     z-index: 100;
@@ -158,8 +109,6 @@ onMounted(() => {
     height: 100%;
 }
 
-/* 背景　スクロールアニメーション01 */
-
 .section03 {
     position: relative;
     z-index: 10;
@@ -172,24 +121,8 @@ onMounted(() => {
 }
 
 
-/* ページトップボタン */
-.fp {
-    position: relative;
-}
 
-.page-top {
-    position: absolute;
-    bottom: 40px;
-    right: 40px;
-    z-index: 1100;
-}
-
-.page-top:hover {
-    opacity: 0.7;
-}
-
-
-/* モバイル設定 */
+/* レスポンシブ設定 */
 
 @media (max-width:800px) {
     .section-title {
@@ -211,6 +144,7 @@ onMounted(() => {
         height: 50vh;
     }
 }
+
 @media (max-width:390px) {
     .section02 {
         width: auto;

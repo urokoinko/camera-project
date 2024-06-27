@@ -1,5 +1,4 @@
 
-/* 全体設定 */
 /* 変数 */
 :root{
     --font_title: 'Zen kaku Gothic New';    
@@ -7,8 +6,16 @@
     --font_text: 'Zen Maru Gothic';
     --color_main: #3d3d3d;
     --color_darkBrown: #6C6059;
-
 }
+
+/* 全体設定 */
+html {
+    font-size: 10px;
+  }
+  
+  .site {
+    overflow: hidden;
+  }
 
 /* font */
 body{

@@ -141,50 +141,47 @@ onMounted(() => {
 
 <template>
     <div class="main-contents">
-
         <h2 class="section-title">撮影メニュー</h2>
         <div class="main-contents-inner">
-
             <div class="contents-box01 box-innerL box-inner">
                 <div class="box-Lpic cb-pic">
-                    <img src="../assets/img/A7306925.jpg" alt="">
+                    <img src="../public/img/A7306925.jpg" alt="">
                 </div>
                 <div class="box-textL">
                     <h3>家族写真</h3>
                     <p>お宮参り・七五三・マタニティフォトなど、<br>ご家族の記念撮影を承ります。</p>
                     <div class="more">
-                        <PartsContentsMore />
+                        <NuxtLink :to="{name: 'familyPhoto'}"><PartsContentsMore /></NuxtLink>
                     </div>
                 </div>
             </div>
             <div class="contents-box02  box-innerR box-inner">
                 <div class="box-Rpic cb-pic">
-                    <img src="../assets/img/DSC00230.jpg" alt="">
+                    <img src="../public/img/DSC00230.jpg" alt="">
                 </div>
                 <div class="box-textR">
                     <h3>ブライダル</h3>
                     <p>結婚式での撮影や、前撮りを承ります。</p>
                     <div class="more">
-                        <PartsContentsMore />
+                        <NuxtLink :to="{name: 'bridalPhoto'}"><PartsContentsMore /></NuxtLink>
                     </div>
                 </div>
             </div>
             <div class="contents-box03  box-innerL box-inner">
                 <div class="box-Lpic cb-pic">
-                    <img src="../assets/img/A7303423.jpg" alt="">
+                    <img src="../public/img/A7303423.jpg" alt="">
                 </div>
                 <div class="box-textL">
                     <h3>ポートレート</h3>
                     <p>宣材写真・アーティスト写真など、<br>ご要望に沿った撮影を承ります。</p>
                     <div class="more">
-                        <PartsContentsMore />
+                        <NuxtLink :to="{name: 'portraitPhoto'}"><PartsContentsMore /></NuxtLink>
                     </div>
                 </div>
-
             </div>
             <div class="contents-box04 box-innerR box-inner">
                 <div class="box-Rpic cb-pic">
-                    <img src="../assets/img/IMG_0270.jpg" alt="">
+                    <img src="../public/img/IMG_0270.jpg" alt="">
                 </div>
                 <div class="box-textR">
                     <h3>動画撮影</h3>
@@ -192,22 +189,16 @@ onMounted(() => {
                         行事やイベントにも対応しておりますので<br>
                         お気軽にご相談下さい。</p>
                     <div class="more">
-                        <PartsContentsMore />
+                        <NuxtLink :to="{name: 'move'}"><PartsContentsMore /></NuxtLink>
                     </div>
                 </div>
-
-
             </div>
-
 
             <svg class="scroll-motion" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 775.17 4984.6">
                 <path id="motionPath" class="scroll-motion"
                     d="M736.69.36c-122.66 120-714.73 84-702.66 326.66 5.47 110.04 437.54 50.53 501.33 172 97.33 185.34-562.23 264.03-533.33 492 24 189.33 488 264 650.67 410.67 153.57 138.46 6.25 432.18-165.33 506.67-172 74.67-561.33 266.67-434.67 566.67 85.16 201.7 284.65 236.84 381.33 248 104 12 222.67 50.67 284 144 103.68 157.78 64 424-110.67 608-154.18 162.42-703.68 89.41-592 356 41.33 98.67 234.55 90.63 413.33 152 89.33 30.67 285.33 177.33 174.67 382.67-163.75 303.83-645.33 281.33-460 618.67"
                     style="fill:none;stroke:#000;stroke-miterlimit:10" data-name="レイヤー 1" />
             </svg>
-
-
-
             <svg xmlns="http://www.w3.org/2000/svg" id="motionSVG" data-name="レイヤー 2" viewBox="0 0 216.38 231.58"
                 width="10vw">
                 <g id="leaf">
@@ -222,23 +213,16 @@ onMounted(() => {
                         class="cls-2" />
                 </g>
             </svg>
-
-
-
         </div>
     </div>
-
-
 </template>
 
 <style scoped>
 /* メインコンテンツ設定 */
-
 .main-contents {
     position: relative;
     padding-top: 50vh;
 }
-
 
 /* メインコンテンツ　スクロールアニメーション */
 .scroll-motion {
@@ -283,7 +267,6 @@ onMounted(() => {
     display: flex;
     padding-left: 5vw;
 }
-
 
 .main-contents h3 {
     font-size: 32px;
@@ -339,9 +322,6 @@ onMounted(() => {
     padding-right: 30px;
 }
 
-
-
-
 /* レスポンシブ設定 */
 
 @media (max-width:800px) {
@@ -382,7 +362,6 @@ onMounted(() => {
         align-items: center;
         margin-bottom: 190px;
         padding: 0;
-
     }
 
     .contents-box01 {
@@ -421,8 +400,6 @@ onMounted(() => {
     .scroll-motion {
         display: none;
     }
-
-
 }
 
 @media (max-width:430px) {
@@ -434,6 +411,5 @@ onMounted(() => {
         max-width: 90%;
         max-height: 200px;
     }
-
 }
 </style>
