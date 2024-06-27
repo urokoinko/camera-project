@@ -133,10 +133,7 @@ onMounted(() => {
             return i ? s + (a[Math.ceil(i)] - s) * (i % 1) : 0;
         }
     }
-
 })
-
-
 </script>
 
 <template>

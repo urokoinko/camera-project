@@ -2,11 +2,14 @@
 const PAGE_TITLE = "家族写真";
 
 definePageMeta({
-    layout: "other"
+    layout: false
 });
 
 </script>
 <template>
-    <h2 class="section-title">{{ PAGE_TITLE }}</h2>
-    <slot />
+    <NuxtLayout name="other">
+        <template #sub-sectionTitle>
+            {{ PAGE_TITLE }}
+        </template>
+    </NuxtLayout>
 </template>

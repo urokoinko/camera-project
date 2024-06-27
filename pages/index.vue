@@ -72,11 +72,6 @@ onMounted(() => {
 
 <style>
 /* トップページ設定 */
-.section-title {
-    font-family: var(--font_title);
-    text-align: center;
-    font-size: 36px;
-}
 
 /* スライドショー */
 .slide-section {
@@ -124,17 +119,7 @@ onMounted(() => {
 
 /* レスポンシブ設定 */
 
-@media (max-width:800px) {
-    .section-title {
-        font-size: 26px;
-    }
-}
-
 @media (max-width:430px) {
-    .section-title {
-        font-size: 20px;
-    }
-
     .section02 {
         width: auto;
         max-height: 700px;

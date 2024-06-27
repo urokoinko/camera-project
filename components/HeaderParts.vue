@@ -12,7 +12,7 @@ function navFunc() {
     <div class="header">
         <div class="header-inner">
             <div class="site-logo">
-                <a href="#"><img src="../public/img/camera_site_logo.svg" alt=""></a>
+                <NuxtLink :to="{name: 'index'}"><img src="../public/img/camera_site_logo.svg" alt=""></NuxtLink>
             </div>
             <div class="header-menu">
                 <ul>
