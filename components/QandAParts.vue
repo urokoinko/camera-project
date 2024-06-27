@@ -119,6 +119,10 @@ onMounted(() => {
 .QandA h2 {
     padding-bottom: 80px;
 }
+.QandA-inner{
+    font-family: var(--font_text);
+    font-weight: 600;
+}
 
 .faq-header {
     background-color: #d7eee9;
