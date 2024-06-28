@@ -35,7 +35,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
         console.log(this);
 
         className = className.split(' ');				//「sortXX active」のクラス名を分割して配列にする
-        ("." + className[0]).addClass("active");			//並び替えボタンに付与されているクラス名とギャラリー内のリストのクラス名が同じボタンにactiveクラスを付与
+        document.querySelector(`. ${className[0]}`).addClass("active");			//並び替えボタンに付与されているクラス名とギャラリー内のリストのクラス名が同じボタンにactiveクラスを付与
         if (className[0] == "sort00") {						//クラス名がsort00（全て）のボタンの場合は、
             grid.show('');								//全ての要素を出す
         } else {											//それ以外の場合は
