@@ -148,7 +148,7 @@ onMounted(() => {
                     <h3>家族写真</h3>
                     <p>お宮参り・七五三・マタニティフォトなど、<br>ご家族の記念撮影を承ります。</p>
                     <div class="more">
-                        <NuxtLink :to="{name: 'familyPhoto'}"><PartsContentsMore /></NuxtLink>
+                        <NuxtLink :to="{name: 'photoGallery'}"><PartsContentsMore /></NuxtLink>
                     </div>
                 </div>
             </div>
@@ -160,7 +160,7 @@ onMounted(() => {
                     <h3>ブライダル</h3>
                     <p>結婚式での撮影や、前撮りを承ります。</p>
                     <div class="more">
-                        <NuxtLink :to="{name: 'bridalPhoto'}"><PartsContentsMore /></NuxtLink>
+                        <NuxtLink :to="{name: 'photoGallery'}"><PartsContentsMore /></NuxtLink>
                     </div>
                 </div>
             </div>
@@ -172,7 +172,7 @@ onMounted(() => {
                     <h3>ポートレート</h3>
                     <p>宣材写真・アーティスト写真など、<br>ご要望に沿った撮影を承ります。</p>
                     <div class="more">
-                        <NuxtLink :to="{name: 'portraitPhoto'}"><PartsContentsMore /></NuxtLink>
+                        <NuxtLink :to="{name: 'photoGallery'}"><PartsContentsMore /></NuxtLink>
                     </div>
                 </div>
             </div>

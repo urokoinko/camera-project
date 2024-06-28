@@ -43,7 +43,7 @@ onMounted(() => {
     <div class="fq">
             <FooterPart />
             <button class="page-top" id="page-top-btn">
-                <img src="../public/img/page_top.svg" alt="">
+                <img src="./public/img/page_top.svg" alt="">
             </button>
         </div>
   </div>
@@ -82,6 +82,9 @@ onMounted(() => {
 @media (max-width:430px) {
   .section-title {
     font-size: 20px;
+  }
+  .page-top{
+    width: 50px;
   }
 }
 </style>

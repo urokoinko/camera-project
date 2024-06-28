@@ -14,5 +14,8 @@ export default defineNuxtConfig({
       scrollTo: true,
     }
   },
+  // plugins:[
+  //   {src: '@/plugins/muuriClient', mode: 'client'},
+  // ]
 })
 

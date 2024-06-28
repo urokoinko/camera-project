@@ -16,11 +16,11 @@ function navFunc() {
             </div>
             <div class="header-menu">
                 <ul>
-                    <li><a href="#">撮影メニュー</a></li>
-                    <li><a href="#">料金表</a></li>
-                    <li><a href="#">カメラマンについて</a></li>
-                    <li><a href="#">Q&A</a></li>
-                    <li><a href="#">お問い合わせ</a></li>
+                    <li><NuxtLink>撮影メニュー</NuxtLink></li>
+                    <li><NuxtLink :to="{name: 'priceMenu'}">料金表</NuxtLink></li>
+                    <li><NuxtLink :to="{name: 'priceMenu'}">カメラマンについて</NuxtLink></li>
+                    <li><NuxtLink :to="{name: 'priceMenu'}">Q&A</NuxtLink></li>
+                    <li><NuxtLink :to="{name: 'contact'}">お問い合わせ</NuxtLink></li>
                 </ul>
             </div>
             <button type="button" class="m-humburgar" @click="navFunc()">
@@ -30,13 +30,13 @@ function navFunc() {
         <nav class="humburgarMenu">
             <ul>
                 <li>撮影メニュー</li>
-                <li class="menu-photo"><a href="#">写真</a></li>
-                <li class="menu-move"><a href="#">動画</a></li>
-                <li><a href="#">料金表</a></li>
-                <li><a href="#">カメラマンについて</a></li>
-                <li><a href="#">Q＆A</a></li>
-                <li><a href="#">お問い合わせ</a></li>
-                <li><a href="#"></a></li>
+                <li class="menu-photo"><NuxtLink :to="{name: 'photoGallery'}">写真</NuxtLink></li>
+                <li class="menu-move"><NuxtLink :to="{name: 'priceMenu'}">動画</NuxtLink></li>
+                <li><NuxtLink :to="{name: 'priceMenu'}">料金表</NuxtLink></li>
+                <li><NuxtLink :to="{name: 'priceMenu'}">カメラマンについて</NuxtLink></li>
+                <li><NuxtLink :to="{name: 'priceMenu'}">Q＆A</NuxtLink></li>
+                <li><NuxtLink :to="{name: 'contact'}">お問い合わせ</NuxtLink></li>
+                <li><NuxtLink :to="{name: 'priceMenu'}"></NuxtLink></li>
             </ul>
         </nav>
     </div>
@@ -74,14 +74,14 @@ function navFunc() {
     gap: 3vw;
 }
 
-.header-menu a {
+.header-menu li {
     font-family: var(--font_text);
     font-weight: 500;
     font-size: 16px;
     position: relative;
 }
 
-.header-menu a::after {
+.header-menu li::after {
     position: absolute;
     content: '';
     bottom: -2px;
