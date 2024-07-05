@@ -29,22 +29,29 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
     });
 
     //＝＝＝並び替えボタン設定
-    document.querySelectorAll('.sort-btn li').addEventListener('click', function () {			//並び替えボタンをクリックしたら
-        document.querySelector(".sort-btn .active").removeClass("active");	//並び替えボタンに付与されているactiveクラスを全て取り除き
-        var className = this.attr("class");			//クラス名を取得
-        console.log(this);
+    const sortBtnLi = document.querySelectorAll('.sort-btn li');
+    
+    sortBtnLi.forEach((el)=>{
+        el.addEventListener('click', (f)=> {			//並び替えボタンをクリックしたら
+            document.querySelector(".sort-btn .active").classList.remove("active");	//並び替えボタンに付与されているactiveクラスを全て取り除き
+            var className = f.target.className;			//クラス名を取得
+            className = className.split(' ');				//「sortXX active」のクラス名を分割して配列にする
+            
+            let sortClass = document.querySelectorAll('.' + className);
+            sortClass.classList.add("active");			//並び替えボタンに付与されているクラス名とギャラリー内のリストのクラス名が同じボタンにactiveクラスを付与
+            if (className[0] == "sort00") {						//クラス名がsort00（全て）のボタンの場合は、
+                grid.show('');								//全ての要素を出す
+            } else {											//それ以外の場合は
+                grid.filter("." + className[0]); 				//フィルターを実行
+            }
+        });
 
-        className = className.split(' ');				//「sortXX active」のクラス名を分割して配列にする
-        document.querySelector(`. ${className[0]}`).addClass("active");			//並び替えボタンに付与されているクラス名とギャラリー内のリストのクラス名が同じボタンにactiveクラスを付与
-        if (className[0] == "sort00") {						//クラス名がsort00（全て）のボタンの場合は、
-            grid.show('');								//全ての要素を出す
-        } else {											//それ以外の場合は
-            grid.filter("." + className[0]); 				//フィルターを実行
-        }
-    });
+    })
+
+
 
     //＝＝＝ Fancyboxの設定
-    document.querySelectorAll('a[data-fancybox]').fancybox({
+    document.querySelectorAll(a[data-fancybox]).fancybox({
         thumbs: {
             autoStart: true, //グループのサムネイル一覧をデフォルトで出す。不必要であればfalseに
         },
