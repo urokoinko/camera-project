@@ -1,9 +1,13 @@
 <script setup>
+import { Fancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
 const PAGE_TITLE = "Photo Gallery";
 
 definePageMeta({
     layout: false
 });
+
 
 import Muuri from 'muuri';
 onMounted(() => {	//画面遷移時にギャラリーの画像が被らないように、すべての読み込みが終わった後に実行する
@@ -37,10 +41,12 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
             var className = f.target.className;			//クラス名を取得
             className = className.split(' ');				//「sortXX active」のクラス名を分割して配列にする
             
-            let sortClass = document.querySelectorAll('.' + className);
-            sortClass.classList.add("active");			//並び替えボタンに付与されているクラス名とギャラリー内のリストのクラス名が同じボタンにactiveクラスを付与
+            let sortClass = document.querySelectorAll('.' + className[0]);
+            sortClass.forEach((el)=>{
+                el.classList.add("active");			//並び替えボタンに付与されているクラス名とギャラリー内のリストのクラス名が同じボタンにactiveクラスを付与
+            });
             if (className[0] == "sort00") {						//クラス名がsort00（全て）のボタンの場合は、
-                grid.show('');								//全ての要素を出す
+               grid.show();								//全ての要素を出す
             } else {											//それ以外の場合は
                 grid.filter("." + className[0]); 				//フィルターを実行
             }
@@ -51,7 +57,8 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
 
 
     //＝＝＝ Fancyboxの設定
-    document.querySelectorAll(a[data-fancybox]).fancybox({
+    Fancybox.bind('[data-fancybox]',{});
+    $('a[data-fancybox]').fancybox({
         thumbs: {
             autoStart: true, //グループのサムネイル一覧をデフォルトで出す。不必要であればfalseに
         },
@@ -367,6 +374,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
 /*＝＝＝Muuriのレイアウトのための調整 */
 .grid {
     position: relative;
+    display: block;
     /*並び替えの基準点を指定*/
     margin-bottom: 20vh;
 }

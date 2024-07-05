@@ -1,5 +1,10 @@
 <script setup lang="ts">
+
+
+
+
 const SITE_TITLE = "出張カメラマン";
+
 
 useHead({
   titleTemplate: (titleChunk: strig | undefined): string => {
@@ -20,6 +25,8 @@ useHead({
     }
   ],
 });
+
+
 
 onMounted(() => {
   // ページトップに戻る
