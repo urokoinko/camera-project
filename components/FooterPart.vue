@@ -16,22 +16,17 @@
                         <li class="footer-navitem"><a href="#">お問い合わせ</a></li>
                     </ul>
                 </div>
-
                 <small class="footer-copy">&copy; Hachi</small>
             </div>
         </div>
-        
-
     </div>
-
-
 </template>
 
 <style scoped>
 /* フッター設定 */
 .footer {
     color: var(--color_darkBrown);
-    background-color: rgba(255, 251, 215, 0.5);
+    background-color:var(--color_yellow);
 }
 
 .footer-inner {
@@ -49,7 +44,6 @@
 .footer-nav {
     display: flex;
     justify-content: center;
-
     font-size: 18px;
     font-weight: 100;
 }
@@ -130,8 +124,6 @@ small {
 }
 
 
-
-
 /* レスポンシブ設定 */
 @media (max-width:800px) {
     .footer{
@@ -175,8 +167,7 @@ small {
     .footer-nav ul{
         padding: 10px;
     }
- 
-    }
+}
 @media (max-width:430px) {
     .footer-bg {
         height: 500px;

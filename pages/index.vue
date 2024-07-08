@@ -68,6 +68,7 @@ onMounted(() => {
         <Bgimg02 />
     </div>
     <QandAParts />
+    <ContactParts />
 </template>
 
 <style>
