@@ -13,7 +13,7 @@ import Muuri from 'muuri';
 onMounted(() => {	//画面遷移時にギャラリーの画像が被らないように、すべての読み込みが終わった後に実行する
 
     //＝＝＝Muuriギャラリープラグイン設定
-    var grid = new Muuri('.grid', {
+    let grid = new Muuri('.grid', {
 
         //アイテムの表示速度※オプション。入れなくても動作します
         showDuration: 600,
@@ -34,19 +34,21 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
 
     //＝＝＝並び替えボタン設定
     const sortBtnLi = document.querySelectorAll('.sort-btn li');
-    
-    sortBtnLi.forEach((el)=>{
-        el.addEventListener('click', (f)=> {			//並び替えボタンをクリックしたら
+
+    sortBtnLi.forEach((el) => {
+        el.addEventListener('click', (f) => {			//並び替えボタンをクリックしたら
             document.querySelector(".sort-btn .active").classList.remove("active");	//並び替えボタンに付与されているactiveクラスを全て取り除き
             var className = f.target.className;			//クラス名を取得
             className = className.split(' ');				//「sortXX active」のクラス名を分割して配列にする
-            
+
             let sortClass = document.querySelectorAll('.' + className[0]);
-            sortClass.forEach((el)=>{
+            sortClass.forEach((el) => {
                 el.classList.add("active");			//並び替えボタンに付与されているクラス名とギャラリー内のリストのクラス名が同じボタンにactiveクラスを付与
             });
             if (className[0] == "sort00") {						//クラス名がsort00（全て）のボタンの場合は、
-               grid.show();								//全ての要素を出す
+                // grid.show();								//全ての要素を出す
+                grid.filter(".item");
+
             } else {											//それ以外の場合は
                 grid.filter("." + className[0]); 				//フィルターを実行
             }
@@ -57,12 +59,12 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
 
 
     //＝＝＝ Fancyboxの設定
-    Fancybox.bind('[data-fancybox]',{});
-    $('a[data-fancybox]').fancybox({
-        thumbs: {
-            autoStart: true, //グループのサムネイル一覧をデフォルトで出す。不必要であればfalseに
-        },
-    });
+        Fancybox.bind('[data-fancybox]', {});
+        $('a[data-fancybox]').fancybox({
+            thumbs: {
+                autoStart: true, //グループのサムネイル一覧をデフォルトで出す。不必要であればfalseに
+            },
+        });
 
 });
 
@@ -83,7 +85,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
         </ul>
 
         <ul class="grid">
-            <li class="item sort01">
+            <li class="active item sort01">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg"
                         data-fancybox="group1" data-caption="グループ1キャプション"><img
@@ -91,7 +93,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort02">
+            <li class="active item sort02">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/02.jpg"
                         data-fancybox="group2" data-caption="グループ2キャプション"><img
@@ -99,7 +101,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort03">
+            <li class="active item sort03">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/03.jpg"
                         data-fancybox="group3" data-caption="グループ3キャプション"><img
@@ -107,7 +109,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort01">
+            <li class="active item sort01">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/04.jpg"
                         data-fancybox="group1" data-caption="グループ1キャプション"><img
@@ -115,7 +117,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort02">
+            <li class="active item sort02">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/05.jpg"
                         data-fancybox="group2" data-caption="グループ2キャプション"><img
@@ -123,7 +125,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort03">
+            <li class="active item sort03">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/06.jpg"
                         data-fancybox="group3" data-caption="グループ3キャプション"><img
@@ -131,7 +133,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort01">
+            <li class="active item sort01">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/07.jpg"
                         data-fancybox="group1" data-caption="グループ1キャプション"><img
@@ -139,7 +141,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort02">
+            <li class="active item sort02">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/08.jpg"
                         data-fancybox="group2" data-caption="グループ2キャプション"><img
@@ -147,7 +149,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort03">
+            <li class="active item sort03">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/09.jpg"
                         data-fancybox="group3" data-caption="グループ3キャプション"><img
@@ -155,7 +157,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort01">
+            <li class="active item sort01">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/10.jpg"
                         data-fancybox="group1" data-caption="グループ1キャプション"><img
@@ -163,7 +165,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort02">
+            <li class="active item sort02">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/11.jpg"
                         data-fancybox="group2" data-caption="グループ2キャプション"><img
@@ -171,7 +173,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort03">
+            <li class="active item sort03">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/12.jpg"
                         data-fancybox="group3" data-caption="グループ3キャプション"><img
@@ -179,7 +181,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort01">
+            <li class="active item sort01">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/13.jpg"
                         data-fancybox="group1" data-caption="グループ1キャプション"><img
@@ -187,7 +189,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort02">
+            <li class="active item sort02">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/14.jpg"
                         data-fancybox="group2" data-caption="グループ2キャプション"><img
@@ -195,7 +197,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort03">
+            <li class="active item sort03">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/15.jpg"
                         data-fancybox="group3" data-caption="グループ3キャプション"><img
@@ -203,7 +205,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort01">
+            <li class="active item sort01">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/16.jpg"
                         data-fancybox="group1" data-caption="グループ1キャプション"><img
@@ -211,7 +213,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort02">
+            <li class="active item sort02">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/17.jpg"
                         data-fancybox="group2" data-caption="グループ2キャプション"><img
@@ -219,7 +221,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort03">
+            <li class="active item sort03">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/18.jpg"
                         data-fancybox="group3" data-caption="グループ3キャプション"><img
@@ -227,7 +229,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort01">
+            <li class="active item sort01">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/19.jpg"
                         data-fancybox="group1" data-caption="グループ1キャプション"><img
@@ -235,7 +237,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort02">
+            <li class="active item sort02">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/20.jpg"
                         data-fancybox="group2" data-caption="グループ2キャプション"><img
@@ -243,7 +245,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort03">
+            <li class="active item sort03">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/21.jpg"
                         data-fancybox="group3" data-caption="グループ3キャプション"><img
@@ -251,7 +253,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort01">
+            <li class="active item sort01">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/22.jpg"
                         data-fancybox="group1" data-caption="グループ1キャプション"><img
@@ -259,7 +261,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort02">
+            <li class="active item sort02">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/23.jpg"
                         data-fancybox="group2" data-caption="グループ2キャプション"><img
@@ -267,7 +269,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort03">
+            <li class="active item sort03">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/24.jpg"
                         data-fancybox="group3" data-caption="グループ3キャプション"><img
@@ -275,7 +277,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort01">
+            <li class="active item sort01">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/25.jpg"
                         data-fancybox="group1" data-caption="グループ1キャプション"><img
@@ -283,7 +285,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort02">
+            <li class="active item sort02">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/26.jpg"
                         data-fancybox="group2" data-caption="グループ2キャプション"><img
@@ -291,15 +293,16 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort03">
+            <li class="active item sort03">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/27.jpg"
-                        data-fancybox="group3" data-caption="グループ3キャプション"><img
-                            src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/27.jpg"
-                            alt=""></a>
+                        data-fancybox="group3" data-caption="グループ3キャプション">
+                        <img src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/27.jpg"
+                            alt="">
+                    </a>
                 </div>
             </li>
-            <li class="item sort01">
+            <li class="active item sort01">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/28.jpg"
                         data-fancybox="group1" data-caption="グループ1キャプション"><img
@@ -307,7 +310,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort02">
+            <li class="active item sort02">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/29.jpg"
                         data-fancybox="group2" data-caption="グループ2キャプション"><img
@@ -315,7 +318,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
                             alt=""></a>
                 </div>
             </li>
-            <li class="item sort03">
+            <li class="active item sort03">
                 <div class="item-content">
                     <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/30.jpg"
                         data-fancybox="group3" data-caption="グループ3キャプション"><img
@@ -377,13 +380,14 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
     display: block;
     /*並び替えの基準点を指定*/
     margin-bottom: 20vh;
+    width: 100vw;
 }
 
 /*各画像の横幅などの設定*/
 .item {
     display: block;
     position: absolute;
-    width: 33%;
+    width: calc(100% / 3);
     /*横並びで3つ表示*/
     z-index: 1;
 }
@@ -428,8 +432,11 @@ ul {
     list-style: none;
 }
 
-a {
+.grid a {
     color: #333;
+    display: block;
+    height: auto;
+    /* width: calc(100vw / 3); */
 }
 
 a:hover,

@@ -75,14 +75,14 @@ onMounted(() => {
 .section-title {
   font-family: var(--font_title);
   text-align: center;
-  font-size: 36px;
+  font-size: 28px;
 }
 
 /* レスポンシブ設定 */
 
 @media (max-width:800px) {
   .section-title {
-    font-size: 26px;
+    font-size: 22px;
   }
 }
 

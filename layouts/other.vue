@@ -17,12 +17,13 @@
 .sub-title::before{
     position: absolute;
     top: 10vh;
-    left: 60vw;
+    left: 62vw;
     content: "";
     width: 90px;
     height: 90px;
     background: url(../public/img/camera_site_mPic2.svg) no-repeat;
     background-size: contain;
+    z-index: -1;
 
 }
 
