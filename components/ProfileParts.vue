@@ -1,6 +1,6 @@
 
 <template>
-    <div class="profile">
+    <div class="profile" id="photographer">
         <div class="profile-inner">
             <h2 class="section-title">カメラマンProfile</h2>
             <div class="profile-text">

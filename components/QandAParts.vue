@@ -49,7 +49,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="QandA">
+    <div class="QandA" id="QandA">
         <h2 class="section-title">Q&A</h2>
         <div class="QandA-inner">
             <div class="QandA-item">

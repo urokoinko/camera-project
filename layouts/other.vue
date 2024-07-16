@@ -1,22 +1,25 @@
 <template>
     <div class="other">
-        <h2 class="section-title sub-title"><slot name="sub-sectionTitle"></slot></h2>
+        <h2 class="section-title sub-title">
+            <slot name="sub-sectionTitle"></slot>
+        </h2>
         <slot />
     </div>
 </template>
 
 <style>
 /* ランディングページ　レイアウト */
-.other .section-title{
-    padding-top: 10vh;
+.other .section-title {
+    padding-top: 150px;
 }
 
-.sub-title{
-    position:relative;
+.sub-title {
+    position: relative;
 }
-.sub-title::before{
+
+.sub-title::before {
     position: absolute;
-    top: 10vh;
+    top: 140px;
     left: 62vw;
     content: "";
     width: 90px;
@@ -29,13 +32,20 @@
 
 /* レスポンシブ設定 */
 @media (max-width:800px) {
-    .sub-title::before{
+    .other .section-title {
+        padding-top: 120px;
+    }
+    .sub-title::before {
         width: 60px;
         height: 60px;
     }
 }
+
 @media (max-width:430px) {
-    .sub-title::before{
+    .other .section-title {
+        padding-top: 100px;
+    }
+    .sub-title::before {
         width: 40px;
         height: 40px;
     }

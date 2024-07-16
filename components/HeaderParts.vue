@@ -16,10 +16,16 @@ function navFunc() {
             </div>
             <div class="header-menu">
                 <ul>
-                    <li><NuxtLink>撮影メニュー</NuxtLink></li>
+                    <li class="dropdown">
+                        <a href="#">撮影ギャラリー</a>
+                        <ul class="dropdown-inner">
+                            <li class="dropdown-item"><NuxtLink :to="{name: 'photoGallery'}">photo</NuxtLink></li>
+                            <li class="dropdown-item"><NuxtLink :to="{name: 'priceMenu'}">movie</NuxtLink></li>
+                        </ul>
+                    </li>
                     <li><NuxtLink :to="{name: 'priceMenu'}">料金表</NuxtLink></li>
-                    <li><NuxtLink :to="{name: 'priceMenu'}">カメラマンについて</NuxtLink></li>
-                    <li><NuxtLink :to="{name: 'priceMenu'}">Q&A</NuxtLink></li>
+                    <li><NuxtLink to="#photographer">カメラマンについて</NuxtLink></li>
+                    <li><NuxtLink to="#QandA">Q&A</NuxtLink></li>
                     <li><NuxtLink :to="{name: 'contact'}">お問い合わせ</NuxtLink></li>
                 </ul>
             </div>
@@ -29,12 +35,12 @@ function navFunc() {
         </div>
         <nav class="humburgarMenu">
             <ul>
-                <li>撮影メニュー</li>
+                <li>撮影ギャラリー</li>
                 <li class="menu-photo"><NuxtLink :to="{name: 'photoGallery'}">写真</NuxtLink></li>
                 <li class="menu-move"><NuxtLink :to="{name: 'priceMenu'}">動画</NuxtLink></li>
                 <li><NuxtLink :to="{name: 'priceMenu'}">料金表</NuxtLink></li>
-                <li><NuxtLink :to="{name: 'priceMenu'}">カメラマンについて</NuxtLink></li>
-                <li><NuxtLink :to="{name: 'priceMenu'}">Q＆A</NuxtLink></li>
+                <li><NuxtLink to="#photographer">カメラマンについて</NuxtLink></li>
+                <li><NuxtLink to="#QandA">Q＆A</NuxtLink></li>
                 <li><NuxtLink :to="{name: 'contact'}">お問い合わせ</NuxtLink></li>
                 <li><NuxtLink :to="{name: 'priceMenu'}"></NuxtLink></li>
             </ul>
@@ -50,7 +56,7 @@ function navFunc() {
     left: 0;
     width: 100%;
     height: 50px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
     z-index: 1000;
     display: flex;
     align-items: center;
@@ -71,7 +77,7 @@ function navFunc() {
 
 .header-menu ul {
     display: flex;
-    gap: 3vw;
+    gap: 0px 3vw;
 }
 
 .header-menu li {
@@ -94,18 +100,59 @@ function navFunc() {
     transition: 0.3s;
 }
 
-.header-menu a:hover {
+.header-menu a:hover{
     opacity: 1;
 }
-.header-menu a:hover::after {
+
+.header-menu li:hover::after {
     transform: scale(1, 1);
 }
-
 .m-humburgar,
 .humburgarMenu {
     display: none;
 }
 
+/* ヘッダー　ドロップダウン */
+.dropdown{
+    position: relative;
+}
+.dropdown-inner{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 37px;
+    left: 0;
+}
+
+.dropdown-item{
+    visibility: hidden;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 40px;
+    padding-bottom: 10px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+.dropdown-item::after {
+    position: absolute;
+    content: '';
+    bottom: -2px;
+    left: 0px;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color_main);
+    transform: scale(0, 1);
+    transform-origin: center top;
+    transition: 0.3s;
+}
+.dropdown-item a{
+    transition: none;
+}
+
+.dropdown:hover .dropdown-item{
+    visibility: visible;
+}
 
 /* レスポンシブ設定 */
 @media (max-width:1024px) {
