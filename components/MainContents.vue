@@ -148,7 +148,9 @@ onMounted(() => {
                     <h3>家族写真</h3>
                     <p>お宮参り・七五三・マタニティフォトなど、<br>ご家族の記念撮影を承ります。</p>
                     <div class="more">
-                        <NuxtLink :to="{name: 'photoGallery'}"><PartsContentsMore /></NuxtLink>
+                        <NuxtLink :to="{ name: 'photoGallery' }">
+                            more
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
@@ -160,7 +162,9 @@ onMounted(() => {
                     <h3>ブライダル</h3>
                     <p>結婚式での撮影や、前撮りを承ります。</p>
                     <div class="more">
-                        <NuxtLink :to="{name: 'photoGallery'}"><PartsContentsMore /></NuxtLink>
+                        <NuxtLink :to="{ name: 'photoGallery' }">
+                            more
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
@@ -172,7 +176,9 @@ onMounted(() => {
                     <h3>ポートレート</h3>
                     <p>宣材写真・アーティスト写真など、<br>ご要望に沿った撮影を承ります。</p>
                     <div class="more">
-                        <NuxtLink :to="{name: 'photoGallery'}"><PartsContentsMore /></NuxtLink>
+                        <NuxtLink :to="{ name: 'photoGallery' }">
+                            more
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
@@ -186,7 +192,9 @@ onMounted(() => {
                         行事やイベントにも対応しておりますので<br>
                         お気軽にご相談下さい。</p>
                     <div class="more">
-                        <NuxtLink :to="{name: 'move'}"><PartsContentsMore /></NuxtLink>
+                        <NuxtLink :to="{ name: 'movie' }">
+                            more
+                        </NuxtLink>
                     </div>
                 </div>
             </div>
@@ -237,16 +245,12 @@ onMounted(() => {
 }
 
 /* メインコンテンツ　インナー */
-
 .main-contents-inner {
     font-family: var(--font_text);
 }
 
-.main-contents-inner h2 {
-    margin-top: 180px;
-}
-
-.contents-box01 {
+.main-contents-inner h2,
+.contents-box01{
     margin-top: 180px;
 }
 
@@ -262,7 +266,7 @@ onMounted(() => {
     align-items: center;
     margin-bottom: 190px;
     display: flex;
-    padding-left: 5vw;
+    padding-left: 3vw;
 }
 
 .main-contents h3 {
@@ -311,16 +315,86 @@ onMounted(() => {
     box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.3);
 }
 
+/* more　設定 */
 .more {
+    position: relative;
+    padding-left: 35px;
     padding-top: 40px;
+    font-size: 24px;
+}
+
+.box-innerL .more::before {
+    position: absolute;
+    content: '';
+    top: 50px;
+    left: -15px;
+    width: 180px;
+    height: 60px;
+    background: url(@/public/img/camera_tree_line.png) no-repeat;
+    background-size: contain;
 }
 
 .box-innerR .more {
     padding-right: 30px;
 }
 
-/* レスポンシブ設定 */
+.box-innerR .more::before {
+    position: absolute;
+    content: '';
+    top: 50px;
+    right: -40px;
+    width: 180px;
+    height: 60px;
+    background: url(@/public/img/camera_tree_line.png) no-repeat;
+    background-size: contain;
+}
 
+
+/* レスポンシブ設定 */
+@media (max-width:800px) {
+
+    .box-textL,
+    .box-textR {
+        width: 350px;
+    }
+
+    .more {
+        text-align: right;
+        position: relative;
+        padding-left: 0px;
+        padding-right: 40px;
+    }
+
+    .box-innerL .more::before {
+        top: 50px;
+        left: 200px;
+        right: 0px;
+    }
+
+}
+
+@media (max-width: 430px) {
+    .more {
+        font-size: 20px;
+    }
+
+    .box-innerL .more::before {
+        top: 50px;
+        left: 230px;
+        width: 120px;
+    }
+    .box-innerR .more {
+        padding-right: 40px;
+    }
+    .box-innerR .more::before {
+        top: 50px;
+        right: -0px;
+        width: 120px;
+    }
+}
+
+
+/* レスポンシブ設定 */
 @media (max-width:800px) {
     .main-contents {
         padding-top: 40vh;
@@ -382,14 +456,6 @@ onMounted(() => {
         box-shadow: -5px 5px 4px rgba(0, 0, 0, 0.3);
     }
 
-    .more {
-        padding-left: 50px;
-    }
-
-    .box-innerR .more {
-        padding-right: 0px;
-    }
-
     #motionSVG {
         display: none;
     }
@@ -408,5 +474,6 @@ onMounted(() => {
         max-width: 90%;
         max-height: 200px;
     }
+
 }
 </style>

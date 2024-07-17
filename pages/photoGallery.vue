@@ -37,7 +37,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
 
     sortBtnLi.forEach((el) => {
         el.addEventListener('click', (f) => {			//並び替えボタンをクリックしたら
-            document.querySelector(".sort-btn .active").classList.remove("active");	//並び替えボタンに付与されているactiveクラスを全て取り除き
+            document.querySelector(".sort-btn .active").classList.remove('active');	//並び替えボタンに付与されているactiveクラスを全て取り除き
             var className = f.target.className;			//クラス名を取得
             className = className.split(' ');				//「sortXX active」のクラス名を分割して配列にする
 

@@ -7,7 +7,8 @@
                 <h4>はち</h4>
                 <div class="profile-img"></div>
                 <p>テキスト</p>
-                <div class="insta"><a href="#">instagram</a></div>
+                <div class="insta"><a href="#">instagram <font-awesome-icon :icon="['fab', 'instagram']" size="xl"
+                    class="insta-icon" /></a></div>
             </div>
         </div>
     </div>

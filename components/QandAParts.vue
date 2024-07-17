@@ -22,14 +22,14 @@ onMounted(() => {
                     // 隣接するcontentを閉じて
                     $gsap.to(faq_content, { height: 0 });
                     // is-activeを外す
-                    faq_header.classList.remove('is-active');
+                    faq_header.classList.removie('is-active');
                 } else {
                     const active_header = document.querySelector('.faq_header.is-active');
                     let delay = 0;
 
                     if (active_header) {
                         $gsap.to(active_header.nextElementSibling, { height: 0 });
-                        active_header.classList.remove('is-active');
+                        active_header.classList.removie('is-active');
                         delay = 0;
                     }
 

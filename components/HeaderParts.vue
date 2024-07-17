@@ -20,12 +20,12 @@ function navFunc() {
                         <a href="#">撮影ギャラリー</a>
                         <ul class="dropdown-inner">
                             <li class="dropdown-item"><NuxtLink :to="{name: 'photoGallery'}">photo</NuxtLink></li>
-                            <li class="dropdown-item"><NuxtLink :to="{name: 'priceMenu'}">movie</NuxtLink></li>
+                            <li class="dropdown-item"><NuxtLink :to="{name: 'movie'}">movie</NuxtLink></li>
                         </ul>
                     </li>
                     <li><NuxtLink :to="{name: 'priceMenu'}">料金表</NuxtLink></li>
-                    <li><NuxtLink to="#photographer">カメラマンについて</NuxtLink></li>
-                    <li><NuxtLink to="#QandA">Q&A</NuxtLink></li>
+                    <li><NuxtLink :to="{path: '/', hash: '#photographer'}">カメラマンについて</NuxtLink></li>
+                    <li><NuxtLink :to="{path: '/', hash: '#QandA'}">Q&A</NuxtLink></li>
                     <li><NuxtLink :to="{name: 'contact'}">お問い合わせ</NuxtLink></li>
                 </ul>
             </div>
@@ -37,12 +37,13 @@ function navFunc() {
             <ul>
                 <li>撮影ギャラリー</li>
                 <li class="menu-photo"><NuxtLink :to="{name: 'photoGallery'}">写真</NuxtLink></li>
-                <li class="menu-move"><NuxtLink :to="{name: 'priceMenu'}">動画</NuxtLink></li>
+                <li class="menu-movie"><NuxtLink :to="{name: 'priceMenu'}">動画</NuxtLink></li>
                 <li><NuxtLink :to="{name: 'priceMenu'}">料金表</NuxtLink></li>
-                <li><NuxtLink to="#photographer">カメラマンについて</NuxtLink></li>
-                <li><NuxtLink to="#QandA">Q＆A</NuxtLink></li>
+                <li><NuxtLink :to="{path: '/', hash: '#photographer'}">カメラマンについて</NuxtLink></li>
+                <li><NuxtLink :to="{path: '/', hash: '#QandA'}">Q＆A</NuxtLink></li>
                 <li><NuxtLink :to="{name: 'contact'}">お問い合わせ</NuxtLink></li>
-                <li><NuxtLink :to="{name: 'priceMenu'}"></NuxtLink></li>
+                <li><NuxtLink :to="{name: 'priceMenu'}"><font-awesome-icon :icon="['fab', 'instagram']" size="x"
+                    class="insta-icon" /></NuxtLink></li>
             </ul>
         </nav>
     </div>
@@ -130,22 +131,18 @@ function navFunc() {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
     height: 40px;
-    padding-bottom: 10px;
+    padding-left: 10px;
     transition: all 0.2s ease;
     position: relative;
 }
-.dropdown-item::after {
-    position: absolute;
-    content: '';
-    bottom: -2px;
-    left: 0px;
-    width: 100%;
-    height: 1px;
-    background-color: var(--color_main);
-    transform: scale(0, 1);
-    transform-origin: center top;
-    transition: 0.3s;
+.dropdown-item a:hover{
+    opacity: 0.7;
 }
+
+.dropdown-inner li:hover::after{
+    transform: scale(0, 1);
+}
+
 .dropdown-item a{
     transition: none;
 }
@@ -263,24 +260,24 @@ function navFunc() {
     }
 
     .humburgarMenu li:last-child {
-        font-size: 30px;
+        font-size: 24px;
     }
 
 
     .menu-photo,
-    .menu-move {
+    .menu-movie {
         margin-top: -20px;
     }
 
     .menu-photo a,
-    .menu-move a {
+    .menu-movie a {
         position: relative;
         padding-left: 40%;
         margin-bottom: -10px;
     }
 
     .menu-photo a::before,
-    .menu-move a::before {
+    .menu-movie a::before {
         position: absolute;
         content: '';
         top: 50%;
