@@ -79,9 +79,9 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
 
         <ul class="sort-btn">
             <li class="sort00 active">全て</li>
-            <li class="sort01">グループ1</li>
-            <li class="sort02">グループ2</li>
-            <li class="sort03">グループ3</li>
+            <li class="sort01">家族写真</li>
+            <li class="sort02">ブライダル</li>
+            <li class="sort03">ポートレート</li>
         </ul>
 
         <ul class="grid">

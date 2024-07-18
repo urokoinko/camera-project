@@ -44,7 +44,7 @@
 .footer-nav {
     display: flex;
     justify-content: center;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 100;
 }
 
@@ -62,7 +62,7 @@
 small {
     display: block;
     padding-top: 110px;
-    font-size: 14px;
+    font-size: 11px;
 }
 
 .footer-treeR,
@@ -130,7 +130,6 @@ small {
         margin-top: 10vw;
     }
     .footer-nav ul{
-        font-size: 14px;
         padding-top: 15vw;
     }
     small {

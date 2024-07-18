@@ -1,10 +1,5 @@
 <script setup lang="ts">
-
-
-
-
 const SITE_TITLE = "出張カメラマン";
-
 
 useHead({
   titleTemplate: (titleChunk: strig | undefined): string => {
@@ -25,7 +20,6 @@ useHead({
     }
   ],
 });
-
 
 
 onMounted(() => {
@@ -75,7 +69,7 @@ onMounted(() => {
 .section-title {
   font-family: var(--font_title);
   text-align: center;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 /* レスポンシブ設定 */

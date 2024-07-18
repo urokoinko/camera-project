@@ -73,7 +73,7 @@ function navFunc() {
 }
 
 .site-logo {
-    width: 53px;
+    width: 45px;
 }
 
 .header-menu ul {

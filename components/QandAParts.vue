@@ -22,14 +22,14 @@ onMounted(() => {
                     // 隣接するcontentを閉じて
                     $gsap.to(faq_content, { height: 0 });
                     // is-activeを外す
-                    faq_header.classList.removie('is-active');
+                    faq_header.classList.remove('is-active');
                 } else {
-                    const active_header = document.querySelector('.faq_header.is-active');
+                    const active_header = document.querySelector('.faq_header .is-active');
                     let delay = 0;
 
                     if (active_header) {
                         $gsap.to(active_header.nextElementSibling, { height: 0 });
-                        active_header.classList.removie('is-active');
+                        active_header.classList.remove('is-active');
                         delay = 0;
                     }
 
@@ -58,7 +58,11 @@ onMounted(() => {
                 </div>
                 <div class="faq-content">
                     <div class="faq-contentInner">
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        １、当サイトor Instagram　からご予約いただいて、撮影するお日にちを決めていきます。
+                        この時ご希望の撮影場所も教えてください。<br>
+                        ２、当日は撮影場所にて待ち合わせ、撮影をします。<br>
+                        ３、撮影後2～3日でデータをお渡しさせていただきます。（レタッチプランの場合は1～2週間お時間いただきます。）
+
                     </div>
                 </div>
             </div>
@@ -68,7 +72,7 @@ onMounted(() => {
                 </div>
                 <div class="faq-content">
                     <div class="faq-contentInner">
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        出張対応エリア内でしたら追加料金はかかりません。
                     </div>
                 </div>
             </div>
@@ -78,7 +82,8 @@ onMounted(() => {
                 </div>
                 <div class="faq-content">
                     <div class="faq-contentInner">
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        撮影メニューは一律料金になっております。
+                        追加料金が発生することはございません。
                     </div>
                 </div>
             </div>
@@ -88,7 +93,8 @@ onMounted(() => {
                 </div>
                 <div class="faq-content">
                     <div class="faq-contentInner">
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        体調不良や悪天候などのやむを得ない理由でキャンセルされる場合、キャンセル料はかかりません。
+                        キャンセルする場合は前日までにご連絡ください。
                     </div>
                 </div>
             </div>
@@ -98,7 +104,7 @@ onMounted(() => {
                 </div>
                 <div class="faq-content">
                     <div class="faq-contentInner">
-                        テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+                        申し訳ございませんが、女性カメラマンには対応しておりません。
                     </div>
                 </div>
             </div>
@@ -129,7 +135,7 @@ onMounted(() => {
     padding: 7px 20px 7px;
     cursor: pointer;
     position: relative;
-    font-size: 24px;
+    font-size: 20px;
     margin-top: 40px;
     border-radius: 10px;
 }
@@ -177,7 +183,7 @@ onMounted(() => {
         max-width: 600px;
     }
     .faq-header {
-        font-size: 20px;
+        font-size: 16px;
         padding: 5px 20px 5px;
         margin-top: 25px;
     }
@@ -199,7 +205,7 @@ onMounted(() => {
 
 @media (max-width: 430px) {
     .faq-header {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .faq-contentInner {

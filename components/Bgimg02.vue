@@ -4,24 +4,24 @@ const { $gsap } = useNuxtApp()
 
 onMounted(() => {
 
-    let tl = $gsap.timeline({
+    // let tl = $gsap.timeline({
 
-        defaults:{
-            duration: 1000
-        },
-        scrollTrigger: {
-            trigger: '.bg-img02',
-            scrub: 0.7,
-            start: '+=1',
-            end: '+=1200',
-            pin: !0,
-        }
-    })
+    //     defaults:{
+    //         duration: 1000
+    //     },
+    //     scrollTrigger: {
+    //         trigger: '.bg-img02',
+    //         scrub: 0.7,
+    //         start: '+=1',
+    //         end: '+=1200',
+    //         pin: !0,
+    //     }
+    // })
 
-    tl.from('.bg-img02 img.img01', {opacity: 1, y:-20}, "<")
-    .to('.bg-img02 img.img01', {opacity: 0, y:-20}, "<")
-    .from('img.img02', {opacity: 0, y:-20}, '<')
-    .to('img.img02', {opacity: 1, y:-20}, "<");
+    // tl.from('.bg-img02 img.img01', {opacity: 1, y:-20}, "<")
+    // .to('.bg-img02 img.img01', {opacity: 0, y:-20}, "<")
+    // .from('img.img02', {opacity: 0, y:-20}, '<')
+    // .to('img.img02', {opacity: 1, y:-20}, "<");
 
 
 })
@@ -30,16 +30,51 @@ onMounted(() => {
 
 <template>
     <div class="bg-img02">
-        <div class="bg-img02-images" >
-            <img class="img01" src="../public/img/A7306778.jpg" alt="">
-            <img class="img02" src="../public/img/A7306792.jpg" alt="">
+        <div class="bg-img02-images-one" >
+            <!-- <img class="img01" src="../public/img/A7306778.jpg" alt=""> -->
+        </div>
+        <div class="block"></div>
+        <div class="bg-img02-images-twe" >
+            <!-- <img class="img02" src="../public/img/A7306792.jpg" alt=""> -->
         </div>
     </div>
 </template>
 
 <style scoped>
+.block{
+    background-color: #fff;
+    padding: 250px;
+    width: 820px;
+}
 
-.bg-img02-images {
+.bg-img02-images-one{
+    padding-top: 350px;
+    padding-bottom: 350px;
+    overflow: hidden;
+    position: relative;
+    width: 100%; 
+    background: url(../public/img/A7306778.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-position: top center;
+}
+.bg-img02-images-twe{
+    padding-top: 350px;
+    padding-bottom: 350px;
+    overflow: hidden;
+    position: relative;
+    width: 100%; 
+    background: url(../public/img/A7306792.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-position: top center;
+}
+
+/* .bg-img02-images {
     position: relative;
     width: auto;
     height: 90vh;
@@ -62,5 +97,5 @@ onMounted(() => {
         height: 70vh;
 
     }
-}
+} */
 </style>

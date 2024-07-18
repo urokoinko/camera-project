@@ -101,7 +101,7 @@ onMounted(() => {
     justify-content: center;
     padding: 65px;
     font-family: var(--font_catch);
-    font-size: 28px;
+    font-size: 24px;
     background-color: rgba(255, 255, 255, 0.6);
 }
 
@@ -117,8 +117,8 @@ onMounted(() => {
     top: -100px;
     left: -10vw;
     content: '';
-    width: 170px;
-    height: 200px;
+    width: 150px;
+    height: 180px;
     background: url(../public/img/camera_site_pic2.svg) no-repeat;
     background-size: contain;
     overflow: hidden;
@@ -130,16 +130,16 @@ onMounted(() => {
     position: absolute;
     content: '';
     top: 20px;
-    right: 0;
-    width: 170px;
-    height: 300px;
+    right: -10vw;
+    width: 150px;
+    height: 200px;
     background: url(../public/img/camera_site_pic.svg) no-repeat;
     background-size: contain;
     z-index: -1;
 }
 
 .main-catch p span {
-    font-size: 48px;
+    font-size: 40px;
 }
 
 .m-br {
@@ -159,7 +159,7 @@ onMounted(() => {
     }
 
     .main-catch p span {
-        font-size: 40px;
+        font-size: 36px;
     }
 
     .mc-text::before {
@@ -193,7 +193,6 @@ onMounted(() => {
         width: 100px;
         height: 100px;
         z-index: -1;
-
     }
 
     .mc-text {
@@ -211,7 +210,6 @@ onMounted(() => {
         background: url(../public/img/camera_site_mPic2.svg) no-repeat;
         background-size: contain;
         z-index: -1;
-
     }
 
 }
@@ -234,7 +232,7 @@ onMounted(() => {
     }
 
     .main-catch p span {
-        font-size: 30px;
+        font-size: 28px;
     }
 
     .mc-text::before {
@@ -245,7 +243,6 @@ onMounted(() => {
         width: 80px;
         height: 80px;
         z-index: -1;
-
     }
 
     .mc-text::after {
@@ -254,12 +251,10 @@ onMounted(() => {
         width: 90px;
         height: 120px;
         z-index: -1;
-
     }
 
     .m-br {
         display: block;
     }
-
 }
 </style>

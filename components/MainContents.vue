@@ -205,7 +205,7 @@ onMounted(() => {
                     style="fill:none;stroke:#000;stroke-miterlimit:10" data-name="レイヤー 1" />
             </svg>
             <svg xmlns="http://www.w3.org/2000/svg" id="motionSVG" data-name="レイヤー 2" viewBox="0 0 216.38 231.58"
-                width="10vw">
+                width="8vw">
                 <g id="leaf">
                     <path
                         d="M214.55 2.24c4.81 4.23 3.27 112.39-44.15 164.18-61.76 67.44-152.15 65.63-169 65-2.64-25.07-5.9-90.07 35-148 48.94-69.32 167-91 178.15-81.18Z"

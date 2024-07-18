@@ -20,7 +20,7 @@
 .sub-title::before {
     position: absolute;
     top: 140px;
-    left: 62vw;
+    left: 58vw;
     content: "";
     width: 90px;
     height: 90px;
@@ -36,6 +36,7 @@
         padding-top: 120px;
     }
     .sub-title::before {
+    top: 120px;
         width: 60px;
         height: 60px;
     }
@@ -46,7 +47,8 @@
         padding-top: 100px;
     }
     .sub-title::before {
-        width: 40px;
+    top: 100px;
+    width: 40px;
         height: 40px;
     }
 }
