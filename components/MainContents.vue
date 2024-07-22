@@ -270,12 +270,12 @@ onMounted(() => {
 }
 
 .main-contents h3 {
-    font-size: 32px;
+    font-size: 24px;
     font-weight: 500;
 }
 
 .main-contents p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     padding-top: 25px;
 }
@@ -320,7 +320,7 @@ onMounted(() => {
     position: relative;
     padding-left: 35px;
     padding-top: 40px;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .box-innerL .more::before {

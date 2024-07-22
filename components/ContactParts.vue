@@ -16,7 +16,7 @@
 .contact {
     font-family: var(--font_text);
     text-align: center;
-    padding-bottom: 100px
+    padding-bottom: 100px;
 }
 
 .contact-inner h2 {
@@ -40,8 +40,9 @@
 }
 
 @media (max-width:430px) {
-    .contant {
-        background-color: rgba(255, 251, 215, 0.5);
+    .contact{
+        background-color: var(--color_yellow);
+        padding-bottom: 0;
     }
 
     .contact-inner h2 {
@@ -51,7 +52,7 @@
     .contact-inner p {
         font-size: 16px;
         padding-top: 69px;
-        padding-bottom: 40px
+        padding-bottom: 0px
     }
 
 }

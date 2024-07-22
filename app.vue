@@ -69,7 +69,7 @@ onMounted(() => {
 .section-title {
   font-family: var(--font_title);
   text-align: center;
-  font-size: 24px;
+  font-size: 28px;
 }
 
 /* レスポンシブ設定 */

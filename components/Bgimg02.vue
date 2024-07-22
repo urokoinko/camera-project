@@ -1,101 +1,64 @@
-<script setup>
-const { $gsap } = useNuxtApp()
-
-
-onMounted(() => {
-
-    // let tl = $gsap.timeline({
-
-    //     defaults:{
-    //         duration: 1000
-    //     },
-    //     scrollTrigger: {
-    //         trigger: '.bg-img02',
-    //         scrub: 0.7,
-    //         start: '+=1',
-    //         end: '+=1200',
-    //         pin: !0,
-    //     }
-    // })
-
-    // tl.from('.bg-img02 img.img01', {opacity: 1, y:-20}, "<")
-    // .to('.bg-img02 img.img01', {opacity: 0, y:-20}, "<")
-    // .from('img.img02', {opacity: 0, y:-20}, '<')
-    // .to('img.img02', {opacity: 1, y:-20}, "<");
-
-
-})
-
-</script>
-
 <template>
     <div class="bg-img02">
-        <div class="bg-img02-images-one" >
-            <!-- <img class="img01" src="../public/img/A7306778.jpg" alt=""> -->
+        <div class="bg-img02-images-one">
         </div>
         <div class="block"></div>
-        <div class="bg-img02-images-twe" >
-            <!-- <img class="img02" src="../public/img/A7306792.jpg" alt=""> -->
+        <div class="bg-img02-images-twe">
         </div>
     </div>
 </template>
 
 <style scoped>
-.block{
+.block {
     background-color: #fff;
     padding: 250px;
     width: 820px;
 }
 
-.bg-img02-images-one{
+.bg-img02-images-one {
     padding-top: 350px;
     padding-bottom: 350px;
     overflow: hidden;
     position: relative;
-    width: 100%; 
+    width: 100%;
     background: url(../public/img/A7306778.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
+    /* -moz-background-size: cover;
+    -webkit-background-size: cover; */
     background-position: top center;
 }
-.bg-img02-images-twe{
+
+.bg-img02-images-twe {
     padding-top: 350px;
     padding-bottom: 350px;
     overflow: hidden;
     position: relative;
-    width: 100%; 
+    width: 100%;
     background: url(../public/img/A7306792.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    -moz-background-size: cover;
-    -webkit-background-size: cover;
+    /* -moz-background-size: cover;
+    -webkit-background-size: cover; */
     background-position: top center;
 }
 
-/* .bg-img02-images {
-    position: relative;
-    width: auto;
-    height: 90vh;
-}
-
-.bg-img02-images img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.bg-img02-images img:not(:first-child) {
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-@media (max-width:430px) {
-    .bg-img02-images img {
-        height: 70vh;
-
+@media (max-width:800px) {
+    .block {
+        background-color: #fff;
+        padding: 200px;
     }
-} */
+
+    .bg-img02-images-one {
+        background: url(../public/img/m_A7306778.jpg) no-repeat;
+        background-attachment: fixed;
+        background-size: contain;
+    }
+
+    .bg-img02-images-twe {
+        background: url(../public/img/m_A7306792.jpg) no-repeat;
+        background-attachment: fixed;
+        background-size: contain;
+    }
+}
 </style>

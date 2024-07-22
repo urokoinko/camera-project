@@ -168,8 +168,11 @@ small {
     }
 }
 @media (max-width:430px) {
+    .footer{
+        margin-top: 0;
+    }
     .footer-bg {
-        height: 500px;
+        height: 430px;
     }
 
     .footer-nav {
@@ -177,7 +180,7 @@ small {
     }
 
     small {
-        padding-top: 470px;
+        padding-top: 400px;
     }
 
     .footer-treeR::before {
