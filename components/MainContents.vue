@@ -14,7 +14,7 @@ onMounted(() => {
     contentsArray.forEach((content) => {
 
         let windowSize = window.innerWidth;
-        let start = 'bottom bottom';
+        let start = 'top bottom';
 
         if (windowSize < 800) {   //800px以下でアニメーションの開始位置を変える
             start = 'top bottom';
@@ -138,20 +138,20 @@ onMounted(() => {
 
 <template>
     <div class="main-contents">
-        <h2 class="section-title">撮影メニュー</h2>
+        <h2 class="section-title">撮影シーン</h2>
         <div class="main-contents-inner">
             <div class="contents-box01 box-innerL box-inner">
                 <div class="box-Lpic cb-pic">
                     <img src="../public/img/A7306925.jpg" alt="">
                 </div>
                 <div class="box-textL">
+                    <NuxtLink :to="{ name: 'photoGallery' }">
                     <h3>家族写真</h3>
                     <p>お宮参り・七五三・マタニティフォトなど、<br>ご家族の記念撮影を承ります。</p>
                     <div class="more">
-                        <NuxtLink :to="{ name: 'photoGallery' }">
-                            more
-                        </NuxtLink>
-                    </div>
+                            写真ギャラリー
+                        </div>
+                    </NuxtLink>
                 </div>
             </div>
             <div class="contents-box02  box-innerR box-inner">
@@ -159,13 +159,13 @@ onMounted(() => {
                     <img src="../public/img/DSC00230.jpg" alt="">
                 </div>
                 <div class="box-textR">
+                    <NuxtLink :to="{ name: 'photoGallery' }">
                     <h3>ブライダル</h3>
                     <p>結婚式での撮影や、前撮りを承ります。</p>
                     <div class="more">
-                        <NuxtLink :to="{ name: 'photoGallery' }">
-                            more
-                        </NuxtLink>
-                    </div>
+                        写真ギャラリー
+                        </div>
+                    </NuxtLink>
                 </div>
             </div>
             <div class="contents-box03  box-innerL box-inner">
@@ -173,29 +173,29 @@ onMounted(() => {
                     <img src="../public/img/A7303423.jpg" alt="">
                 </div>
                 <div class="box-textL">
+                    <NuxtLink :to="{ name: 'photoGallery' }">
                     <h3>ポートレート</h3>
                     <p>宣材写真・アーティスト写真など、<br>ご要望に沿った撮影を承ります。</p>
                     <div class="more">
-                        <NuxtLink :to="{ name: 'photoGallery' }">
-                            more
-                        </NuxtLink>
+                        写真ギャラリー
+                        </div>
+                    </NuxtLink>
                     </div>
-                </div>
             </div>
             <div class="contents-box04 box-innerR box-inner">
                 <div class="box-Rpic cb-pic">
                     <img src="../public/img/IMG_0270.jpg" alt="">
                 </div>
                 <div class="box-textR">
+                    <NuxtLink :to="{ name: 'movie' }">
                     <h3>動画撮影</h3>
                     <p>MVや企業向けムービーなど承ります。<br>
                         行事やイベントにも対応しておりますので<br>
                         お気軽にご相談下さい。</p>
                     <div class="more">
-                        <NuxtLink :to="{ name: 'movie' }">
-                            more
-                        </NuxtLink>
-                    </div>
+                        動画ギャラリー
+                        </div>
+                    </NuxtLink>
                 </div>
             </div>
 
@@ -226,7 +226,7 @@ onMounted(() => {
 /* メインコンテンツ設定 */
 .main-contents {
     position: relative;
-    padding-top: 50vh;
+    padding-top: 400px;
 }
 
 /* メインコンテンツ　スクロールアニメーション */
@@ -278,6 +278,7 @@ onMounted(() => {
     font-size: 16px;
     font-weight: 400;
     padding-top: 25px;
+    margin: 0;
 }
 
 .cb-pic {
@@ -318,18 +319,18 @@ onMounted(() => {
 /* more　設定 */
 .more {
     position: relative;
-    padding-left: 35px;
-    padding-top: 40px;
-    font-size: 22px;
+    padding-left: 25px;
+    padding-top: 45px;
+    font-size: 18px;
 }
 
 .box-innerL .more::before {
     position: absolute;
     content: '';
-    top: 50px;
+    top: 40px;
     left: -15px;
-    width: 180px;
-    height: 60px;
+    width: 250px;
+    height: 65px;
     background: url(@/public/img/camera_tree_line.png) no-repeat;
     background-size: contain;
 }
@@ -341,10 +342,10 @@ onMounted(() => {
 .box-innerR .more::before {
     position: absolute;
     content: '';
-    top: 50px;
-    right: -40px;
-    width: 180px;
-    height: 60px;
+    top: 40px;
+    right: -45px;
+    width: 250px;
+    height: 65px;
     background: url(@/public/img/camera_tree_line.png) no-repeat;
     background-size: contain;
 }

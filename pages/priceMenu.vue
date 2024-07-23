@@ -27,6 +27,9 @@ const PAGE_TITLE = "料金表";
             <p class="ec-text"></p>
         </div>
     </div>
+    <div class="contact-parts">
+        <ContactParts />
+    </div>
 </template>
 
 <style scoped>

@@ -4,7 +4,9 @@
             <h2 class="section-title">お問い合わせ</h2>
             <p>ご予約やご不明点など<br>お気軽にお問い合わせください。</p>
             <div class="contact-button">
-                <PartsButtonparts class="button">お問い合わせはこちら</PartsButtonparts>
+                <NuxtLink :to="{name:'contact'}">
+                    <PartsButtonparts class="button">お問い合わせはこちら</PartsButtonparts>
+                </NuxtLink>
             </div>
         </div>
     </div>
@@ -16,6 +18,7 @@
 .contact {
     font-family: var(--font_text);
     text-align: center;
+    padding-top: 100px;
     padding-bottom: 100px;
 }
 

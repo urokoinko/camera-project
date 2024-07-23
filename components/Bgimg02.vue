@@ -2,7 +2,10 @@
     <div class="bg-img02">
         <div class="bg-img02-images-one">
         </div>
-        <div class="block"></div>
+        <div class="block" id="QandA">
+            <QandAParts />
+
+</div>
         <div class="bg-img02-images-twe">
         </div>
     </div>
@@ -10,13 +13,14 @@
 
 <style scoped>
 .block {
-    background-color: #fff;
+    position: relative;
     padding: 250px;
-    width: 820px;
+    z-index: 10;
+    box-shadow: 0 0 30px 20px rgba(0,0,0,0.4);
 }
 
 .bg-img02-images-one {
-    padding-top: 350px;
+    padding-top: 400px;
     padding-bottom: 350px;
     overflow: hidden;
     position: relative;
@@ -30,7 +34,7 @@
 }
 
 .bg-img02-images-twe {
-    padding-top: 350px;
+    padding-top: 400px;
     padding-bottom: 350px;
     overflow: hidden;
     position: relative;

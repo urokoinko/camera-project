@@ -2,7 +2,7 @@
 import { Fancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
-const PAGE_TITLE = "Photo Gallery";
+const PAGE_TITLE = "写真ギャラリー";
 
 definePageMeta({
     layout: false

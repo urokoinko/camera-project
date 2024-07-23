@@ -1,11 +1,12 @@
 <script setup lang="ts">
 const SITE_TITLE = "出張カメラマン";
 
+
 useHead({
   titleTemplate: (titleChunk: strig | undefined): string => {
     let title = SITE_TITLE;
     if (titleChunk != undefined) {
-      title = `${titleChunk}｜${SITE_TITLE}`;
+      title = `document.getElementById{titleChunk}｜document.getElementById{SITE_TITLE}`;
     }
     return title
   },
@@ -16,15 +17,34 @@ useHead({
     },
     {
       rel: "stylesheet",
-      href: "https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Zen+Kaku+Gothic+New:wght@700&family=Zen+Maru+Gothic:wght@400;500&display=swap"
+      href: "https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@500&family=Zen+Maru+Gothic:wght@400;500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&&display=swap"
     }
   ],
 });
 
 
 onMounted(() => {
-  // ページトップに戻る
   const pageTopBtn = document.getElementById('page-top-btn');
+  
+  // ページトップボタンの出現
+//   const DownMoveClass = ref('DownMove');
+//   const UpMoveClass = ref('UpMove');
+//   var scroll =window.scrollY;
+//   if (scroll >= 600){//上から200pxスクロールしたら
+//     pageTopBtn_class.remove('DownMove');//#page-topについているDownMoveというクラス名を除く
+//     pageTopBtn_class.add('UpMove');//#page-topについているUpMoveというクラス名を付与
+//   }else{
+//     if(pageTopBtn_class == 'UpMove'){//すでに#page-topにUpMoveというクラス名がついていたら
+//       pageTopBtn_class.remove('UpMove');//UpMoveというクラス名を除き
+//       pageTopBtn_class.add('DownMove');//DownMoveというクラス名を#page-topに付与
+//     }
+//   }
+// // 画面をスクロールをしたら動かしたい場合の記述
+
+// 	PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
+
+
+  // ページトップに戻る
 
   pageTopBtn.addEventListener('click', () => {
     window.scroll({
@@ -36,7 +56,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="site">
+  <div class="site" id="site">
     <HeaderParts />
     <NuxtLayout>
       <NuxtPage />
@@ -44,7 +64,7 @@ onMounted(() => {
     <div class="fq">
             <FooterPart />
             <button class="page-top" id="page-top-btn">
-                <img src="./public/img/page_top.svg" alt="">
+                <img src="./public/img/page_top.svg" alt="page-top">
             </button>
         </div>
   </div>
@@ -57,7 +77,7 @@ onMounted(() => {
 }
 
 .page-top {
-    position: absolute;
+    position: fixed;
     bottom: 40px;
     right: 40px;
     z-index: 1100;
@@ -70,6 +90,39 @@ onMounted(() => {
   font-family: var(--font_title);
   text-align: center;
   font-size: 28px;
+  font-weight: 500;
+}
+
+/*　上に上がる動き　*/
+
+.page-top.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+/*　下に下がる動き　*/
+
+.page-top.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+  	opacity: 1;
+	transform: translateY(100px);
+  }
 }
 
 /* レスポンシブ設定 */

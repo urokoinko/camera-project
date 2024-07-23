@@ -7,7 +7,7 @@ const config = useRuntimeConfig()
 <template>
     <div class="contact-title">
         <h2 class="section-title">{{ PAGE_TITLE }}</h2>
-        <img src="../public/img/contact_img.svg" alt="">
+        <img src="../public/img/contact_img.svg" alt="leaf_img">
     </div>
     <div class="contact-text">
         <p>ご予約・ご質問等、お気軽にご連絡ください。</p>
@@ -92,7 +92,8 @@ const config = useRuntimeConfig()
 
 .QandA-link {
     text-align: right;
-    margin-top: 10vh;
+    margin-top: 80px;
+    padding-bottom: 20px;
     color: teal;
 }
 
@@ -101,14 +102,14 @@ const config = useRuntimeConfig()
     text-align: center;
     background-color: var(--color_yellow);
     position: relative;
-    padding-top: 10vh;
-    padding-bottom: 10vh;
+    padding-top: 180px;
+    padding-bottom: 100px;
 }
 
 .contact-title h2 {
     position: relative;
     display: inline-block;
-    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(255, 255, 255, 0.5); */
     z-index: 2;
 }
 
@@ -179,10 +180,6 @@ textarea {
     }
 
     .camera-form {
-        /* padding-left: 20px;
-        padding-right: 20px; */
-        /* margin: 0 auto; */
-        /* max-width: 330px; */
         text-align: center;
     }
 

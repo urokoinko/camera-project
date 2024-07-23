@@ -1,5 +1,5 @@
 <script setup>
-const PAGE_TITLE = "Movie Gallery";
+const PAGE_TITLE = "動画ギャラリー";
 </script>
 <template>
     <NuxtLayout name="other">

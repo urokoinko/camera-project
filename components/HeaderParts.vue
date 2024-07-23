@@ -1,26 +1,24 @@
 <script setup>
 
 // ハンバーガーメニュー開け閉め
-
 function navFunc() {
     document.querySelector('html').classList.toggle('open');
 }
-
 </script>
 
 <template>
     <div class="header">
         <div class="header-inner">
             <div class="site-logo">
-                <NuxtLink :to="{name: 'index'}"><img src="../public/img/camera_site_logo.svg" alt=""></NuxtLink>
+                <NuxtLink :to="{path: '/', hash: '#site'}"><img src="../public/img/camera_site_logo.svg" alt="logo"></NuxtLink>
             </div>
             <div class="header-menu">
                 <ul>
                     <li class="dropdown">
-                        <a href="#">撮影ギャラリー</a>
+                        撮影ギャラリー
                         <ul class="dropdown-inner">
-                            <li class="dropdown-item"><NuxtLink :to="{name: 'photoGallery'}">photo</NuxtLink></li>
-                            <li class="dropdown-item"><NuxtLink :to="{name: 'movie'}">movie</NuxtLink></li>
+                            <li class="dropdown-item"><NuxtLink :to="{name: 'photoGallery'}">写真</NuxtLink></li>
+                            <li class="dropdown-item"><NuxtLink :to="{name: 'movie'}">動画</NuxtLink></li>
                         </ul>
                     </li>
                     <li><NuxtLink :to="{name: 'priceMenu'}">料金表</NuxtLink></li>
@@ -51,6 +49,7 @@ function navFunc() {
 
 <style scoped>
 /* ヘッダー　設定 */
+
 .header {
     position: fixed;
     top: 0;

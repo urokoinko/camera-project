@@ -44,12 +44,10 @@ onMounted(() => {
     });
 })
 
-
-
 </script>
 
 <template>
-    <div class="QandA" id="QandA">
+    <div class="QandA">
         <h2 class="section-title">Q&A</h2>
         <div class="QandA-inner">
             <div class="QandA-item">
@@ -110,14 +108,12 @@ onMounted(() => {
             </div>
         </div>
     </div>
-
-
 </template>
 
 <style scoped>
 /* アコーディオン設定 */
 .QandA {
-    margin: 50vh auto;
+    margin: 0 auto 150px auto ;
     max-width: 760px;
     padding: 0 5vw;
 }
@@ -151,7 +147,6 @@ onMounted(() => {
     background-size: contain;
     z-index: 10;
     transition: 1s;
-
 }
 
 /* アコーディオン　開いている時のスタイル */

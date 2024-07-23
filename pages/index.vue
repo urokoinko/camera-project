@@ -59,7 +59,7 @@ onMounted(() => {
             <Bgimg01 />
         </div>
     </div>
-    <div class="section03">
+    <div class="section03" id="photographer">
         <div class="section03-height">
             <ProfileParts />
         </div>
@@ -67,7 +67,6 @@ onMounted(() => {
     <div class="section04">
         <Bgimg02 />
     </div>
-    <QandAParts />
     <ContactParts />
 </template>
 
@@ -109,17 +108,18 @@ onMounted(() => {
     position: relative;
     z-index: 10;
     width: 100%;
-    height: 60vh;
+    height: auto;
     background-color: #fff;
     padding-top: 200px;
-    padding-bottom: 200px;
+    padding-bottom: 100px;
     box-shadow: 0 -30px 30px -30px rgba(0, 0, 0, 0.25);
 }
 
-
+.section05{
+    padding-top: 200px;
+}
 
 /* レスポンシブ設定 */
-
 @media (max-width:430px) {
     .section02 {
         width: auto;
@@ -128,13 +128,6 @@ onMounted(() => {
 
     .scrollAnime {
         height: 50vh;
-    }
-}
-
-@media (max-width:390px) {
-    .section02 {
-        width: auto;
-        height: 90vh;
     }
 }
 </style>

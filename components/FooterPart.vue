@@ -7,13 +7,14 @@
             <div class="footer-bg">
                 <div class="footer-nav">
                     <ul class="nav-ul01">
-                        <li class="footer-navitem"><a href="#">撮影メニュー</a></li>
-                        <li class="footer-navitem"><a href="#">料金表</a></li>
-                        <li class="footer-navitem"><a href="#">カメラマンについて</a></li>
+                                <li class="footer-navitem"><NuxtLink :to="{name: 'photoGallery'}">写真ギャラリー</NuxtLink></li>
+                                <li class="footer-navitem"><NuxtLink :to="{name: 'movie'}">動画ギャラリー</NuxtLink></li>
+                        <li class="footer-navitem"><NuxtLink :to="{name: 'priceMenu'}">料金表</NuxtLink></li>
+                        <li class="footer-navitem"><NuxtLink  :to="{path: '/', hash: '#photographer'}">カメラマンについて</NuxtLink></li>
                     </ul>
                     <ul class="nav-ul02">
-                        <li class="footer-navitem"><a href="#">Q＆A</a></li>
-                        <li class="footer-navitem"><a href="#">お問い合わせ</a></li>
+                        <li class="footer-navitem"><NuxtLink :to="{path: '/', hash: '#QandA'}">Q＆A</NuxtLink></li>
+                        <li class="footer-navitem"><NuxtLink  :to="{name: 'contact'}">お問い合わせ</NuxtLink></li>
                     </ul>
                 </div>
                 <small class="footer-copy">&copy; Hachi</small>
@@ -44,8 +45,8 @@
 .footer-nav {
     display: flex;
     justify-content: center;
-    font-size: 12px;
-    font-weight: 100;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 .nav-ul02 li:first-child{
