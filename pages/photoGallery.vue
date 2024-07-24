@@ -74,6 +74,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
         <template #sub-sectionTitle>
             {{ PAGE_TITLE }}
         </template>
+    </NuxtLayout>
 
         <!-- <ClientOnly> -->
 
@@ -328,9 +329,6 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
             </li>
         </ul>
         <!-- </ClientOnly> -->
-
-
-    </NuxtLayout>
 
 </template>
 

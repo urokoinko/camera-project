@@ -9,8 +9,14 @@
 
 <style>
 /* ランディングページ　レイアウト */
+.other{
+    position: relative;
+    background: var(--color_yellow);
+    z-index: -2;
+}
 .other .section-title {
     padding-top: 150px;
+    padding-bottom: 100px;
 }
 
 .sub-title {

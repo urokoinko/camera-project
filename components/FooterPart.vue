@@ -1,4 +1,3 @@
-
 <template>
     <div class="footer">
         <div class="footer-inner">
@@ -7,14 +6,26 @@
             <div class="footer-bg">
                 <div class="footer-nav">
                     <ul class="nav-ul01">
-                                <li class="footer-navitem"><NuxtLink :to="{name: 'photoGallery'}">写真ギャラリー</NuxtLink></li>
-                                <li class="footer-navitem"><NuxtLink :to="{name: 'movie'}">動画ギャラリー</NuxtLink></li>
-                        <li class="footer-navitem"><NuxtLink :to="{name: 'priceMenu'}">料金表</NuxtLink></li>
-                        <li class="footer-navitem"><NuxtLink  :to="{path: '/', hash: '#photographer'}">カメラマンについて</NuxtLink></li>
+                        <li class="footer-navitem">
+                            <NuxtLink :to="{ name: 'photoGallery' }">写真ギャラリー</NuxtLink>
+                        </li>
+                        <li class="footer-navitem">
+                            <NuxtLink :to="{ name: 'movie' }">動画ギャラリー</NuxtLink>
+                        </li>
                     </ul>
                     <ul class="nav-ul02">
-                        <li class="footer-navitem"><NuxtLink :to="{path: '/', hash: '#QandA'}">Q＆A</NuxtLink></li>
-                        <li class="footer-navitem"><NuxtLink  :to="{name: 'contact'}">お問い合わせ</NuxtLink></li>
+                        <li class="footer-navitem">
+                            <NuxtLink :to="{ name: 'priceMenu' }">料金表</NuxtLink>
+                        </li>
+                        <li class="footer-navitem">
+                            <NuxtLink :to="{ path: '/', hash: '#photographer' }">カメラマンについて</NuxtLink>
+                        </li>
+                        <li class="footer-navitem">
+                            <NuxtLink :to="{ path: '/', hash: '#QandA' }">Q＆A</NuxtLink>
+                        </li>
+                        <li class="footer-navitem">
+                            <NuxtLink :to="{ name: 'contact' }">お問い合わせ</NuxtLink>
+                        </li>
                     </ul>
                 </div>
                 <small class="footer-copy">&copy; Hachi</small>
@@ -27,7 +38,7 @@
 /* フッター設定 */
 .footer {
     color: var(--color_darkBrown);
-    background-color:var(--color_yellow);
+    background-color: var(--color_yellow);
 }
 
 .footer-inner {
@@ -36,20 +47,20 @@
 }
 
 .footer-nav ul {
-    padding-top: 100px;
+    padding-top: clamp(50px, 10vw, 100px);
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 3vw;
 }
 
 .footer-nav {
     display: flex;
     justify-content: center;
-    font-size: 13px;
+    font-size: var(--fz_13px);
     font-weight: 500;
 }
 
-.nav-ul02 li:first-child{
+.nav-ul02 li:first-child {
     padding-left: 20px;
 }
 
@@ -62,8 +73,8 @@
 
 small {
     display: block;
-    padding-top: 110px;
-    font-size: 11px;
+    padding-top: clamp(30px, 10vw, 100px);
+    font-size: var(--fz_11px);
 }
 
 .footer-treeR,
@@ -74,10 +85,10 @@ small {
 .footer-treeR::before {
     position: absolute;
     content: '';
-    top: -75px;
-    right: 290px;
-    width: 147px;
-    height: 169px;
+    top: clamp(-80px, -7vw, -60px);
+    right: 330px;
+    width: clamp(110px, 15vw, 150px);
+    height: 16vw;
     background: url(../public/img/camera_tree_blue.png) no-repeat;
     background-size: contain;
     z-index: 1000;
@@ -86,10 +97,10 @@ small {
 .footer-treeR::after {
     position: absolute;
     content: '';
-    top: -150px;
+    top: clamp(-140px, -13vw, -100px);
     right: 100px;
-    width: 248px;
-    height: 248px;
+    width: clamp(180px, 21vw, 260px);
+    height: 21vw;
     background: url(../public/img/camera_tree.png) no-repeat;
     background-size: contain;
     z-index: 1000;
@@ -98,27 +109,29 @@ small {
 .footer-treeL::after {
     position: absolute;
     content: '';
-    top: -90px;
+    top: clamp(-100px, -6.5vw, 75px);
     left: 180px;
-    width: 147px;
-    height: 169px;
+    width: clamp(130px, 14vw, 160px);
+    height: 16vw;
     background: url(../public/img/camera_tree_green.png) no-repeat;
     background-size: contain;
     z-index: 1000;
 }
 
 /* ページトップボタン */
-.footer{
+.footer {
     position: relative;
 }
-#page-top{
+
+#page-top {
     position: absolute;
     bottom: 60px;
     right: 40px;
 }
 
 @media (max-width:430px) {
-    #page-top{
+
+    #page-top {
         width: 60px;
         height: 60px;
     }
@@ -126,52 +139,59 @@ small {
 
 
 /* レスポンシブ設定 */
-@media (max-width:800px) {
-    .footer{
+@media (max-width:1024px) {
+    .footer {
         margin-top: 10vw;
     }
-    .footer-nav ul{
-        padding-top: 15vw;
+
+    .footer-nav {
+        display: block;
     }
-    small {
-        font-size: 12px;
-        padding-top: 90px;
+
+    .footer-nav ul:last-child {
+        padding-top: 2vw;
     }
+
     .footer-treeR::before {
-        right: 30%;
-        width: 110px;
-        height: 126px;
-        background: url(../public/img/camera_tree_blue.png) no-repeat;
-        background-size: contain;
-        z-index: 1000;
+        top: -8vw;
+        right: 20vw;
     }
 
     .footer-treeR::after {
-        right: 50px;
-        width: 184px;
-        height: 184px;
+        top: -14vw;
+        right: 0vw;
     }
 
     .footer-treeL::after {
-        left: 100px;
-        width: 130px;
-        height: 140px;
+        top: -7vw;
+        left: 10vw;
     }
-    
+
 }
+
 @media (max-width:600px) {
-    .footer-nav{
-        flex-direction: column;
-        padding-top: 60px;
+    .footer-treeR::before {
+        right: 15vw;
     }
-    .footer-nav ul{
-        padding: 10px;
+
+    .footer-treeR::after {
+        right: -8vw;
+    }
+
+    .footer-treeL::after {
+        left: 10vw;
+    }
+    small {
+        padding-top: 140px;
     }
 }
+
+
 @media (max-width:430px) {
-    .footer{
+    .footer {
         margin-top: 0;
     }
+
     .footer-bg {
         height: 430px;
     }

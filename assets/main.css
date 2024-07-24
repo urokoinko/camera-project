@@ -1,8 +1,23 @@
 /* 変数 */
 :root {
+    /*　変数 フォントファミリー */
     --font_title: "Roboto", "Noto Sans JP", sans-serif;
     --font_catch: 'Kiwi Maru';
     --font_text: "Roboto", 'Zen Maru Gothic';
+
+    /*　変数 フォントサイズ */
+    --fz_30px: clamp(26px, 3vw, 32px);
+    --fz_28px: clamp(26px, 2.7vw, 30px);
+    --fz_22px: clamp(18px, 2.15vw, 24px);
+    --fz_20px: clamp(16px, 1.9vw, 22px);
+    --fz_18px: clamp(12px, 1.75vw, 20px);
+    --fz_17px: clamp(13px, 1.66vw, 19px);
+    --fz_16px: clamp(14px, 1.56vw, 18px);
+    --fz_14px: clamp(12px, 1.37vw, 16px);
+    --fz_13px: clamp(11px, 1.27vw, 15px);
+    --fz_12px: clamp(10.5px, 1.2vw, 14px);
+
+    /*　変数 カラー */
     --color_main: #3d3d3d;
     --color_darkBrown: #6C6059;
     --color_yellow: rgba(255, 251, 215, 0.5);

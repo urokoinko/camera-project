@@ -25,23 +25,23 @@ useHead({
 
 onMounted(() => {
   const pageTopBtn = document.getElementById('page-top-btn');
-  
-  // ページトップボタンの出現
-//   const DownMoveClass = ref('DownMove');
-//   const UpMoveClass = ref('UpMove');
-//   var scroll =window.scrollY;
-//   if (scroll >= 600){//上から200pxスクロールしたら
-//     pageTopBtn_class.remove('DownMove');//#page-topについているDownMoveというクラス名を除く
-//     pageTopBtn_class.add('UpMove');//#page-topについているUpMoveというクラス名を付与
-//   }else{
-//     if(pageTopBtn_class == 'UpMove'){//すでに#page-topにUpMoveというクラス名がついていたら
-//       pageTopBtn_class.remove('UpMove');//UpMoveというクラス名を除き
-//       pageTopBtn_class.add('DownMove');//DownMoveというクラス名を#page-topに付与
-//     }
-//   }
-// // 画面をスクロールをしたら動かしたい場合の記述
 
-// 	PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
+  // ページトップボタンの出現
+  //   const DownMoveClass = ref('DownMove');
+  //   const UpMoveClass = ref('UpMove');
+  //   var scroll =window.scrollY;
+  //   if (scroll >= 600){//上から200pxスクロールしたら
+  //     pageTopBtn_class.remove('DownMove');//#page-topについているDownMoveというクラス名を除く
+  //     pageTopBtn_class.add('UpMove');//#page-topについているUpMoveというクラス名を付与
+  //   }else{
+  //     if(pageTopBtn_class == 'UpMove'){//すでに#page-topにUpMoveというクラス名がついていたら
+  //       pageTopBtn_class.remove('UpMove');//UpMoveというクラス名を除き
+  //       pageTopBtn_class.add('DownMove');//DownMoveというクラス名を#page-topに付与
+  //     }
+  //   }
+  // // 画面をスクロールをしたら動かしたい場合の記述
+
+  // 	PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
 
 
   // ページトップに戻る
@@ -62,82 +62,80 @@ onMounted(() => {
       <NuxtPage />
     </NuxtLayout>
     <div class="fq">
-            <FooterPart />
-            <button class="page-top" id="page-top-btn">
-                <img src="./public/img/page_top.svg" alt="page-top">
-            </button>
-        </div>
+      <FooterPart />
+      <button class="page-top" id="page-top-btn">
+        <img src="./public/img/page_top.svg" alt="page-top">
+      </button>
+    </div>
   </div>
 </template>
 
 <style>
 /* ページトップボタン */
 .fq {
-    position: relative;
+  position: relative;
 }
 
 .page-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    z-index: 1100;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1100;
 }
 
 .page-top:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
+
 .section-title {
   font-family: var(--font_title);
   text-align: center;
-  font-size: 28px;
+  font-size: var(--fz_28px);
   font-weight: 500;
 }
 
 /*　上に上がる動き　*/
 
-.page-top.UpMove{
-	animation: UpAnime 0.5s forwards;
+.page-top.UpMove {
+  animation: UpAnime 0.5s forwards;
 }
-@keyframes UpAnime{
+
+@keyframes UpAnime {
   from {
     opacity: 0;
-	transform: translateY(100px);
+    transform: translateY(100px);
   }
+
   to {
     opacity: 1;
-	transform: translateY(0);
+    transform: translateY(0);
   }
 }
 
 /*　下に下がる動き　*/
 
-.page-top.DownMove{
-	animation: DownAnime 0.5s forwards;
+.page-top.DownMove {
+  animation: DownAnime 0.5s forwards;
 }
-@keyframes DownAnime{
+
+@keyframes DownAnime {
   from {
-  	opacity: 1;
-	transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
   }
+
   to {
-  	opacity: 1;
-	transform: translateY(100px);
+    opacity: 1;
+    transform: translateY(100px);
   }
 }
 
 /* レスポンシブ設定 */
-
-@media (max-width:800px) {
-  .section-title {
-    font-size: 22px;
-  }
-}
-
 @media (max-width:430px) {
   .section-title {
     font-size: 20px;
   }
-  .page-top{
+  .page-top {
     width: 50px;
   }
 }
