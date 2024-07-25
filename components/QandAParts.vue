@@ -113,9 +113,11 @@ onMounted(() => {
 <style scoped>
 /* アコーディオン設定 */
 .QandA {
-    margin: 0 auto 150px auto ;
+    margin: 0 auto;
+    width: 80%;
     max-width: 760px;
     padding: 0 5vw;
+    padding-bottom: 15vw;
 }
 
 .QandA h2 {
@@ -131,7 +133,7 @@ onMounted(() => {
     padding: 7px 20px 7px;
     cursor: pointer;
     position: relative;
-    font-size: 20px;
+    font-size: var(--fz_20px);
     margin-top: 40px;
     border-radius: 10px;
 }
@@ -168,18 +170,17 @@ onMounted(() => {
 .faq-contentInner {
     margin: 20px auto;
     width: 90%;
-    font-size: 18px;
+    font-size: var(--fz_18px);
 }
 
 
 /* レスポンシブ設定 */
 @media (max-width: 800px) {
     .QandA {
-        max-width: 600px;
+        /* max-width: 600px; */
     }
     .faq-header {
-        font-size: 16px;
-        padding: 5px 20px 5px;
+        /* padding: 5px ; */
         margin-top: 25px;
     }
 
@@ -193,18 +194,6 @@ onMounted(() => {
         top: 10px;
     }
 
-    .faq-contentInner {
-        font-size: 16px;
-    }
 }
 
-@media (max-width: 430px) {
-    .faq-header {
-        font-size: 14px;
-    }
-
-    .faq-contentInner {
-        font-size: 14px;
-    }
-}
 </style>

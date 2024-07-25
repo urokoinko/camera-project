@@ -354,46 +354,11 @@ onMounted(() => {
 /* レスポンシブ設定 */
 @media (max-width:800px) {
 
-    .box-textL,
-    .box-textR {
-        width: 350px;
-    }
-
-    .more {
-        text-align: right;
-        position: relative;
-        padding-left: 0px;
-        padding-right: 40px;
-    }
-
     .box-innerL .more::before {
-        top: 50px;
-        left: 200px;
-        right: 0px;
+
     }
 
 }
-
-@media (max-width: 430px) {
-    .more {
-        font-size: 20px;
-    }
-
-    .box-innerL .more::before {
-        top: 50px;
-        left: 230px;
-        width: 120px;
-    }
-    .box-innerR .more {
-        padding-right: 40px;
-    }
-    .box-innerR .more::before {
-        top: 50px;
-        right: -0px;
-        width: 120px;
-    }
-}
-
 
 /* レスポンシブ設定 */
 @media (max-width:800px) {
@@ -413,6 +378,7 @@ onMounted(() => {
 
     .box-textL,
     .box-textR {
+        width: 350px;
         text-align: center;
         padding-top: 35px;
         padding-right: 0;
@@ -463,6 +429,28 @@ onMounted(() => {
 
     .scroll-motion {
         display: none;
+    }
+
+    .more {
+        text-align: right;
+        position: relative;
+        padding-left: 0px;
+        padding-right: 40px;
+        font-size: 15px;
+    }
+
+    .box-innerL .more::before {
+        top: 40px;
+        left: 170px;
+        width: 190px;
+    }
+    .box-innerR .more {
+        padding-right: 40px;
+    }
+    .box-innerR .more::before {
+        top: 40px;
+        left: 170px;
+        width: 190px;
     }
 }
 

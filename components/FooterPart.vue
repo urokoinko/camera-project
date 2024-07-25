@@ -51,6 +51,8 @@
     display: flex;
     justify-content: center;
     gap: 3vw;
+    position: relative;
+    z-index: 2000;
 }
 
 .footer-nav {

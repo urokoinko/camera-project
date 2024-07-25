@@ -16,14 +16,14 @@ onMounted(() => {
     let end = 'bottom -500px bottom';
 
     if (windowSize < 430) {   //800px以下でアニメーションの開始位置を変える
-        top = '-100px'
-        end = 'bottom bottom';
+        top = '-100px';
+        end = 'top -500px top';
     }
 
     $gsap.to('.scrollAnime', {
         // アニメーション終了時
         height: 0,
-        top: '-300px',
+        top: top,
         scrollTrigger: {
             trigger: '.section02-height',
             start: 'top 40% center',
@@ -83,8 +83,8 @@ onMounted(() => {
 .section01 {
     position: relative;
     z-index: 10;
-    padding-bottom: 100px;
     background-color: #fff;
+    padding-bottom: 50px;
 }
 
 .scrollAnime {
@@ -111,13 +111,10 @@ onMounted(() => {
     height: auto;
     background-color: #fff;
     padding-top: 200px;
-    padding-bottom: 100px;
+    padding-bottom: 5vw;
     box-shadow: 0 -30px 30px -30px rgba(0, 0, 0, 0.25);
 }
 
-.section05{
-    padding-top: 200px;
-}
 
 /* レスポンシブ設定 */
 @media (max-width:430px) {

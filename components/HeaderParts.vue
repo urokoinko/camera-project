@@ -57,7 +57,7 @@ function navFunc() {
     width: 100%;
     height: 50px;
     background-color: rgba(255, 255, 255, 0.8);
-    z-index: 1000;
+    z-index: 2500;
     display: flex;
     align-items: center;
 }
@@ -217,7 +217,7 @@ function navFunc() {
 
     /* ナビゲーションボタン　閉じるボタン */
     .open .m-humburgar {
-        z-index: 1000;
+        z-index: 2500;
     }
 
     .open .m-humburgar::before {
@@ -237,7 +237,7 @@ function navFunc() {
         right: 0%;
         width: 100%;
         height: 100vh;
-        background-color: rgba(255, 254, 249, 0.9);
+        background-color: rgba(255, 254, 249);
         color: var(--color_main);
         display: flex;
         justify-content: center;
