@@ -24,7 +24,7 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-    background: url(../public/img/A7306778.jpg) no-repeat;
+    background: url(../public/img/bg02-01.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -37,7 +37,7 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-    background: url(../public/img/A7306792.jpg) no-repeat;
+    background: url(../public/img/bg02-02.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -48,7 +48,7 @@
 @media (max-width:800px) {
     .bg-img02-images-one {
         height: 400px;
-        background: url(../public/img/m_A7306778.jpg) no-repeat;
+        /* background: url(../public/img/m_A7306778.jpg) no-repeat; */
         background-attachment: fixed;
         background-size: cover;
         background-position: center;
@@ -56,7 +56,7 @@
 
     .bg-img02-images-twe {
         height: 400px;
-        background: url(../public/img/m_A7306792.jpg) no-repeat;
+        /* background: url(../public/img/m_A7306792.jpg) no-repeat; */
         background-attachment: fixed;
         background-size: cover;
         background-position: center;

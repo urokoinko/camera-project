@@ -3,8 +3,6 @@ const { $gsap } = useNuxtApp()
 
 onMounted(() => {
 
-
-
     // スライドショーアニメーション
     const slideShow = document.querySelector('.mainSlide-inner');
     const slideShow_img = slideShow.querySelectorAll('.slide-img');
@@ -27,17 +25,15 @@ onMounted(() => {
         .to(slideShow_img[2], { opacity: 0 })
         .to(slideShow_img[0], { opacity: 1 }, '<');
 
-
 });
-
 </script>
 
 <template>
     <div id="main-slide">
         <div class="mainSlide-inner">
-            <img class="slide-img" src="../public/img/A7409484.jpg" alt="">
-            <img class="slide-img" src="../public/img/A7304492.jpg" alt="">
-            <img class="slide-img" src="../public/img/DSC01849.jpg" alt="">
+                <img class="slide-img" src="../public/img/top_slide01.jpg" alt="">
+                <img class="slide-img" src="../public/img/top_slide02.jpg" alt="">
+                <img class="slide-img" src="../public/img/top_slide03.jpg" alt="">
         </div>
         <div class="main-catch">
             <div class="mc-text">
@@ -47,17 +43,13 @@ onMounted(() => {
             </div>
         </div>
     </div>
-
-
 </template>
 
 <style scoped>
 /* メインスライドショー */
 #main-slide {
-    width: auto;
-    z-index: 10;
+    z-index: 100;
 }
-
 .mainSlide-inner {
     width: auto;
     height: 80vh;

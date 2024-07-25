@@ -40,7 +40,9 @@ const PAGE_TITLE = "料金表";
             </ul>
         </div>
         <div class="reserve-button">
-            <PartsButtonparts>ご予約はこちら</PartsButtonparts>
+            <NuxtLink :to = "{name: 'contact'}">
+                <PartsButtonparts>ご予約はこちら</PartsButtonparts>
+            </NuxtLink>
         </div>
 
         <div class="explain">
@@ -86,7 +88,9 @@ const PAGE_TITLE = "料金表";
             </div>
         </div>
         <div class="reserve-button">
-            <PartsButtonparts>ご予約はこちら</PartsButtonparts>
+            <NuxtLink :to="{name: 'contact'}">
+                <PartsButtonparts>ご予約はこちら</PartsButtonparts>
+            </NuxtLink>
         </div>
     </div>
 </template>

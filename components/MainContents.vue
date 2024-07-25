@@ -142,7 +142,7 @@ onMounted(() => {
         <div class="main-contents-inner">
             <div class="contents-box01 box-innerL box-inner">
                 <div class="box-Lpic cb-pic">
-                    <img src="../public/img/A7306925.jpg" alt="">
+                    <img src="../public/img/main-contant01.jpg" alt="">
                 </div>
                 <div class="box-textL">
                     <NuxtLink :to="{ name: 'photoGallery' }">
@@ -156,7 +156,7 @@ onMounted(() => {
             </div>
             <div class="contents-box02  box-innerR box-inner">
                 <div class="box-Rpic cb-pic">
-                    <img src="../public/img/DSC00230.jpg" alt="">
+                    <img src="../public/img/main-contant02.jpg" alt="">
                 </div>
                 <div class="box-textR">
                     <NuxtLink :to="{ name: 'photoGallery' }">
@@ -170,7 +170,7 @@ onMounted(() => {
             </div>
             <div class="contents-box03  box-innerL box-inner">
                 <div class="box-Lpic cb-pic">
-                    <img src="../public/img/A7303423.jpg" alt="">
+                    <img src="../public/img/main-contant03.jpg" alt="">
                 </div>
                 <div class="box-textL">
                     <NuxtLink :to="{ name: 'photoGallery' }">
@@ -184,7 +184,7 @@ onMounted(() => {
             </div>
             <div class="contents-box04 box-innerR box-inner">
                 <div class="box-Rpic cb-pic">
-                    <img src="../public/img/IMG_0270.jpg" alt="">
+                    <img src="../public/img/main-contant04.jpg" alt="">
                 </div>
                 <div class="box-textR">
                     <NuxtLink :to="{ name: 'movie' }">

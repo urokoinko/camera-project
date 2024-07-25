@@ -1,9 +1,9 @@
 /* 変数 */
 :root {
     /*　変数 フォントファミリー */
-    --font_title: "Roboto", "Noto Sans JP", sans-serif;
+    --font_title: "Noto Sans JP", sans-serif;
     --font_catch: 'Kiwi Maru';
-    --font_text: "Roboto", 'Zen Maru Gothic';
+    --font_text: 'Zen Maru Gothic';
 
     /*　変数 フォントサイズ */
     --fz_30px: clamp(26px, 3vw, 32px);
