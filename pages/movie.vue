@@ -8,35 +8,45 @@ const PAGE_TITLE = "動画ギャラリー";
         </template>
     </NuxtLayout>
     <div class="movie-contents">
+        <p class="movie-contents-p">これまでに携わった動画作品を掲載しております。<br>
+            他にもプライベートの行事の撮影なども行っておりますので、
+            お気軽にご相談ください。
+        </p>
         <div class="movie-content">
             <div class="mc-inner">
-                <iframe class="movie-link" width="560" height="315"
-                    src="https://www.youtube.com/embed/zOTmIxbyTAw?si=IVnGKAZCRtIyhtUX" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="movie-link" width="560" height="315" src="https://www.youtube.com/embed/cdYCIVnPABU?si=FdEO_U259Y-jCnb8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <p class="mc-text">MV内映像撮影・編集</p>
+            <p class="mc-text">MV内映像 ディレクション・撮影・編集<br>撮影：〇時間<br>編集期間:2～3日<br>費用:〇万円</p>
         </div>
         <div class="movie-content">
             <div class="mc-inner">
-                <iframe class="movie-link" width="560" height="315"
-                    src="https://www.youtube.com/embed/zOTmIxbyTAw?si=IVnGKAZCRtIyhtUX" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="movie-link" width="560" height="315" src="https://www.youtube.com/embed/RVNQOnPmA6w?si=5lV88jtPe3-0fzm9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <p class="mc-text">MV内映像撮影・編集</p>
+            <p class="mc-text">MV内映像 ディレクション・撮影・編集<br>撮影：〇時間<br>編集期間:2～3日<br>費用:〇万円</p>
         </div>
         <div class="movie-content">
             <div class="mc-inner">
-                <iframe class="movie-link" width="560" height="315"
-                    src="https://www.youtube.com/embed/zOTmIxbyTAw?si=IVnGKAZCRtIyhtUX" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe class="movie-link" width="560" height="315" src="https://www.youtube.com/embed/Pn3RQtP5aaE?si=MwD57gM9uDTbxvuz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <p class="mc-text">MV内映像撮影・編集</p>
+            <p class="mc-text">MV内映像 ディレクション・撮影・編集<br>撮影：〇時間<br>編集期間:2～3日<br>費用:〇万円</p>
+        </div>
+        <div class="movie-content">
+            <div class="mc-inner">
+                <iframe class="movie-link" width="560" height="315" src="https://www.youtube.com/embed/K9hRitLC44U?si=NGbxit-z0LYAxq6v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p class="mc-text">MV内映像 ディレクション・撮影・編集<br>撮影：〇時間<br>編集期間:2～3日<br>費用:〇万円</p>
+        </div>
+        <div class="movie-content">
+            <div class="mc-inner">
+                <iframe class="movie-link" width="560" height="315" src="https://www.youtube.com/embed/dslH7jy1HIU?si=Z5uFJIpnEAzVcO7V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p class="mc-text">MV内映像 ディレクション・撮影・編集<br>撮影：〇時間<br>編集期間:2～3日<br>費用:〇万円</p>
+        </div>
+        <div class="movie-content">
+            <div class="mc-inner">
+                <iframe class="movie-link" width="560" height="315" src="https://www.youtube.com/embed/vIFng_5RnDY?si=1BkbjDYrQXgmbxp-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <p class="mc-text">MV内映像 ディレクション・撮影・編集<br>撮影：〇時間<br>編集期間:2～3日<br>費用:〇万円</p>
         </div>
     </div>
 </template>
@@ -48,7 +58,11 @@ const PAGE_TITLE = "動画ギャラリー";
     padding-bottom: 400px;
     text-align: center;
     width: 80%;
+    max-width: 700px;
     margin: 0 auto;
+}
+.movie-contents-p{
+    font-size: var(--fz_12px);
 }
 
 .movie-content {

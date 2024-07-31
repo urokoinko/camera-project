@@ -18,9 +18,9 @@ onMounted(() => {
         }
     });
 
-    tl.to(slideShow_img[0], { opacity: 0 })
-        .to(slideShow_img[1], { opacity: 1 }, '<')
-        .to(slideShow_img[1], { opacity: 0 })
+    tl.to(slideShow_img[0], { opacity: 0, scale:1 })
+        .to(slideShow_img[1], { opacity: 1, scale:1.1 }, '<')
+        .to(slideShow_img[1], { opacity: 0, scale:1.2 })
         .to(slideShow_img[2], { opacity: 1 }, '<')
         .to(slideShow_img[2], { opacity: 0 })
         .to(slideShow_img[0], { opacity: 1 }, '<');

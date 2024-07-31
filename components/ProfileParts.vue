@@ -6,9 +6,14 @@
             <div class="profile-text">
                 <h4>はち</h4>
                 <div class="profile-img"></div>
-                <p>テキスト</p>
-                <div class="insta"><a href="#">instagram <font-awesome-icon :icon="['fab', 'instagram']" size="xl"
-                    class="insta-icon" /></a></div>
+                <p>
+                    僕の父はカメラが好きで、家族の色んな瞬間をいつも写真に残してくれました。<br>
+                    段ボールいっぱいの写真は家族の大切な宝物です。<br>
+                    そんな僕も大切な家族との大切な瞬間を残したいと思い、この仕事をしています。<br>
+                    ご家族の思い出をかたちとして残すお手伝いが出来ましたら幸いです。
+                </p>
+                <div class="insta"><NuxtLink :to="{path:'/'}">instagram <font-awesome-icon :icon="['fab', 'instagram']" size="xl"
+                    class="insta-icon" /></NuxtLink></div>
             </div>
         </div>
     </div>
@@ -35,8 +40,7 @@
 
 .profile-text p {
     display: inline-block;
-    width: 80%;
-    max-width: 252px;
+    width: 70%;
     font-size: var(--fz_18px);
     padding-top: 5vw;
 }
@@ -51,7 +55,9 @@
     width: clamp(150px, 23.9vw, 250px);
     height: clamp(150px, 23.9vw, 250px);
     border-radius: 50%;
-    background-color: #adadad;
+    background: url(../public/img/Profile_img.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
     margin: 0 auto;
     margin-top: 30px;
 }
