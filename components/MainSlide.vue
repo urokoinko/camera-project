@@ -6,24 +6,86 @@ onMounted(() => {
     // スライドショーアニメーション
     const slideShow = document.querySelector('.mainSlide-inner');
     const slideShow_img = slideShow.querySelectorAll('.slide-img');
-    const delay = 2;
-    const duration = 5;
+    const delay = 0;
+    const duration = 12;
 
-    const tl = $gsap.timeline({
-        repeat: -1,
-        delay: delay,
-        defaults: {
-            duration: duration,
-            ease: 'power3.out'
-        }
-    });
+    function firstslide(){
+        var tl = $gsap.timeline({
+            repeat: 0,
+            delay: delay,
+            defaults: {
+                duration: duration,
+                ease: 'power3.out'
+            }
+        });
+        
+        tl.to(slideShow_img[0], {
+            keyframes: {
+                '0%': { opacity: 1, scale: 1.2 },
+                '70%': { opacity: 1 },
+                '100%': { opacity: 0, scale: 1 }
+            }
+        })
+        .to(slideShow_img[1], { 
+            keyframes:{
+                '0%':{ opacity: 0, scale: 1.2 },
+                '5%':{ opacity: 1, scale: 1.2 },
+                '70%':{ opacity: 1},
+                '100%':{ opacity: 0, scale: 1 }
+            }
+        },'>-1.5')
+        .to(slideShow_img[2], { 
+            keyframes:{
+                '0%':{ opacity: 0, scale: 1.2 },
+                '5%':{ opacity: 1, scale: 1.2 },
+                '70%':{ opacity: 1 },
+                '100%':{ opacity: 0, scale: 1 }
+            }
+        },'>-1.5')
 
-    tl.to(slideShow_img[0], { opacity: 0, scale:1 })
-        .to(slideShow_img[1], { opacity: 1, scale:1.1 }, '<')
-        .to(slideShow_img[1], { opacity: 0, scale:1.2 })
-        .to(slideShow_img[2], { opacity: 1 }, '<')
-        .to(slideShow_img[2], { opacity: 0 })
-        .to(slideShow_img[0], { opacity: 1 }, '<');
+    };
+
+    function middleslide(){
+        var tl = $gsap.timeline({
+            repeat: -1,
+            delay: delay,
+            defaults: {
+                duration: duration,
+                ease: 'power3.out'
+            }
+        });
+        
+        tl.to(slideShow_img[0], {
+            keyframes: {
+                '0%':{ opacity: 0, scale: 1.2 },
+                '5%': { opacity: 1, scale: 1.2 },
+                '70%': { opacity: 1 },
+                '100%': { opacity: 0, scale: 1 }
+            }
+        })
+        .to(slideShow_img[1], { 
+            keyframes:{
+                '0%':{ opacity: 0, scale: 1.2 },
+                '5%':{ opacity: 1, scale: 1.2 },
+                '70%':{ opacity: 1},
+                '100%':{ opacity: 0, scale: 1 }
+            }
+        },'>-1.5')
+        .to(slideShow_img[2], { 
+            keyframes:{
+                '0%':{ opacity: 0, scale: 1.2 },
+                '5%':{ opacity: 1, scale: 1.2 },
+                '70%':{ opacity: 1 },
+                '100%':{ opacity: 0, scale: 1 }
+            }
+        },'>-1.5')
+    }
+
+
+    var slide_master = $gsap.timeline();
+    slide_master.add(firstslide())
+                .add(middleslide(),'-=1');
+
 
 });
 </script>
@@ -31,9 +93,9 @@ onMounted(() => {
 <template>
     <div id="main-slide">
         <div class="mainSlide-inner">
-                <img class="slide-img" src="../public/img/top_slide01.jpg" alt="">
-                <img class="slide-img" src="../public/img/top_slide02.jpg" alt="">
-                <img class="slide-img" src="../public/img/top_slide03.jpg" alt="">
+            <img class="slide-img" src="../public/img/top_slide01.jpg" alt="">
+            <img class="slide-img" src="../public/img/top_slide02.jpg" alt="">
+            <img class="slide-img" src="../public/img/top_slide03.jpg" alt="">
         </div>
         <div class="main-catch">
             <div class="mc-text">
@@ -50,10 +112,12 @@ onMounted(() => {
 #main-slide {
     z-index: 100;
 }
+
 .mainSlide-inner {
     width: auto;
     height: 80vh;
     position: relative;
+    overflow: hidden;
 }
 
 .slide-img {
@@ -75,6 +139,7 @@ onMounted(() => {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    scale: 1.2;
 }
 
 
