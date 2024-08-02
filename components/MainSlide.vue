@@ -84,7 +84,7 @@ onMounted(() => {
 
     var slide_master = $gsap.timeline();
     slide_master.add(firstslide())
-                .add(middleslide(),'-=1');
+                .add(middleslide(),'-=2.5');
 
 
 });

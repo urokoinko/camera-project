@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { $gsap } = useNuxtApp()
+
 const SITE_TITLE = "出張カメラマン";
 
 
@@ -26,6 +28,25 @@ useHead({
 onMounted(() => {
   const pageTopBtn = document.getElementById('page-top-btn');
 
+
+  // function PageTopAnime(){
+
+    
+  //   var scroll =window.scrollY;
+  //   console.log(scroll)
+    
+  //   if (scroll >= 200){//上から200pxスクロールしたら
+      
+  //     $gsap.to('.page-top', {
+  //       opacity:1,
+  //     })
+  //   }else{
+  //     $gsap.to('.page-top', {
+  //       opacity:0,
+  //     })
+  //   }
+  // };
+
   // ページトップボタンの出現
   //   const DownMoveClass = ref('DownMove');
   //   const UpMoveClass = ref('UpMove');
@@ -41,7 +62,7 @@ onMounted(() => {
   //   }
   // // 画面をスクロールをしたら動かしたい場合の記述
 
-  // 	PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
+  	// PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
 
 
   // ページトップに戻る
@@ -81,6 +102,7 @@ onMounted(() => {
   bottom: 40px;
   right: 40px;
   z-index: 1100;
+  opacity: 0;
 }
 
 .page-top:hover {
