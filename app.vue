@@ -29,40 +29,27 @@ onMounted(() => {
   const pageTopBtn = document.getElementById('page-top-btn');
 
 
-  // function PageTopAnime(){
 
-    
-  //   var scroll =window.scrollY;
-  //   console.log(scroll)
-    
-  //   if (scroll >= 200){//上から200pxスクロールしたら
-      
-  //     $gsap.to('.page-top', {
-  //       opacity:1,
-  //     })
-  //   }else{
-  //     $gsap.to('.page-top', {
-  //       opacity:0,
-  //     })
-  //   }
-  // };
+  function PageTopAnime() {
 
-  // ページトップボタンの出現
-  //   const DownMoveClass = ref('DownMove');
-  //   const UpMoveClass = ref('UpMove');
-  //   var scroll =window.scrollY;
-  //   if (scroll >= 600){//上から200pxスクロールしたら
-  //     pageTopBtn_class.remove('DownMove');//#page-topについているDownMoveというクラス名を除く
-  //     pageTopBtn_class.add('UpMove');//#page-topについているUpMoveというクラス名を付与
-  //   }else{
-  //     if(pageTopBtn_class == 'UpMove'){//すでに#page-topにUpMoveというクラス名がついていたら
-  //       pageTopBtn_class.remove('UpMove');//UpMoveというクラス名を除き
-  //       pageTopBtn_class.add('DownMove');//DownMoveというクラス名を#page-topに付与
-  //     }
-  //   }
+    // ページトップボタンの出現
+
+    var scroll = window.scrollY;
+    if (scroll >= 200) {    //上から200pxスクロールしたら
+      pageTopBtn?.classList.remove('DownMove');   //#page-topについているDownMoveというクラス名を除く
+      pageTopBtn?.classList.add('UpMove');    //#page-topについているUpMoveというクラス名を付与
+    } else {
+      if (pageTopBtn?.classList.contains('UpMove')) {   //すでに#page-topにUpMoveというクラス名がついていたら
+        pageTopBtn.classList.remove('UpMove');    //UpMoveというクラス名を除き
+        pageTopBtn.classList.add('DownMove');   //DownMoveというクラス名を#page-topに付与
+      }
+    }
+  };
   // // 画面をスクロールをしたら動かしたい場合の記述
+  window.addEventListener('scroll', function () {
+    PageTopAnime();   /* スクロールした際の動きの関数を呼ぶ*/
 
-  	// PageTopAnime();/* スクロールした際の動きの関数を呼ぶ*/
+  })
 
 
   // ページトップに戻る
@@ -157,6 +144,7 @@ onMounted(() => {
   .section-title {
     font-size: 20px;
   }
+
   .page-top {
     width: 50px;
   }

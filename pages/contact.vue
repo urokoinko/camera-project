@@ -1,7 +1,8 @@
 <script setup>
 const PAGE_TITLE = "ご予約・お問い合わせ";
 
-const config = useRuntimeConfig()
+// const config = useRuntimeConfig()
+//  :action="config.public.newt.formEndpoint"
 
 </script>
 <template>
@@ -12,36 +13,52 @@ const config = useRuntimeConfig()
     <div class="contact-text">
         <p>ご予約・ご質問等、お気軽にご連絡ください。</p>
         <p>Instagramからもご予約・お問い合わせ<br class="m-br">受け付けております。</p>
-        <div class="insta-link"><NuxtLink>→Instagramへ移動<font-awesome-icon :icon="['fab', 'instagram']" size="2xl"
-                    class="insta-icon" /></NuxtLink></div>
+        <div class="insta-link">
+            <NuxtLink>→Instagramへ移動<font-awesome-icon :icon="['fab', 'instagram']" size="2xl" class="insta-icon" />
+            </NuxtLink>
+        </div>
         <div class="QandA-link">
-            <NuxtLink :to = "{ path:'/', hash: '#QandA'}">お問い合わせの前によくあるご質問を見る</NuxtLink>
+            <NuxtLink :to="{ path: '/', hash: '#QandA' }">お問い合わせの前によくあるご質問を見る</NuxtLink>
         </div>
     </div>
     <div class="camera-form">
         <div class="camera-form-inner">
 
-            <form :action="config.public.newt.formEndpoint" method="post">
+            <validation-observer ref="observer" v-slot="{ invalid, validated }" tag="form" method="post" name="contact"
+                netlify data-netlify-honeypot="bot-field" @submit.prevent="onSubmit" :class="sendingClass">
+                <input type="hidden" name="form-name" value="contact">
+
                 <div class="form-item">
-                    <label for="name">お名前</label>
-                    <input id="name" name="name">
+                    <label for="username">お名前</label>
+                    <validation-provider v-slot="{ errors }" rules="required|max:100" name="お名前">
+                        <input type="text" id="username" v-model="username" autocomplete="name">
+                        <p v-show="errors.length" class="contact_error">{{ errors[0] }}</p>
+                    </validation-provider>
                 </div>
                 <div class="form-item">
-                    <label for="name_h">ふりがな</label>
-                    <input id="name_h" name="name_h">
+                    <label for="katakana">フリガナ</label>
+                    <validation-provider v-slot="{ errors }" rules="required|katakana" name="フリガナ">
+                        <input type="text" id="katakana" v-model="katakana">
+                        <p v-show="errors.length" class="contact_error">{{ errors[0] }}</p>
+                    </validation-provider>
                 </div>
                 <div class="form-item">
-                    <label for="email">メールアドレス</label>
-                    <input id="email" name="email" type="email">
+                    <label for="useremail">メールアドレス</label>
+                    <validation-provider v-slot="{ errors }" rules="required|email|max:256" name="メールアドレス">
+                        <input type="text" id="useremail" v-model="useremail" autocomplete="email">
+                        <p v-show="errors.length" class="contact_error">{{ errors[0] }}</p>
+                    </validation-provider>
                 </div>
                 <div class="form-item">
-                    <label for="tel">電話番号</label>
-                    <input id="tel" name="tel">
+                    <label for="usertel">電話番号</label>
+                    <validation-provider v-slot="{ errors }" rules="required|max:11" name="電話番号">
+                        <input type="text" id="usertel" v-model="usertel" autocomplete="tel">
+                        <p v-show="errors.length" class="contact_error">{{ errors[0] }}</p>
+                    </validation-provider>
                 </div>
                 <div class="form-item form-select">
                     <label for="menu">予約メニュー</label>
                     <div class="select">
-
                         <select id="menu" name="menu">
                             <option value="menu01">家族写真</option>
                             <option value="menu02">ブライダル写真</option>
@@ -53,12 +70,21 @@ const config = useRuntimeConfig()
                 </div>
                 <div class="form-item">
                     <label for="messege">お問い合わせ内容</label>
-                    <textarea name="message" id="message" />
+                    <validation-provider v-slot="{ errors }" rules="required|max:1000" name="お問い合わせ内容">
+                        <textarea id="messege" name="messege" v-model="messege"></textarea>
+                        <p v-show="errors.length" class="contact_error">{{ errors[0] }}</p>
+                    </validation-provider>
+                </div>
+                <div class="form-item" v-show="false">
+                    <label for="message">スパムでない場合は空欄</label>
+                    <input type="text" name="bot-field" v-model="botField" />
                 </div>
                 <div class="submit">
-                    <PartsButtonparts>送信</PartsButtonparts>
+                    <button type="submit" :disabled="invalid || !validated">
+                        <PartsButtonparts>送信</PartsButtonparts>
+                    </button>
                 </div>
-            </form>
+            </validation-observer>
         </div>
     </div>
 </template>
@@ -210,6 +236,7 @@ textarea {
         width: 300px;
         text-align: left;
     }
+
     textarea {
         width: 300px;
         height: 150px;
@@ -273,6 +300,7 @@ textarea {
     .select {
         text-align: left;
     }
+
     textarea {
         width: 330px;
         height: 150px;
