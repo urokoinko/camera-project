@@ -1,7 +1,9 @@
 <script setup>
 const PAGE_TITLE = "ご予約・お問い合わせ";
 
-// const config = useRuntimeConfig()
+import { useForm } from 'vee-validate';
+
+const config = useRuntimeConfig()
 //  :action="config.public.newt.formEndpoint"
 
 </script>
@@ -24,37 +26,22 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
     <div class="camera-form">
         <div class="camera-form-inner">
 
-            <validation-observer ref="observer" v-slot="{ invalid, validated }" tag="form" method="post" name="contact"
-                netlify data-netlify-honeypot="bot-field" @submit.prevent="onSubmit" :class="sendingClass">
-                <input type="hidden" name="form-name" value="contact">
-
+            <form :action="config.public.newt.formEndpoint" method="post">
                 <div class="form-item">
-                    <label for="username">お名前</label>
-                    <validation-provider v-slot="{ errors }" rules="required|max:100" name="お名前">
-                        <input type="text" id="username" v-model="username" autocomplete="name">
-                        <p v-show="errors.length" class="contact_error">{{ errors[0] }}</p>
-                    </validation-provider>
+                    <label for="name">お名前</label>
+                    <input id="name" name="name">
                 </div>
                 <div class="form-item">
-                    <label for="katakana">フリガナ</label>
-                    <validation-provider v-slot="{ errors }" rules="required|katakana" name="フリガナ">
-                        <input type="text" id="katakana" v-model="katakana">
-                        <p v-show="errors.length" class="contact_error">{{ errors[0] }}</p>
-                    </validation-provider>
+                    <label for="name_h">ふりがな</label>
+                    <input id="name_h" name="name_h">
                 </div>
                 <div class="form-item">
-                    <label for="useremail">メールアドレス</label>
-                    <validation-provider v-slot="{ errors }" rules="required|email|max:256" name="メールアドレス">
-                        <input type="text" id="useremail" v-model="useremail" autocomplete="email">
-                        <p v-show="errors.length" class="contact_error">{{ errors[0] }}</p>
-                    </validation-provider>
+                    <label for="email">メールアドレス</label>
+                    <input id="email" name="email" type="email">
                 </div>
                 <div class="form-item">
-                    <label for="usertel">電話番号</label>
-                    <validation-provider v-slot="{ errors }" rules="required|max:11" name="電話番号">
-                        <input type="text" id="usertel" v-model="usertel" autocomplete="tel">
-                        <p v-show="errors.length" class="contact_error">{{ errors[0] }}</p>
-                    </validation-provider>
+                    <label for="tel">電話番号</label>
+                    <input id="tel" name="tel">
                 </div>
                 <div class="form-item form-select">
                     <label for="menu">予約メニュー</label>
@@ -70,21 +57,12 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                 </div>
                 <div class="form-item">
                     <label for="messege">お問い合わせ内容</label>
-                    <validation-provider v-slot="{ errors }" rules="required|max:1000" name="お問い合わせ内容">
-                        <textarea id="messege" name="messege" v-model="messege"></textarea>
-                        <p v-show="errors.length" class="contact_error">{{ errors[0] }}</p>
-                    </validation-provider>
-                </div>
-                <div class="form-item" v-show="false">
-                    <label for="message">スパムでない場合は空欄</label>
-                    <input type="text" name="bot-field" v-model="botField" />
+                    <textarea name="message" id="message" />
                 </div>
                 <div class="submit">
-                    <button type="submit" :disabled="invalid || !validated">
-                        <PartsButtonparts>送信</PartsButtonparts>
-                    </button>
+                    <PartsButtonparts>送信</PartsButtonparts>
                 </div>
-            </validation-observer>
+            </form>
         </div>
     </div>
 </template>

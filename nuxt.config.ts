@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-import { componentNames } from "#build/components";
-import { ErrorMessage, FieldArray } from "vee-validate";
+// import { componentNames } from "#build/components";
+// import { ErrorMessage, FieldArray } from "vee-validate";
+
 
 
 export default defineNuxtConfig({
@@ -30,9 +31,16 @@ export default defineNuxtConfig({
       scrollTo: true,
     }
   },
-  plugins:[
-    '@/plugins/vee-validate'
-  ],
+  // plugins:[
+  //   '@/plugins/vee-validate'
+  // ],
+  runtimeConfig:{
+    public:{
+      newt:{
+        formEndpoint:''
+      }
+    }
+  },
 })
 
 
