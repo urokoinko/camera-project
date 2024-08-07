@@ -25,24 +25,29 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
         <div class="camera-form-inner">
 
             <form name="contact" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="contact" />
+                <!-- <input type="hidden" name="form-name" value="contact" /> -->
+                
                 <div class="form-item">
                     <label for="name">お名前</label>
                     <input id="name" name="name" type="text" required>
 
                 </div>
+                
                 <div class="form-item">
                     <label for="name_h">ふりがな</label>
                     <input id="name_h" name="name_h" required>
                 </div>
+                
                 <div class="form-item">
                     <label for="email">メールアドレス</label>
                     <input id="email" name="email" type="email" required>
                 </div>
+                
                 <div class="form-item">
                     <label for="tel">電話番号</label>
                     <input id="tel" name="tel" required>
                 </div>
+                
                 <div class="form-item form-select">
                     <label for="menu">予約メニュー</label>
                     <div class="select">
@@ -57,7 +62,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                 </div>
                 <div class="form-item">
                     <label for="messege">お問い合わせ内容</label>
-                    <textarea name="message" id="message" required  />
+                    <textarea name="message" id="message" required ></textarea>
                 </div>
                 <div class="submit">
                     <button type="submit">送信</button>
