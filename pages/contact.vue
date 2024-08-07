@@ -21,18 +21,50 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
             <NuxtLink :to="{ path: '/', hash: '#QandA' }">お問い合わせの前によくあるご質問を見る</NuxtLink>
         </div>
     </div>
-    <div class="camera-form">
+
+  <div class="container">
+    <form
+      class="contact_form"
+      name="contact"
+      method="POST"
+      data-netlify="true" 
+    >
+      <input type="hidden" name="form-name" value="contact" /> 
+      <div class="contact_item">
+        <label for="name">お名前</label>
+        <input type="text" id="name" name="name" autocomplete="name" />
+      </div>
+      <div class="contact_item">
+        <label for="email">メールアドレス</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          autocomplete="email"
+        />
+      </div>
+      <div class="contact_item">
+        <label for="message">お問い合わせ内容</label>
+        <textarea id="message" rows="12" name="message"></textarea>
+      </div>
+      <div class="contact_submit">
+        <button type="submit">送信</button>
+      </div>
+    </form>
+  </div>
+
+    <!-- <div class="camera-form">
         <div class="camera-form-inner">
 
-            <form name="contact" method="POST" data-netlify="true">
+            <form name="contact" method="POST" data-netlify="true" action="./success.html">
                 <input type="hidden" name="form-name" value="contact" />
                 
-                <!-- <div class="form-item">
+                <div class="form-item">
                     <label for="name">お名前</label>
                     <input id="name" name="name" type="text" required>
 
-                </div>
-                
+                </div> -->
+<!--                 
                 <div class="form-item">
                     <label for="name_h">ふりがな</label>
                     <input id="name_h" name="name_h" required>
@@ -48,9 +80,9 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                     <input id="tel" name="tel" required>
                 </div>
                 
-                <div class="form-item form-select"> -->
+                <div class="form-item form-select">
                     <label for="menu">予約メニュー</label>
-                    <!-- <div class="select"> -->
+                    <div class="select">
                         <select id="menu" name="menu">
                             <option value="menu01">家族写真</option>
                             <option value="menu02">ブライダル写真</option>
@@ -58,18 +90,18 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                             <option value="menu04">動画撮影</option>
                             <option value="menu05">未定</option>
                         </select>
-                    <!-- </div> -->
-                <!-- </div>
+                    </div>
+                </div>
                 <div class="form-item">
                     <label for="messege">お問い合わせ内容</label>
                     <textarea name="message" id="message" required ></textarea>
                 </div> -->
-                <div class="submit">
+                <!-- <div class="submit">
                     <button type="submit">送信</button>
                 </div>
-            </form>
-        </div>
-    </div>
+            </form> -->
+        <!-- </div> -->
+    <!-- </div> -->
 </template>
 <style scoped>
 .contact-text {
