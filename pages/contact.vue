@@ -1,10 +1,8 @@
-<script setup>
+<script setup lang="ts">
 const PAGE_TITLE = "ご予約・お問い合わせ";
 
-import { useForm } from 'vee-validate';
+// const config = useRuntimeConfig()
 
-const config = useRuntimeConfig()
-//  :action="config.public.newt.formEndpoint"
 
 </script>
 <template>
@@ -26,22 +24,24 @@ const config = useRuntimeConfig()
     <div class="camera-form">
         <div class="camera-form-inner">
 
-            <form :action="config.public.newt.formEndpoint" method="post">
+            <form method="POST"  data-netlify="true">
+                <input type="hidden" name="form-name" value="contact" />
                 <div class="form-item">
                     <label for="name">お名前</label>
-                    <input id="name" name="name">
+                    <input id="name" name="name" type="text" required>
+
                 </div>
                 <div class="form-item">
                     <label for="name_h">ふりがな</label>
-                    <input id="name_h" name="name_h">
+                    <input id="name_h" name="name_h" required>
                 </div>
                 <div class="form-item">
                     <label for="email">メールアドレス</label>
-                    <input id="email" name="email" type="email">
+                    <input id="email" name="email" type="email" required>
                 </div>
                 <div class="form-item">
                     <label for="tel">電話番号</label>
-                    <input id="tel" name="tel">
+                    <input id="tel" name="tel" required>
                 </div>
                 <div class="form-item form-select">
                     <label for="menu">予約メニュー</label>
@@ -57,10 +57,10 @@ const config = useRuntimeConfig()
                 </div>
                 <div class="form-item">
                     <label for="messege">お問い合わせ内容</label>
-                    <textarea name="message" id="message" />
+                    <textarea name="message" id="message" required  />
                 </div>
                 <div class="submit">
-                    <PartsButtonparts>送信</PartsButtonparts>
+                    <button type="submit">送信</button>
                 </div>
             </form>
         </div>
@@ -161,6 +161,35 @@ textarea {
 .submit {
     text-align: center;
     padding-top: 160px;
+}
+.submit button{
+    font-family: var(--font_text);
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    background-color: #ffcd4b;
+    max-width: 276px;
+    height: 49px;
+    border-radius: 50px;
+    border: none;
+    padding:  10px 48px;
+}
+.submit button:hover{
+    transition: 0.3s;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width:800px) {
+    .submit button{
+    font-size: 16px;
+    padding:  5px 48px;
+    }
+}
+@media (max-width:430px) {
+    .submit button{
+    font-size: 14px;
+    padding:  0px 35px;
+    }
 }
 
 .camera-form form {
