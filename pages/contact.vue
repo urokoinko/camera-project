@@ -25,9 +25,9 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
         <div class="camera-form-inner">
 
             <form name="contact" method="POST" data-netlify="true">
-                <!-- <input type="hidden" name="form-name" value="contact" /> -->
+                <input type="hidden" name="form-name" value="contact" />
                 
-                <div class="form-item">
+                <!-- <div class="form-item">
                     <label for="name">お名前</label>
                     <input id="name" name="name" type="text" required>
 
@@ -48,9 +48,9 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                     <input id="tel" name="tel" required>
                 </div>
                 
-                <div class="form-item form-select">
+                <div class="form-item form-select"> -->
                     <label for="menu">予約メニュー</label>
-                    <div class="select">
+                    <!-- <div class="select"> -->
                         <select id="menu" name="menu">
                             <option value="menu01">家族写真</option>
                             <option value="menu02">ブライダル写真</option>
@@ -58,12 +58,12 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                             <option value="menu04">動画撮影</option>
                             <option value="menu05">未定</option>
                         </select>
-                    </div>
-                </div>
+                    <!-- </div> -->
+                <!-- </div>
                 <div class="form-item">
                     <label for="messege">お問い合わせ内容</label>
                     <textarea name="message" id="message" required ></textarea>
-                </div>
+                </div> -->
                 <div class="submit">
                     <button type="submit">送信</button>
                 </div>
