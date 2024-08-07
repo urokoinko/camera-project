@@ -13,17 +13,6 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@hypernym/nuxt-gsap',
-  
-      '@vee-validate/nuxt',
-      // {
-      //   autoImports: true,
-      //   componentNames: {
-      //     Form: 'VeeFrom',
-      //     Field: 'VeeField',
-      //     FieldArray: 'VeeFieldArray',
-      //     ErrorMessage: 'VeeErrorMessge',
-      //   },
-      // },
   ],
   gsap: {
     extraPlugins: {
@@ -31,9 +20,6 @@ export default defineNuxtConfig({
       scrollTo: true,
     }
   },
-  // plugins:[
-  //   '@/plugins/vee-validate'
-  // ],
   runtimeConfig:{
     public:{
       newt:{
