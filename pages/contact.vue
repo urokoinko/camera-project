@@ -14,8 +14,8 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
         <p>ご予約・ご質問等、お気軽にご連絡ください。</p>
         <p>Instagramからもご予約・お問い合わせ<br class="m-br">受け付けております。</p>
         <div class="insta-link">
-            <NuxtLink>→Instagramへ移動<font-awesome-icon :icon="['fab', 'instagram']" size="2xl" class="insta-icon" />
-            </NuxtLink>
+            <!-- <NuxtLink>→Instagramへ移動<font-awesome-icon :icon="['fab', 'instagram']" size="2xl" class="insta-icon" /> -->
+            <!-- </NuxtLink> -->
         </div>
         <div class="QandA-link">
             <NuxtLink :to="{ path: '/', hash: '#QandA' }">お問い合わせの前によくあるご質問を見る</NuxtLink>
