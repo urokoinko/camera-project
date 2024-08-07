@@ -24,7 +24,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
     <div class="camera-form">
         <div class="camera-form-inner">
 
-            <form method="POST"  data-netlify="true">
+            <form method="POST" netlify>
                 <input type="hidden" name="form-name" value="contact" />
                 <div class="form-item">
                     <label for="name">お名前</label>
