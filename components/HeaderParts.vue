@@ -40,8 +40,8 @@ function navFunc() {
                 <li><NuxtLink :to="{path: '/', hash: '#photographer'}">カメラマンについて</NuxtLink></li>
                 <li><NuxtLink :to="{path: '/', hash: '#QandA'}">Q＆A</NuxtLink></li>
                 <li><NuxtLink :to="{name: 'contact'}">お問い合わせ</NuxtLink></li>
-                <!-- <li><NuxtLink :to="{name: 'priceMenu'}"><font-awesome-icon :icon="['fab', 'instagram']" size="x" -->
-                    <!-- class="insta-icon" /></NuxtLink></li> -->
+                <li><NuxtLink :to="{name: 'priceMenu'}"><font-awesome-icon :icon="['fab', 'instagram']" size="x"
+                    class="insta-icon" /></NuxtLink></li>
             </ul>
         </nav>
     </div>
