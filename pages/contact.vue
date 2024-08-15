@@ -23,6 +23,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
     </div>
 
     <div class="container">
+        <client-only>
     <form
       class="contact_form"
       name="contact"
@@ -51,6 +52,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
         <button type="submit">送信</button>
       </div>
     </form>
+</client-only>
   </div>
     <!-- <div class="camera-form">
         <div class="camera-form-inner">

@@ -1,6 +1,19 @@
 <script setup>
-import { Fancybox } from "@fancyapps/ui";
+import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
+
+const props = defineProps({
+    options: Object,
+})
+
+onMounted(()=>{
+    const opts = props.options || {}
+    NativeFancybox.bind('[data-fancybox]', opts)
+
+    return () =>{
+        NativeFancybox.destroy()
+    }
+})
 
 const PAGE_TITLE = "写真ギャラリー";
 
@@ -10,6 +23,7 @@ definePageMeta({
 
 
 import Muuri from 'muuri';
+import { onMounted } from "vue";
 onMounted(() => {	//画面遷移時にギャラリーの画像が被らないように、すべての読み込みが終わった後に実行する
 
     //＝＝＝Muuriギャラリープラグイン設定
