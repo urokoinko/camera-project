@@ -56,7 +56,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
 
                 </div>
                     
-                <div class="form-item">
+                <!-- <div class="form-item">
                     <label for="name_h">ふりがな</label>
                     <input id="name_h" name="name_h" required>
                 </div>
@@ -86,7 +86,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                 <div class="form-item">
                     <label for="messege">お問い合わせ内容</label>
                     <textarea name="message" id="message" required ></textarea>
-                </div>
+                </div> -->
     <div class="submit">
                     <button type="submit">送信</button>
                 </div>
