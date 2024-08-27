@@ -22,7 +22,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
         </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <client-only>
             <form class="contact_form" name="contact" method="POST" data-netlify="true">
                 <input type="hidden" name="form-name" value="contact" /> 
@@ -43,8 +43,8 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                 </div>
             </form>
         </client-only>
-    </div>
-    <!-- <div class="camera-form">
+    </div> -->
+    <div class="camera-form">
         <div class="camera-form-inner">
 
             <form name="contact" method="POST" data-netlify="true" action="./success.html">
@@ -54,8 +54,8 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                     <label for="name">お名前</label>
                     <input id="name" name="name" type="text" required>
 
-                </div> -->
-    <!--                 
+                </div>
+                    
                 <div class="form-item">
                     <label for="name_h">ふりがな</label>
                     <input id="name_h" name="name_h" required>
@@ -86,13 +86,13 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                 <div class="form-item">
                     <label for="messege">お問い合わせ内容</label>
                     <textarea name="message" id="message" required ></textarea>
-                </div> -->
-    <!-- <div class="submit">
+                </div>
+    <div class="submit">
                     <button type="submit">送信</button>
                 </div>
-            </form> -->
-    <!-- </div> -->
-    <!-- </div> -->
+            </form>
+    </div>
+    </div>
 </template>
 <style scoped>
 .contact-text {

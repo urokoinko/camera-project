@@ -30,7 +30,7 @@ function closeMenu(){
                     <li><NuxtLink :to="{name: 'priceMenu'}">料金表</NuxtLink></li>
                     <li><NuxtLink :to="{path: '/', hash: '#photographer'}">カメラマンについて</NuxtLink></li>
                     <li><NuxtLink :to="{path: '/', hash: '#QandA'}">Q&A</NuxtLink></li>
-                    <li><NuxtLink :to="{name: 'contactContact'}">お問い合わせ</NuxtLink></li>
+                    <li><NuxtLink :to="{name: 'contact'}">お問い合わせ</NuxtLink></li>
                 </ul>
             </div>
             <button type="button" class="m-humburgar" @click="navFunc()">
