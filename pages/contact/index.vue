@@ -24,36 +24,26 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
 
     <div class="container">
         <client-only>
-    <form
-      class="contact_form"
-      name="contact"
-      method="POST"
-      data-netlify="true" 
-    >
-      <input type="hidden" name="form-name" value="contact" /> //追記
-      <div class="contact_item">
-        <label for="name">お名前</label>
-        <input type="text" id="name" name="name" autocomplete="name" />
-      </div>
-      <div class="contact_item">
-        <label for="email">メールアドレス</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          autocomplete="email"
-        />
-      </div>
-      <div class="contact_item">
-        <label for="message">お問い合わせ内容</label>
-        <textarea id="message" rows="12" name="message"></textarea>
-      </div>
-      <div class="contact_submit">
-        <button type="submit">送信</button>
-      </div>
-    </form>
-</client-only>
-  </div>
+            <!-- <form class="contact_form" name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact" /> 
+                <div class="contact_item">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" autocomplete="name" />
+                </div>
+                <div class="contact_item">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" name="email" autocomplete="email" />
+                </div>
+                <div class="contact_item">
+                    <label for="message">お問い合わせ内容</label>
+                    <textarea id="message" rows="12" name="message"></textarea>
+                </div>
+                <div class="contact_submit">
+                    <button type="submit">送信</button>
+                </div>
+            </form> -->
+        </client-only>
+    </div>
     <!-- <div class="camera-form">
         <div class="camera-form-inner">
 
@@ -65,7 +55,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                     <input id="name" name="name" type="text" required>
 
                 </div> -->
-<!--                 
+    <!--                 
                 <div class="form-item">
                     <label for="name_h">ふりがな</label>
                     <input id="name_h" name="name_h" required>
@@ -97,11 +87,11 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                     <label for="messege">お問い合わせ内容</label>
                     <textarea name="message" id="message" required ></textarea>
                 </div> -->
-                <!-- <div class="submit">
+    <!-- <div class="submit">
                     <button type="submit">送信</button>
                 </div>
             </form> -->
-        <!-- </div> -->
+    <!-- </div> -->
     <!-- </div> -->
 </template>
 <style scoped>
@@ -200,7 +190,8 @@ textarea {
     text-align: center;
     padding-top: 160px;
 }
-.submit button{
+
+.submit button {
     font-family: var(--font_text);
     font-size: 18px;
     font-weight: 500;
@@ -210,23 +201,25 @@ textarea {
     height: 49px;
     border-radius: 50px;
     border: none;
-    padding:  10px 48px;
+    padding: 10px 48px;
 }
-.submit button:hover{
+
+.submit button:hover {
     transition: 0.3s;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width:800px) {
-    .submit button{
-    font-size: 16px;
-    padding:  5px 48px;
+    .submit button {
+        font-size: 16px;
+        padding: 5px 48px;
     }
 }
+
 @media (max-width:430px) {
-    .submit button{
-    font-size: 14px;
-    padding:  0px 35px;
+    .submit button {
+        font-size: 14px;
+        padding: 0px 35px;
     }
 }
 

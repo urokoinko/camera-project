@@ -5,14 +5,10 @@ function navFunc() {
     document.querySelector('html').classList.toggle('open');
 }
 
-onMounted(()=>{
-    // ハンバーガーメニューのリンクがクリックされたらメニューを閉じる
-    const humLink = document.querySelectorAll('.humburgarMenu li');
-    console.log(humLink)
-    humLink.addEventListener('click', 
-    document.querySelector('html').classList.remove('open')
-    );
-})
+// ハンバーガーメニューのリンクがクリックされたらメニューを閉じる
+function closeMenu(){
+    document.querySelector('html').classList.remove('open');
+}
 
 </script>
 
@@ -44,12 +40,12 @@ onMounted(()=>{
         <nav class="humburgarMenu">
             <ul>
                 <li>撮影ギャラリー</li>
-                <li class="menu-photo"><NuxtLink :to="{name: 'photoGallery'}">写真</NuxtLink></li>
-                <li class="menu-movie"><NuxtLink :to="{name: 'movie'}">動画</NuxtLink></li>
-                <li><NuxtLink :to="{name: 'priceMenu'}">料金表</NuxtLink></li>
-                <li><NuxtLink :to="{path: '/', hash: '#photographer'}">カメラマンについて</NuxtLink></li>
-                <li><NuxtLink :to="{path: '/', hash: '#QandA'}">Q＆A</NuxtLink></li>
-                <li><NuxtLink :to="{name: 'contact'}">お問い合わせ</NuxtLink></li>
+                <li class="menu-photo"><NuxtLink :to="{name: 'photoGallery'}" @click="closeMenu()">写真</NuxtLink></li>
+                <li class="menu-movie"><NuxtLink :to="{name: 'movie'}" @click="closeMenu()">動画</NuxtLink></li>
+                <li><NuxtLink :to="{name: 'priceMenu'}" @click="closeMenu()">料金表</NuxtLink></li>
+                <li><NuxtLink :to="{path: '/', hash: '#photographer'}" @click="closeMenu()">カメラマンについて</NuxtLink></li>
+                <li><NuxtLink :to="{path: '/', hash: '#QandA'}" @click="closeMenu()">Q＆A</NuxtLink></li>
+                <li><NuxtLink :to="{name: 'contact'}" @click="closeMenu()">お問い合わせ</NuxtLink></li>
                 <li><NuxtLink :to="{name: 'priceMenu'}"><font-awesome-icon :icon="['fab', 'instagram']" size="x"
                     class="insta-icon" /></NuxtLink></li>
             </ul>

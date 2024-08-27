@@ -5,7 +5,7 @@ import BoxJson from '~/assets/lottie/loading.json'
 <template>
   <div class="centered">
     <ClientOnly>
-      <Vue3Lottie :animationData="BoxJson" :width="150" :height="150" />
+      <Vue3Lottie :animationData="BoxJson" :width="280" :height="280" />
     </ClientOnly>
   </div>
 </template>

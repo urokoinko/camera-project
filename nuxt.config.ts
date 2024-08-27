@@ -1,10 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-// import { componentNames } from "#build/components";
-// import { ErrorMessage, FieldArray } from "vee-validate";
-
-
-
 export default defineNuxtConfig({
   devtools: { enabled: true },
   css: [
@@ -20,13 +15,13 @@ export default defineNuxtConfig({
       scrollTo: true,
     }
   },
-  runtimeConfig:{
-    public:{
-      newt:{
-        formEndpoint:''
-      }
-    }
-  },
+  // runtimeConfig:{
+  //   public:{
+  //     newt:{
+  //       formEndpoint:''
+  //     }
+  //   }
+  // },
   
 })
 
