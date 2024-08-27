@@ -4,6 +4,16 @@
 function navFunc() {
     document.querySelector('html').classList.toggle('open');
 }
+
+onMounted(()=>{
+    // ハンバーガーメニューのリンクがクリックされたらメニューを閉じる
+    const humLink = document.querySelectorAll('.humburgarMenu li');
+    console.log(humLink)
+    humLink.addEventListener('click', 
+    document.querySelector('html').classList.remove('open')
+    );
+})
+
 </script>
 
 <template>
@@ -35,13 +45,13 @@ function navFunc() {
             <ul>
                 <li>撮影ギャラリー</li>
                 <li class="menu-photo"><NuxtLink :to="{name: 'photoGallery'}">写真</NuxtLink></li>
-                <li class="menu-movie"><NuxtLink :to="{name: 'priceMenu'}">動画</NuxtLink></li>
+                <li class="menu-movie"><NuxtLink :to="{name: 'movie'}">動画</NuxtLink></li>
                 <li><NuxtLink :to="{name: 'priceMenu'}">料金表</NuxtLink></li>
                 <li><NuxtLink :to="{path: '/', hash: '#photographer'}">カメラマンについて</NuxtLink></li>
                 <li><NuxtLink :to="{path: '/', hash: '#QandA'}">Q＆A</NuxtLink></li>
                 <li><NuxtLink :to="{name: 'contact'}">お問い合わせ</NuxtLink></li>
-                <!-- <li><NuxtLink :to="{name: 'priceMenu'}"><font-awesome-icon :icon="['fab', 'instagram']" size="x" -->
-                    <!-- class="insta-icon" /></NuxtLink></li> -->
+                <li><NuxtLink :to="{name: 'priceMenu'}"><font-awesome-icon :icon="['fab', 'instagram']" size="x"
+                    class="insta-icon" /></NuxtLink></li>
             </ul>
         </nav>
     </div>
@@ -91,7 +101,7 @@ function navFunc() {
     position: absolute;
     content: '';
     bottom: -2px;
-    left: 0px;
+    left: 0;
     width: 100%;
     height: 1px;
     background-color: var(--color_main);
@@ -193,8 +203,8 @@ function navFunc() {
         outline: none;
         border: none;
         background: none;
-        width: 29px;
-        height: 20px;
+        width: 25px;
+        height: 17px;
         cursor: pointer;
         color: var(--color_main);
     }
@@ -204,7 +214,7 @@ function navFunc() {
         content: '';
         display: block;
         height: 2px;
-        border-radius: 5px;
+        border-radius: 10px;
         background-color: currentColor;
         transform: translateY(9px);
         transition: 0.5s ease-in-out;
@@ -221,12 +231,12 @@ function navFunc() {
     }
 
     .open .m-humburgar::before {
-        transform: rotate(-45deg) translate(-101px, 0.5px);
+        transform: rotate(-45deg) translate(-30px, -2px);
         box-shadow: none;
     }
 
     .open .m-humburgar::after {
-        transform: rotate(45deg) translate(-1px, 100.5px);
+        transform: rotate(45deg) translate(-3px, 29px);
     }
 
     /* ハンバーガーメニュー　開いた状態 */
@@ -251,7 +261,7 @@ function navFunc() {
         list-style: none;
         font-family: var(--font_text);
         font-weight: 500;
-        font-size: 20px
+        font-size: 16px
     }
 
     .humburgarMenu li:not(:last-child) {

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { gsap } from 'gsap';
-const { $gsap } = useNuxtApp()
 import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
 import Bgimg02 from '../components/Bgimg02.vue';
 
@@ -13,14 +12,14 @@ onMounted(() => {
 
     let windowSize = window.innerWidth;
     let top = '-300px';
-    let end = 'bottom -500px bottom';
+    let end = 'bottom -300px bottom';
 
     if (windowSize < 430) {   //800px以下でアニメーションの開始位置を変える
         top = '-100px';
         end = 'top -500px top';
     }
 
-    $gsap.to('.scrollAnime', {
+    gsap.to('.scrollAnime', {
         // アニメーション終了時
         height: 0,
         top: top,
@@ -32,7 +31,7 @@ onMounted(() => {
         }
     });
 
-    $gsap.to('.section03', {
+    gsap.to('.section03', {
         // アニメーション終了時
         // height: ,
         top: top,
@@ -72,7 +71,6 @@ onMounted(() => {
 
 <style>
 /* トップページ設定 */
-
 /* スライドショー */
 .slide-section {
     position: relative;
@@ -98,33 +96,19 @@ onMounted(() => {
     box-shadow: 0 30px 30px rgba(0, 0, 0, 0.25);
 }
 
-.section02 {
-    position: relative;
-    width: auto;
-    height: 100%;
-}
-
 .section03 {
     position: relative;
     z-index: 10;
-    width: 100%;
-    height: auto;
     background-color: #fff;
-    padding-top: 200px;
-    padding-bottom: 5vw;
+    padding-top: 15vw;
     box-shadow: 0 -30px 30px -30px rgba(0, 0, 0, 0.25);
 }
 
 
 /* レスポンシブ設定 */
 @media (max-width:430px) {
-    .section02 {
-        width: auto;
-        max-height: 700px;
-    }
-
     .scrollAnime {
-        height: 50vh;
+        height: 40vh;
     }
 }
 </style>

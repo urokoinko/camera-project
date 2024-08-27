@@ -22,6 +22,7 @@
     "nuxt": "^3.12.1",
     "vue": "^3.4.27",
     "vue-router": "^4.3.3",
+    "vue3-lottie": "^3.3.0",
     "web-animations-js": "^2.3.2"
   },
   "devDependencies": {

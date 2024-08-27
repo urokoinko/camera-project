@@ -1,11 +1,9 @@
 <script setup lang="ts">
-const { $gsap } = useNuxtApp()
-
 const SITE_TITLE = "出張カメラマン";
 
 
 useHead({
-  titleTemplate: (titleChunk: strig | undefined): string => {
+  titleTemplate: (titleChunk: string | undefined): string => {
     let title = SITE_TITLE;
     if (titleChunk != undefined) {
       title = `document.getElementById{titleChunk}｜document.getElementById{SITE_TITLE}`;
@@ -24,8 +22,17 @@ useHead({
   ],
 });
 
+const isOpening = ref(true)
+const durationMs = 3000
+
+console.log(isOpening)
 
 onMounted(() => {
+
+  setTimeout(() => {
+    isOpening.value = false
+  }, durationMs)
+
   const pageTopBtn = document.getElementById('page-top-btn');
 
 
@@ -54,7 +61,7 @@ onMounted(() => {
 
   // ページトップに戻る
 
-  pageTopBtn.addEventListener('click', () => {
+  pageTopBtn?.addEventListener('click', () => {
     window.scroll({
       top: 0,
       behavior: "smooth",
@@ -65,16 +72,21 @@ onMounted(() => {
 
 <template>
   <div class="site" id="site">
-    <HeaderParts />
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-    <div class="fq">
-      <FooterPart />
-      <button class="page-top" id="page-top-btn">
-        <img src="./public/img/page_top.svg" alt="page-top">
-      </button>
-    </div>
+    <transition>
+      <OpeningAnimation v-if="isOpening" />
+      <main v-else>
+        <HeaderParts />
+        <NuxtLayout>
+          <NuxtPage />
+        </NuxtLayout>
+        <div class="fq">
+          <FooterPart />
+          <button class="page-top" id="page-top-btn">
+            <img src="./public/img/page_top.svg" alt="page-top">
+          </button>
+        </div>
+      </main>
+    </transition>
   </div>
 </template>
 

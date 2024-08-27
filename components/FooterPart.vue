@@ -132,7 +132,6 @@ small {
 }
 
 @media (max-width:430px) {
-
     #page-top {
         width: 60px;
         height: 60px;
@@ -195,7 +194,7 @@ small {
     }
 
     .footer-bg {
-        height: 430px;
+        height: 50vh;
     }
 
     .footer-nav {
@@ -203,11 +202,11 @@ small {
     }
 
     small {
-        padding-top: 400px;
+        padding-top: 300px;
     }
 
     .footer-treeR::before {
-        top: 230px;
+        top: 150px;
         right: 40%;
         width: 110px;
         height: 126px;
@@ -219,7 +218,7 @@ small {
     .footer-treeR::after {
         position: absolute;
         content: '';
-        top: 140px;
+        top: 90px;
         right: 0;
         width: 184px;
         height: 184px;
@@ -231,7 +230,7 @@ small {
     .footer-treeL::after {
         position: absolute;
         content: '';
-        top: 190px;
+        top: 140px;
         left: 20px;
         width: 130px;
         height: 140px;

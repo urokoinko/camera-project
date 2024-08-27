@@ -57,7 +57,7 @@ onMounted(() => {
         
         tl.to(slideShow_img[0], {
             keyframes: {
-                '0%':{ opacity: 0, scale: 1.2 },
+                '0%':{ opacity: 0.7, scale: 1.2 },
                 '5%': { opacity: 1, scale: 1.2 },
                 '70%': { opacity: 1 },
                 '100%': { opacity: 0, scale: 1 }

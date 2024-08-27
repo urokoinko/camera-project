@@ -10,8 +10,6 @@
             </div>
         </div>
     </div>
-
-
 </template>
 
 <style scoped>
@@ -22,13 +20,9 @@
     padding-bottom: 100px;
 }
 
-.contact-inner h2 {
-    padding-top: 50px;
-}
-
 .contact-inner p {
     font-size: 24px;
-    padding-top: 178px;
+    padding-top: 10vw;
     padding-bottom: 40px
 }
 

@@ -120,9 +120,6 @@ onMounted(() => {
     padding-bottom: 15vw;
 }
 
-.QandA h2 {
-    padding-bottom: 80px;
-}
 .QandA-inner{
     font-family: var(--font_text);
     font-weight: 600;
@@ -134,7 +131,7 @@ onMounted(() => {
     cursor: pointer;
     position: relative;
     font-size: var(--fz_20px);
-    margin-top: 40px;
+    margin-top: 30px;
     border-radius: 10px;
 }
 
@@ -143,8 +140,8 @@ onMounted(() => {
     content: '';
     top: 15px;
     right: 20px;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     background: url(../public/img/arrow.png) no-repeat;
     background-size: contain;
     z-index: 10;
@@ -176,11 +173,7 @@ onMounted(() => {
 
 /* レスポンシブ設定 */
 @media (max-width: 800px) {
-    .QandA {
-        /* max-width: 600px; */
-    }
     .faq-header {
-        /* padding: 5px ; */
         margin-top: 25px;
     }
 

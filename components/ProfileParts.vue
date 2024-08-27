@@ -17,14 +17,11 @@
             </div>
         </div>
     </div>
-
-
 </template>
 
 <style scoped>
 /* プロフィール設定 */
 .profile {
-    padding-bottom: 5vw;
     text-align: center;
     box-shadow: 0 30px -30px -20px rgba(0, 0, 0, 0.4);
 }
@@ -41,7 +38,7 @@
 .profile-text p {
     display: inline-block;
     width: 70%;
-    font-size: var(--fz_18px);
+    font-size: var(--fz_16px);
     padding-top: 5vw;
 }
 
