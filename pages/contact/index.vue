@@ -22,14 +22,15 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
         </div>
     </div>
 
-  <div class="container">
+    <div class="container">
+        <client-only>
     <form
       class="contact_form"
       name="contact"
       method="POST"
       data-netlify="true" 
     >
-      <input type="hidden" name="form-name" value="contact" /> 
+      <input type="hidden" name="form-name" value="contact" /> //追記
       <div class="contact_item">
         <label for="name">お名前</label>
         <input type="text" id="name" name="name" autocomplete="name" />
@@ -51,8 +52,8 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
         <button type="submit">送信</button>
       </div>
     </form>
+</client-only>
   </div>
-
     <!-- <div class="camera-form">
         <div class="camera-form-inner">
 
