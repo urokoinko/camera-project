@@ -24,13 +24,12 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
     <div class="camera-form">
         <div class="camera-form-inner">
 
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/pages/thanks/index.vue">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks">
                 <input type="hidden" name="form-name" value="contact" />
 
                 <div class="form-item">
                     <label for="name">お名前</label>
                     <input id="name" name="name" type="text" required>
-
                 </div>
 
                 <div class="form-item">
@@ -44,25 +43,43 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                 </div>
 
                 <div class="form-item">
-                    <label for="tel">電話番号</label>
-                    <input id="tel" name="tel" required>
+                    <label for="tel">電話番号<br>(ハイフンなし)</label>
+                    <input id="tel" name="tel" type="tel" minlength="10" maxlength="11" required>
                 </div>
 
                 <div class="form-item form-select">
                     <label for="menu">予約メニュー</label>
                     <div class="select">
                         <select id="menu" name="menu">
-                            <option value="menu01">家族写真</option>
-                            <option value="menu02">ブライダル写真</option>
-                            <option value="menu03">ポートレート写真</option>
-                            <option value="menu04">動画撮影</option>
-                            <option value="menu05">未定</option>
+                            <option value="家族写真">家族写真</option>
+                            <option value="ブライダル写真">ブライダル写真</option>
+                            <option value="ポートレート写真">ポートレート写真</option>
+                            <option value="動画撮影">動画撮影</option>
+                            <option value="未定">未定</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-item form-select">
+                    <label for="child">お子さまの人数</label>
+                    <div class="select">
+                        <select id="menu" name="child">
+                            <option value="1名">1名</option>
+                            <option value="2名">2名</option>
+                            <option value="3名">3名</option>
+                            <option value="">4名</option>
+                            <option value="">5名以上</option>
+                            <option value="">いない</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-item">
+                    <label for="child">お子さまの年齢</label>
+                    <textarea id="child" name="child" minlength="1" maxlength="50" required></textarea>
+                </div>
+                <div class="form-item">
                     <label for="messege">お問い合わせ内容</label>
-                    <textarea name="message" id="message" required></textarea>
+                    <textarea name="message" id="message" minlength="10" maxlength="11" required></textarea>
                 </div>
                 <div class="contact_item" v-show="false">
                     <label for="message">スパムでない場合は空欄</label>
@@ -86,19 +103,15 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
     padding-top: 70px;
     line-height: 1.6;
 }
-
 .m-br {
     display: none;
 }
-
 .contact-text p {
     padding-top: 32px;
 }
-
 .insta-link {
     text-align: right;
 }
-
 .insta-icon {
     padding-left: 15px;
 }
@@ -109,20 +122,17 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
     padding-bottom: 20px;
     color: teal;
 }
-
-
 .contact-title {
     text-align: center;
     background-color: var(--color_yellow);
     position: relative;
-    padding-top: 180px;
-    padding-bottom: 100px;
+    padding-top: 120px;
+    padding-bottom: 70px;
 }
 
 .contact-title h2 {
     position: relative;
     display: inline-block;
-    /* background-color: rgba(255, 255, 255, 0.5); */
     z-index: 2;
 }
 
@@ -139,12 +149,11 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
 .camera-form {
     max-width: 600px;
     margin: 0 auto;
-    padding-top: 5vh;
-    text-align: left;
+    padding-top: 5vw;
 }
 
 .form-item {
-    padding-top: 28px;
+    padding-top: 24px;
 }
 
 label {
@@ -154,7 +163,7 @@ label {
 
 input {
     width: 320px;
-    height: 38px;
+    text-align: left;
 }
 
 .select {
@@ -165,6 +174,9 @@ textarea {
     vertical-align: top;
     width: 320px;
     height: 200px;
+}
+#child{
+    height: 50px;
 }
 
 .submit {
