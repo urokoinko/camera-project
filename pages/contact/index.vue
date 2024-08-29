@@ -146,7 +146,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
 }
 
 .form-item {
-    padding-top: 24px;
+    padding-top: 26px;
 }
 
 label {
@@ -156,7 +156,7 @@ label {
 
 input {
     width: 320px;
-    height: 24px;
+    height: 26px;
     text-align: left;
 }
 
@@ -175,7 +175,7 @@ textarea {
 
 .submit {
     text-align: center;
-    padding-top: 160px;
+    padding-top: 60px;
 }
 
 .submit button {
