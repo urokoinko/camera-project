@@ -156,6 +156,7 @@ label {
 
 input {
     width: 320px;
+    padding-top: 26px;
     text-align: left;
 }
 
