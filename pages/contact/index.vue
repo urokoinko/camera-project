@@ -14,36 +14,13 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
         <p>ご予約・ご質問等、お気軽にご連絡ください。</p>
         <p>Instagramからもご予約・お問い合わせ<br class="m-br">受け付けております。</p>
         <div class="insta-link">
-            <!-- <NuxtLink>→Instagramへ移動<font-awesome-icon :icon="['fab', 'instagram']" size="2xl" class="insta-icon" /> -->
-            <!-- </NuxtLink> -->
+            <NuxtLink>→Instagramへ移動<font-awesome-icon :icon="['fab', 'instagram']" size="2xl" class="insta-icon" />
+            </NuxtLink>
         </div>
         <div class="QandA-link">
             <NuxtLink :to="{ path: '/', hash: '#QandA' }">お問い合わせの前によくあるご質問を見る</NuxtLink>
         </div>
     </div>
-
-    <!-- <div class="container">
-        <client-only>
-            <form class="contact_form" name="contact" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="contact" /> 
-                <div class="contact_item">
-                    <label for="name">お名前</label>
-                    <input type="text" id="name" name="name" autocomplete="name" />
-                </div>
-                <div class="contact_item">
-                    <label for="email">メールアドレス</label>
-                    <input type="email" id="email" name="email" autocomplete="email" />
-                </div>
-                <div class="contact_item">
-                    <label for="message">お問い合わせ内容</label>
-                    <textarea id="message" rows="12" name="message"></textarea>
-                </div>
-                <div class="contact_submit">
-                    <button type="submit">送信</button>
-                </div>
-            </form>
-        </client-only>
-    </div> -->
     <div class="camera-form">
         <div class="camera-form-inner">
 
@@ -56,7 +33,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
 
                 </div>
                     
-                <!-- <div class="form-item">
+                <div class="form-item">
                     <label for="name_h">ふりがな</label>
                     <input id="name_h" name="name_h" required>
                 </div>
@@ -86,7 +63,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                 <div class="form-item">
                     <label for="messege">お問い合わせ内容</label>
                     <textarea name="message" id="message" required ></textarea>
-                </div> -->
+                </div>
     <div class="submit">
                     <button type="submit">送信</button>
                 </div>

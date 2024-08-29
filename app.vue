@@ -25,9 +25,9 @@ useHead({
 const isOpening = ref(true)
 const durationMs = 3000
 
-console.log(isOpening)
-
 onMounted(() => {
+
+  // オープニングアニメーション
 
   setTimeout(() => {
     isOpening.value = false
