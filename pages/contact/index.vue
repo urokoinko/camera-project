@@ -23,7 +23,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
     <div class="camera-form">
         <div class="camera-form-inner">
 
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks">
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/pages/contact/thanks.vue">
                 <input type="hidden" name="form-name" value="contact" />
                 <div class="form-item">
                     <label for="name">お名前</label>
@@ -145,9 +145,9 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
     padding-top: 5vw;
 }
 
-/* .form-item { */
-    /* padding-top: 24px; */
-/* } */
+.form-item {
+    padding-top: 24px;
+}
 
 label {
     display: inline-block;
@@ -156,7 +156,7 @@ label {
 
 input {
     width: 320px;
-    padding-top: 24px;
+    height: 24px;
     text-align: left;
 }
 
