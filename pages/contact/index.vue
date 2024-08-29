@@ -1,10 +1,9 @@
 <script setup lang="ts">
+
 const PAGE_TITLE = "ご予約・お問い合わせ";
 
-// const config = useRuntimeConfig()
-
-
 </script>
+
 <template>
     <div class="contact-title">
         <h2 class="section-title">{{ PAGE_TITLE }}</h2>
@@ -26,27 +25,22 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
 
             <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks">
                 <input type="hidden" name="form-name" value="contact" />
-
                 <div class="form-item">
                     <label for="name">お名前</label>
                     <input id="name" name="name" type="text" required>
                 </div>
-
                 <div class="form-item">
                     <label for="name_h">ふりがな</label>
                     <input id="name_h" name="name_h" required>
                 </div>
-
                 <div class="form-item">
                     <label for="email">メールアドレス</label>
                     <input id="email" name="email" type="email" required>
                 </div>
-
                 <div class="form-item">
                     <label for="tel">電話番号<br>(ハイフンなし)</label>
                     <input id="tel" name="tel" type="tel" minlength="10" maxlength="11" required>
                 </div>
-
                 <div class="form-item form-select">
                     <label for="menu">予約メニュー</label>
                     <div class="select">
@@ -59,7 +53,6 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                         </select>
                     </div>
                 </div>
-
                 <div class="form-item form-select">
                     <label for="child">お子さまの人数</label>
                     <div class="select">
@@ -75,7 +68,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                 </div>
                 <div class="form-item">
                     <label for="child">お子さまの年齢</label>
-                    <textarea id="child" name="child" minlength="1" maxlength="50" required></textarea>
+                    <textarea id="child" name="child" maxlength="50"></textarea>
                 </div>
                 <div class="form-item">
                     <label for="messege">お問い合わせ内容</label>
@@ -153,7 +146,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
 }
 
 .form-item {
-    padding-top: 24px;
+    padding-top: 26px;
 }
 
 label {
