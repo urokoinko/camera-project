@@ -72,7 +72,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
                 </div>
                 <div class="form-item">
                     <label for="messege">お問い合わせ内容</label>
-                    <textarea name="message" id="message" minlength="10" maxlength="11" required></textarea>
+                    <textarea name="message" id="message" minlength="5" maxlength="500" required></textarea>
                 </div>
                 <div class="contact_item" v-show="false">
                     <label for="message">スパムでない場合は空欄</label>
@@ -145,9 +145,9 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
     padding-top: 5vw;
 }
 
-.form-item {
-    padding-top: 26px;
-}
+/* .form-item { */
+    /* padding-top: 24px; */
+/* } */
 
 label {
     display: inline-block;
@@ -156,7 +156,7 @@ label {
 
 input {
     width: 320px;
-    padding-top: 26px;
+    padding-top: 24px;
     text-align: left;
 }
 
