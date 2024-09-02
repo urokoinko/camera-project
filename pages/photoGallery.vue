@@ -6,11 +6,30 @@ const props = defineProps({
     options: Object,
 })
 
-onMounted(()=>{
+//＝＝＝ 写真
+const photograph = ref([
+    {
+        photoURL: '/public/img/A7301776.jpg',
+        photoKinds: 'familyPhoto',
+        fancyboxNum: 'group1'
+    },
+    {
+        photoURL: '/public/img/A7301715.jpg',
+        photoKinds: 'familyPhoto',
+        fancyboxNum: 'group1'
+    },
+    {
+        photoURL: '/public/img/A7301838.jpg',
+        photoKinds: 'familyPhoto',
+        fancyboxNum: 'group1'
+    },
+])
+
+onMounted(() => {
     const opts = props.options || {}
     NativeFancybox.bind('[data-fancybox]', opts)
 
-    return () =>{
+    return () => {
         NativeFancybox.destroy()
     }
 })
@@ -71,22 +90,13 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
     })
 
 
-
     //＝＝＝ Fancyboxの設定
-        Fancybox.bind('[data-fancybox]', {});
-        $('a[data-fancybox]').fancybox({
-            thumbs: {
-                autoStart: true, //グループのサムネイル一覧をデフォルトで出す。不必要であればfalseに
-            },
-        });
-
-    //＝＝＝ 写真
-const photograph = ref([
-       { photoURL: '/public/img/A7301776.jpg',
-         photoKinds: 'familyPhoto'
-        }
-])
-    
+    Fancybox.bind('[data-fancybox]', {});
+    $('a[data-fancybox]').fancybox({
+        thumbs: {
+            autoStart: true, //グループのサムネイル一覧をデフォルトで出す。不必要であればfalseに
+        },
+    });
 
 });
 
@@ -98,35 +108,48 @@ const photograph = ref([
         </template>
     </NuxtLayout>
 
-        <!-- <ClientOnly> -->
+    <li v-for="photo in photograph " :key="photo.photoURL">
+        {{ photo.photoURL }}
+        {{ photo.photoKinds }}
+        {{ photo.fancyboxNum }}
+        <img src=photo.photoURL alt="">
 
-        <ul class="sort-btn">
-            <li class="allPhoto active">全て</li>
-            <li class="familyPhoto">家族写真</li>
-            <li class="bridalPhoto">ブライダル</li>
-            <li class="portraitPhoto">ポートレート</li>
-        </ul>
+    </li>
 
-        <ul class="grid">
-            <li class="active item familyPhoto">
-                <div class="item-content">
-                    <a href="/public/img/A7301776.jpg"
-                        data-fancybox="group1" data-caption="グループ1キャプション"><img
-                            src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/01.jpg"
-                            alt=""></a>
-                </div>
-            </li>
+    <ul class="sort-btn">
+        <li class="allPhoto active">全て</li>
+        <li class="familyPhoto">家族写真</li>
+        <li class="bridalPhoto">ブライダル</li>
+        <li class="portraitPhoto">ポートレート</li>
+    </ul>
 
-            <li class="active item portraitPhoto">
-                <div class="item-content">
-                    <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/30.jpg"
-                        data-fancybox="group3" data-caption="グループ3キャプション"><img
-                            src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/30.jpg"
-                            alt=""></a>
-                </div>
-            </li>
-        </ul>
-        <!-- </ClientOnly> -->
+    <ul class="grid">
+        <li class="active item familyPhoto">
+            <div class="item-content">
+                <a href="/public/img/A7301776.jpg" data-fancybox="group1" data-caption="グループ1キャプション"><img
+                        src="/public/img/A7301776.jpg" alt=""></a>
+            </div>
+        </li>
+
+
+        <li class="active item portraitPhoto">
+            <div class="item-content">
+                <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/30.jpg"
+                    data-fancybox="group3" data-caption="グループ3キャプション"><img
+                        src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/30.jpg"
+                        alt=""></a>
+            </div>
+        </li>
+
+        <li class="active item portraitPhoto">
+            <div class="item-content">
+                <a href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/30.jpg"
+                    data-fancybox="group3" data-caption="グループ3キャプション"><img
+                        src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/6-2-2/img/30.jpg"
+                        alt=""></a>
+            </div>
+        </li>
+    </ul>
 
 </template>
 
