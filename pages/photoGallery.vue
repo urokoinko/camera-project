@@ -6,25 +6,6 @@ const props = defineProps({
     options: Object,
 })
 
-//＝＝＝ 写真
-const photograph = ref([
-    {
-        photoURL: '/public/img/A7301776.jpg',
-        photoKinds: 'familyPhoto',
-        fancyboxNum: 'group1'
-    },
-    {
-        photoURL: '/public/img/A7301715.jpg',
-        photoKinds: 'familyPhoto',
-        fancyboxNum: 'group1'
-    },
-    {
-        photoURL: '/public/img/A7301838.jpg',
-        photoKinds: 'familyPhoto',
-        fancyboxNum: 'group1'
-    },
-])
-
 onMounted(() => {
     const opts = props.options || {}
     NativeFancybox.bind('[data-fancybox]', opts)
@@ -108,13 +89,6 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
         </template>
     </NuxtLayout>
 
-    <li v-for="photo in photograph " :key="photo.photoURL">
-        {{ photo.photoURL }}
-        {{ photo.photoKinds }}
-        {{ photo.fancyboxNum }}
-        <img src=photo.photoURL alt="">
-
-    </li>
 
     <ul class="sort-btn">
         <li class="allPhoto active">全て</li>
@@ -127,7 +101,7 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
         <li class="active item familyPhoto">
             <div class="item-content">
                 <a href="/public/img/A7301776.jpg" data-fancybox="group1" data-caption="グループ1キャプション"><img
-                        src="/public/img/A7301776.jpg" alt=""></a>
+                        src="public/img/A7301776.jpg" alt=""></a>
             </div>
         </li>
 
