@@ -41,13 +41,14 @@ const images = ref([
   { id: 6, url: '/_nuxt/assets/img/gallery06.jpg', class: 'leftB' },
   { id: 7, url: '/_nuxt/assets/img/gallery07.jpg', class: 'rightC' },
   { id: 8, url: '/_nuxt/assets/img/gallery08.jpg', class: 'rightD' },
-  { id: 9, url: '/_nuxt/assets/img/gallery09.jpg', class: 'leftE' },
+  { id: 9, url: '/_nuxt/assets/img/gallery09.jpg', class: '' },
   { id: 10, url: '/_nuxt/assets/img/gallery10.jpg', class: '' },
   { id: 11, url: '/_nuxt/assets/img/gallery11.jpg', class: '' },
   { id: 12, url: '/_nuxt/assets/img/gallery12.jpg', class: '' },
   { id: 13, url: '/_nuxt/assets/img/gallery13.jpg', class: '' },
   { id: 14, url: '/_nuxt/assets/img/gallery14.jpg', class: '' },
-  { id: 15, url: '/_nuxt/assets/img/gallery15.jpg', class: '' },
+  { id: 15, url: '/_nuxt/assets/img/gallery15.jpg', class: 'leftE' },
+  { id: 11, url: '/_nuxt/assets/img/gallery11.jpg', class: '' },
   { id: 16, url: '/_nuxt/assets/img/gallery16.jpg', class: '' },
   { id: 17, url: '/_nuxt/assets/img/gallery17.jpg', class: '' },
   { id: 18, url: '/_nuxt/assets/img/gallery18.jpg', class: '' },
@@ -108,13 +109,23 @@ const images = ref([
 }
 
 .item{
+width: 100%;
+overflow: hidden;
 
-  object-fit: cover;
+}
+img{
 
+object-fit: cover;
 }
 
 .leftA{
   grid-area: leftA;
+}
+.leftA img,
+.rightB img
+{
+  zoom: 110%;
+  max-width: 110%;
 }
 .leftB{
   grid-area: leftB;
@@ -122,6 +133,12 @@ const images = ref([
 .leftC{
   grid-area: leftC;
 }
+.leftC img{
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
 .leftD{
   grid-area: leftD;
 }
