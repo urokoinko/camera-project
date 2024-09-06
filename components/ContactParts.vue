@@ -21,7 +21,7 @@
 }
 
 .contact-inner p {
-    font-size: 24px;
+    font-size: 18px;
     padding-top: 10vw;
     padding-bottom: 40px
 }
@@ -32,7 +32,7 @@
 
 @media (max-width:800px) {
     .contact-inner p {
-        font-size: 20px;
+        font-size: 16px;
     }
 }
 
@@ -47,7 +47,7 @@
     }
 
     .contact-inner p {
-        font-size: 16px;
+        font-size: 14px;
         padding-top: 69px;
         padding-bottom: 0px
     }

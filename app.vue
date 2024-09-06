@@ -18,12 +18,17 @@ useHead({
     {
       rel: "stylesheet",
       href: "https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@500&family=Zen+Maru+Gothic:wght@400;500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&&display=swap"
+    },
+    {
+      rel: "stylesheet",
+      href: "//unpkg.com/viewerjs/dist/viewer.css"
     }
   ],
 });
 
-const isOpening = ref(true)
-const durationMs = 3000
+// const {$gsap} = useNuxtApp()
+const isOpening = ref(true);
+const durationMs = 3000;
 
 onMounted(() => {
 
@@ -55,7 +60,6 @@ onMounted(() => {
   // // 画面をスクロールをしたら動かしたい場合の記述
   window.addEventListener('scroll', function () {
     PageTopAnime();   /* スクロールした際の動きの関数を呼ぶ*/
-
   })
 
 
@@ -81,12 +85,12 @@ onMounted(() => {
         </NuxtLayout>
         <div class="fq">
           <FooterPart />
-          <button class="page-top" id="page-top-btn">
-            <img src="./public/img/page_top.svg" alt="page-top">
-          </button>
         </div>
       </main>
     </transition>
+    <button class="page-top" id="page-top-btn">
+      <img src="./assets/img/page_top.svg" alt="page-top">
+    </button>
   </div>
 </template>
 
@@ -100,16 +104,16 @@ onMounted(() => {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  z-index: 1100;
-  opacity: 0;
+  z-index: 2100;
+  opacity: 1;
 }
 
 .page-top:hover {
-  opacity: 0.7;
+  opacity: .7;
 }
 
 .section-title {
-  font-family: var(--font_title);
+  font-family: var(--font_text);
   text-align: center;
   font-size: var(--fz_28px);
   font-weight: 500;

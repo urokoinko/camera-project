@@ -93,9 +93,9 @@ onMounted(() => {
 <template>
     <div id="main-slide">
         <div class="mainSlide-inner">
-            <img class="slide-img" src="../public/img/top_slide01.jpg" alt="">
-            <img class="slide-img" src="../public/img/top_slide02.jpg" alt="">
-            <img class="slide-img" src="../public/img/top_slide03.jpg" alt="">
+            <img class="slide-img" src="../assets/img/top_slide01.jpg" alt="">
+            <img class="slide-img" src="../assets/img/top_slide02.jpg" alt="">
+            <img class="slide-img" src="../assets/img/top_slide03.jpg" alt="">
         </div>
         <div class="main-catch">
             <div class="mc-text">
@@ -109,8 +109,9 @@ onMounted(() => {
 
 <style scoped>
 /* メインスライドショー */
-#main-slide {
-    z-index: 100;
+.mainSlide-inner {
+    position: relative;
+    z-index: 1;
 }
 
 .mainSlide-inner {
@@ -159,7 +160,8 @@ onMounted(() => {
     padding: 65px;
     font-family: var(--font_catch);
     font-size: 24px;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 1;
 }
 
 .mc-text {
@@ -176,10 +178,10 @@ onMounted(() => {
     content: '';
     width: 150px;
     height: 180px;
-    background: url(../public/img/camera_site_pic2.svg) no-repeat;
+    background: url(../assets/img/camera_site_pic2.svg) no-repeat;
     background-size: contain;
     overflow: hidden;
-    z-index: -1;
+    z-index: 1;
 
 }
 
@@ -190,9 +192,9 @@ onMounted(() => {
     right: -10vw;
     width: 150px;
     height: 200px;
-    background: url(../public/img/camera_site_pic.svg) no-repeat;
+    background: url(../assets/img/camera_site_pic.svg) no-repeat;
     background-size: contain;
-    z-index: -1;
+    z-index: 1;
 }
 
 .main-catch p span {
@@ -264,7 +266,7 @@ onMounted(() => {
         left: 300px;
         width: 130px;
         height: 150px;
-        background: url(../public/img/camera_site_mPic2.svg) no-repeat;
+        background: url(../assets/img/camera_site_mPic2.svg) no-repeat;
         background-size: contain;
         z-index: -1;
     }
