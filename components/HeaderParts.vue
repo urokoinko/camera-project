@@ -16,7 +16,7 @@ function closeMenu(){
     <div class="header">
         <div class="header-inner">
             <div class="site-logo">
-                <NuxtLink :to="{path: '/', hash: '#site'}"><img src="../public/img/camera_site_logo.svg" alt="logo"></NuxtLink>
+                <NuxtLink :to="{path: '/', hash: '#site'}"><img src="../assets/img/camera_site_logo.svg" alt="logo"></NuxtLink>
             </div>
             <div class="header-menu">
                 <ul>
@@ -46,7 +46,7 @@ function closeMenu(){
                 <li><NuxtLink :to="{path: '/', hash: '#photographer'}" @click="closeMenu()">カメラマンについて</NuxtLink></li>
                 <li><NuxtLink :to="{path: '/', hash: '#QandA'}" @click="closeMenu()">Q＆A</NuxtLink></li>
                 <li><NuxtLink :to="{name: 'contact'}" @click="closeMenu()">お問い合わせ</NuxtLink></li>
-                <li><NuxtLink :to="{name: 'priceMenu'}"><font-awesome-icon :icon="['fab', 'instagram']" size="x"
+                <li><NuxtLink :to="{name: 'priceMenu'}"><font-awesome-icon :icon="['fab', 'instagram']"
                     class="insta-icon" /></NuxtLink></li>
             </ul>
         </nav>
@@ -61,7 +61,7 @@ function closeMenu(){
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 40px;
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 2500;
     display: flex;
@@ -89,7 +89,7 @@ function closeMenu(){
 .header-menu li {
     font-family: var(--font_text);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 14px;
     position: relative;
 }
 
@@ -127,7 +127,7 @@ function closeMenu(){
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: 37px;
+    top: 30px;
     left: 0;
 }
 

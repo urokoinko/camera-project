@@ -15,32 +15,34 @@ const PAGE_TITLE = "料金表";
                 <li class="plan">
                     <div class="plan-inner">
                         <h4 class="plan-title">出張撮影ライトプラン</h4>
-                        <div class="price">￥１５，０００</div>
+                        <div class="price">￥１５,０００</div>
                         <ul class="price-item">
                             <li>撮影時間 1時間</li>
                             <li>出張料 無料</li>
                         </ul>
+                        <p class="plan-text">
+                            当日撮影したお写真を全てデータでお渡しします。<br>そのままの自然なお写真をご希望の方や、ご自身でお写真を加工される方におすすめのプランです。<br>
+                            <span>※レタッチをご希望のお客様はレタッチプランをお選びください。</span>
+                        </p>
                     </div>
-                    <p class="plan-text">当日撮影したお写真を全てデータでお渡しします。<br>そのままの自然なお写真をご希望の方や、ご自身でお写真を加工される方におすすめのプランです。<br>
-                        <span>※レタッチをご希望のお客様はレタッチプランをお選びください。</span>
-                    </p>
                 </li>
                 <li class="plan">
                     <div class="plan-inner">
                         <h4 class="plan-title">出張撮影レタッチプラン</h4>
-                        <div class="price">￥２０，０００</div>
+                        <div class="price">￥２０,０００</div>
                         <ul class="price-item">
                             <li>撮影時間 1時間</li>
                             <li>出張料 無料</li>
                         </ul>
+                        <p class="plan-text">
+                            お顔を明るく、お写真全体の色味を鮮やかにする修正を加えます。<br>屋外の撮影でどうしても発生してしまうカラーバランスの乱れを整えることで、表情が際立ち、お着物が鮮やかに仕上がります。
+                        </p>
                     </div>
-                    <p class="plan-text">
-                        お顔を明るく、お写真全体の色味を鮮やかにする修正を加えます。<br>屋外の撮影でどうしても発生してしまうカラーバランスの乱れを整えることで、表情が際立ち、お着物が鮮やかに仕上がります。</p>
                 </li>
             </ul>
         </div>
         <div class="reserve-button">
-            <NuxtLink :to = "{name: 'contact'}">
+            <NuxtLink :to="{ name: 'contact' }">
                 <PartsButtonparts>ご予約はこちら</PartsButtonparts>
             </NuxtLink>
         </div>
@@ -88,7 +90,7 @@ const PAGE_TITLE = "料金表";
             </div>
         </div>
         <div class="reserve-button">
-            <NuxtLink :to="{name: 'contact'}">
+            <NuxtLink :to="{ name: 'contact' }">
                 <PartsButtonparts>ご予約はこちら</PartsButtonparts>
             </NuxtLink>
         </div>
@@ -98,30 +100,31 @@ const PAGE_TITLE = "料金表";
 <style scoped>
 /* 料金表 */
 .priceMenu {
-    padding-top: 10vw;
-    padding-bottom: 10vw;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
     font-family: var(--font_text);
     text-align: center;
     font-weight: 500;
 }
 
 .priceMenu h3 {
-    font-family: var(--font_title);
-    font-size: var(--fz_20px);
+    font-family: var(--font_text);
+    font-size: var(--fz_22px);
     padding-top: 1.9vw;
+    font-weight: 600;
 }
 
 .priceMenu-text {
-    font-size: var(--fz_18px);
-    padding-top: 80px;
+    font-size: var(--fz_16px);
+    padding-top: 70px;
 }
 
 /* 料金表　写真 */
 .price-inner-ul {
     display: flex;
-    padding-top: 5vw;
+    padding-top: 3vw;
     justify-content: center;
-    gap: 1.9vw;
+    gap: 4vw;
 }
 
 .plan-inner {
@@ -129,21 +132,20 @@ const PAGE_TITLE = "料金表";
     flex-direction: column;
     justify-content: center;
     width: 36vw;
-    height: 250px;
+    height: 400px;
     max-width: 500px;
-    padding: 20px;
     border: solid 10px #E5F5F2;
     border-radius: 20px;
 }
 
 .plan-title {
-    font-size: var(--fz_20px);
+    font-size: var(--fz_16px);
 }
 
 .price {
-    font-size: var(--fz_30px);
+    font-size: var(--fz_24px);
     font-weight: bold;
-    padding-top: 40px;
+    padding-top: 30px;
     padding-right: 40px;
     position: relative;
 }
@@ -151,16 +153,16 @@ const PAGE_TITLE = "料金表";
 .price::before {
     position: absolute;
     content: '(税込)';
-    font-size: var(--fz_20px);
+    font-size: var(--fz_16px);
     bottom: 5px;
-    left: 75%;
+    left: 70%;
 }
 
 .price-item {
-    font-size: var(--fz_16px);
+    font-size: var(--fz_14px);
     display: flex;
     justify-content: center;
-    padding-top: 40px;
+    padding-top: 20px;
     gap: 20px;
     position: relative;
 }
@@ -168,15 +170,15 @@ const PAGE_TITLE = "料金表";
 .price-item::before {
     position: absolute;
     content: 'データ：90～100カット';
-    top: 70px;
+    top: 40px;
 }
 
 .plan-text {
-    width: 35vw;
+    width: 28vw;
     max-width: 450px;
     text-align: left;
-    font-size: var(--fz_16px);
-    padding-top: 40px;
+    font-size: var(--fz_14px);
+    padding-top: 60px;
     margin: 0 auto;
 }
 
@@ -186,7 +188,7 @@ const PAGE_TITLE = "料金表";
 
 /* 料金表　写真　予約ボタン */
 .reserve-button {
-    padding-top: 150px;
+    padding-top: 50px;
 }
 
 /* 料金表　写真　注意事項欄 */
@@ -194,7 +196,7 @@ const PAGE_TITLE = "料金表";
     width: 70%;
     max-width: 1050px;
     margin: 200px auto 0;
-    padding-top: clamp(30px, 10vw, 150px);
+    padding-top: clamp(30px, 10vw, 50px);
     padding-bottom: clamp(30px, 10vw, 150px);
     border: 2px dotted #d3d3d3;
 }
@@ -202,7 +204,7 @@ const PAGE_TITLE = "料金表";
 .explain-content {
     max-width: 700px;
     text-align: left;
-    padding: 30px 40px 0;
+    padding: 20px 35px 0;
     margin: 0 auto;
 }
 
@@ -211,12 +213,12 @@ const PAGE_TITLE = "料金表";
 }
 
 .ec-title {
-    font-size: var(--fz_17px);
+    font-size: var(--fz_16px);
     font-weight: 600;
 }
 
 .ec-text {
-    font-size: var(--fz_16px);
+    font-size: var(--fz_14px);
 }
 
 /* 料金表　動画 */
@@ -243,7 +245,7 @@ const PAGE_TITLE = "料金表";
 }
 
 .movie-price {
-    font-size: var(--fz_30px);
+    font-size: var(--fz_24px);
     font-weight: bold;
     padding-top: 30px;
     padding-right: 60px;
@@ -253,8 +255,8 @@ const PAGE_TITLE = "料金表";
 .movie-price::before {
     position: absolute;
     content: '(税込)～';
-    font-size: var(--fz_20px);
-    bottom: 0;
+    font-size: var(--fz_18px);
+    bottom: 2px;
     left: 74%;
 }
 

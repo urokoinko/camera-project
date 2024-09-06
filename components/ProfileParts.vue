@@ -52,7 +52,7 @@
     width: clamp(150px, 23.9vw, 250px);
     height: clamp(150px, 23.9vw, 250px);
     border-radius: 50%;
-    background: url(../public/img/Profile_img.jpg) no-repeat;
+    background: url(../assets/img/Profile_img.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     margin: 0 auto;

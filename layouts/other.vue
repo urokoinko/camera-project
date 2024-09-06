@@ -30,7 +30,7 @@
     content: "";
     width: 90px;
     height: 90px;
-    background: url(../public/img/camera_site_mPic2.svg) no-repeat;
+    background: url(../assets/img/camera_site_mPic2.svg) no-repeat;
     background-size: contain;
     z-index: -1;
 

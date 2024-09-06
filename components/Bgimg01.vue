@@ -1,6 +1,6 @@
 <template>
     <div class="bg-img01">
-        <img src="../public/img/IMG_0268.jpg" alt="">
+        <img src="../assets/img/IMG_0268.jpg" alt="">
     </div>
 </template>
 

@@ -10,23 +10,25 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@fancyapps/ui": "^5.0.36",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-regular-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@mdi/font": "^7.4.47",
     "@vee-validate/nuxt": "^4.13.2",
     "gsap": "^3.12.5",
-    "muuri": "^0.9.5",
     "nuxt": "^3.12.1",
+    "vite-plugin-vuetify": "^2.0.4",
     "vue": "^3.4.27",
+    "vue-lazyload": "^3.0.0",
     "vue-router": "^4.3.3",
     "vue3-lottie": "^3.3.0",
     "web-animations-js": "^2.3.2"
   },
   "devDependencies": {
     "@hypernym/nuxt-gsap": "^2.4.2",
+    "@nuxtjs/vuetify": "^1.12.3",
     "@types/jquery": "^3.5.30",
     "jquery": "^3.7.1"
   }

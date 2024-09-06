@@ -7,7 +7,7 @@ const PAGE_TITLE = "ご予約・お問い合わせ";
 <template>
     <div class="contact-title">
         <h2 class="section-title">{{ PAGE_TITLE }}</h2>
-        <img src="../public/img/contact_img.svg" alt="leaf_img">
+        <img src="../assets/img/contact_img.svg" alt="leaf_img">
     </div>
     <div class="contact-text">
         <p>ご予約・ご質問等、お気軽にご連絡ください。</p>
@@ -158,6 +158,16 @@ input {
     width: 320px;
     height: 26px;
     text-align: left;
+    border: 1px var(--color_main) solid;
+    border-radius: 5px;
+    font-size: var(--fz_16px);
+    padding-left: 5px;
+}
+select{
+    border: 1px var(--color_main) solid;
+    border-radius: 5px;
+    font-size: var(--fz_16px);
+    padding: 2px 5px 2px;
 }
 
 .select {
@@ -168,6 +178,10 @@ textarea {
     vertical-align: top;
     width: 320px;
     height: 200px;
+    border: 1px var(--color_main) solid;
+    border-radius: 5px;
+    font-size: var(--fz_16px);
+    padding-left: 5px;
 }
 #child{
     height: 50px;

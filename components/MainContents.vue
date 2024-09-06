@@ -142,7 +142,7 @@ onMounted(() => {
         <div class="main-contents-inner">
             <div class="contents-box01 box-innerL box-inner">
                 <div class="box-Lpic cb-pic">
-                    <img src="../public/img/main-contant01.jpg" alt="">
+                    <img src="../assets/img/main-contant01.jpg" alt="">
                 </div>
                 <div class="box-textL">
                     <NuxtLink :to="{ name: 'photoGallery' }">
@@ -156,7 +156,7 @@ onMounted(() => {
             </div>
             <div class="contents-box02  box-innerR box-inner">
                 <div class="box-Rpic cb-pic">
-                    <img src="../public/img/main-contant02.jpg" alt="">
+                    <img src="../assets/img/main-contant02.jpg" alt="">
                 </div>
                 <div class="box-textR">
                     <NuxtLink :to="{ name: 'photoGallery' }">
@@ -170,7 +170,7 @@ onMounted(() => {
             </div>
             <div class="contents-box03  box-innerL box-inner">
                 <div class="box-Lpic cb-pic">
-                    <img src="../public/img/main-contant03.jpg" alt="">
+                    <img src="../assets/img/main-contant03.jpg" alt="">
                 </div>
                 <div class="box-textL">
                     <NuxtLink :to="{ name: 'photoGallery' }">
@@ -184,7 +184,7 @@ onMounted(() => {
             </div>
             <div class="contents-box04 box-innerR box-inner">
                 <div class="box-Rpic cb-pic">
-                    <img src="../public/img/main-contant04.jpg" alt="">
+                    <img src="../assets/img/main-contant04.jpg" alt="">
                 </div>
                 <div class="box-textR">
                     <NuxtLink :to="{ name: 'movie' }">
@@ -316,6 +316,11 @@ onMounted(() => {
     box-shadow: -10px 10px 4px rgba(0, 0, 0, 0.3);
 }
 
+#leaf{
+    position: relative;
+    z-index: 1000;
+}
+
 /* more　設定 */
 .more {
     position: relative;
@@ -331,7 +336,7 @@ onMounted(() => {
     left: -15px;
     width: 250px;
     height: 65px;
-    background: url(@/public/img/camera_tree_line.png) no-repeat;
+    background: url(@/assets/img/camera_tree_line.png) no-repeat;
     background-size: contain;
 }
 
@@ -346,7 +351,7 @@ onMounted(() => {
     right: -45px;
     width: 250px;
     height: 65px;
-    background: url(@/public/img/camera_tree_line.png) no-repeat;
+    background: url(@/assets/img/camera_tree_line.png) no-repeat;
     background-size: contain;
 }
 

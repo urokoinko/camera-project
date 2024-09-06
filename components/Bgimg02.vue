@@ -23,7 +23,7 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-    background: url(../public/img/bg02-01.jpg) no-repeat;
+    background: url(../assets/img/bg02-01.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -36,7 +36,7 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-    background: url(../public/img/bg02-02.jpg) no-repeat;
+    background: url(../assets/img/bg02-02.jpg) no-repeat;
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;

@@ -69,7 +69,7 @@ onMounted(() => {
     <ContactParts />
 </template>
 
-<style>
+<style scoped>
 /* トップページ設定 */
 /* スライドショー */
 .slide-section {
