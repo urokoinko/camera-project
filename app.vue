@@ -22,6 +22,10 @@ useHead({
     {
       rel: "stylesheet",
       href: "//unpkg.com/viewerjs/dist/viewer.css"
+    },
+    {
+      rel: "stylesheet",
+      href: "https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"
     }
   ],
 });
@@ -104,7 +108,7 @@ onMounted(() => {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  z-index: 2100;
+  z-index: 600;
   opacity: 1;
 }
 
