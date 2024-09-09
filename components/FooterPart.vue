@@ -52,7 +52,7 @@
     justify-content: center;
     gap: 15px;
     position: relative;
-    z-index: 2000;
+    z-index: 500;
 }
 
 .footer-nav {
@@ -93,7 +93,6 @@ small {
     height: 16vw;
     background: url(../assets/img/camera_tree_blue.png) no-repeat;
     background-size: contain;
-    z-index: 1000;
 }
 
 .footer-treeR::after {
@@ -105,7 +104,6 @@ small {
     height: 21vw;
     background: url(../assets/img/camera_tree.png) no-repeat;
     background-size: contain;
-    z-index: 1000;
 }
 
 .footer-treeL::after {
@@ -117,7 +115,6 @@ small {
     height: 16vw;
     background: url(../assets/img/camera_tree_green.png) no-repeat;
     background-size: contain;
-    z-index: 1000;
 }
 
 /* ページトップボタン */
@@ -130,6 +127,7 @@ small {
     bottom: 60px;
     right: 40px;
     opacity: 0.7;
+    z-index: 600;
 }
 
 #page-top:hover{
@@ -217,7 +215,6 @@ small {
         height: 126px;
         background: url(../assets/img/camera_tree_blue.png) no-repeat;
         background-size: contain;
-        z-index: 1000;
     }
 
     .footer-treeR::after {
@@ -229,7 +226,6 @@ small {
         height: 184px;
         background: url(../assets/img/camera_tree.png) no-repeat;
         background-size: contain;
-        z-index: 1000;
     }
 
     .footer-treeL::after {
@@ -241,7 +237,6 @@ small {
         height: 140px;
         background: url(../assets/img/camera_tree_green.png) no-repeat;
         background-size: contain;
-        z-index: 1000;
     }
 
 }

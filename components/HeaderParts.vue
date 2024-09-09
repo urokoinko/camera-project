@@ -63,7 +63,7 @@ function closeMenu(){
     width: 100%;
     height: 40px;
     background-color: rgba(255, 255, 255, 0.8);
-    z-index: 2500;
+    z-index: 500;
     display: flex;
     align-items: center;
 }
@@ -223,7 +223,7 @@ function closeMenu(){
 
     /* ナビゲーションボタン　閉じるボタン */
     .open .m-humburgar {
-        z-index: 2500;
+        z-index: 1000;
     }
 
     .open .m-humburgar::before {
