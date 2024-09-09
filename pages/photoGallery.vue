@@ -115,6 +115,7 @@ const images = ref([
     </div>
   </li>
   </ul>
+  <img src="/assets/img/gallery01.jpg" alt="">
 </template>
 
 <style scoped>
