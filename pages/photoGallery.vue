@@ -106,7 +106,7 @@ const images = ref([
     <li class="bridalPhoto">ブライダル</li>
     <li class="portraitPhoto">ポートレート</li>
   </ul>
-  <ul class="grid">
+  <!-- <ul class="grid">
     <li v-for="image in images" :class="image.kind" class="item active">
       <div class="item-content">
       <a :href="image.url"  :data-fancybox="image.group" >
@@ -114,7 +114,7 @@ const images = ref([
       </a>
     </div>
   </li>
-  </ul>
+  </ul> -->
   <img src="/assets/img/gallery01.jpg" alt="">
 </template>
 
