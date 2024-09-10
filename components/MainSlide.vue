@@ -1,4 +1,5 @@
 <script setup>
+import { gsap } from 'gsap';
 // const { $gsap } = useNuxtApp()
 
 onMounted(() => {

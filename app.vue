@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 const SITE_TITLE = "出張カメラマン";
 
 
