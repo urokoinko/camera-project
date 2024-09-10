@@ -1,5 +1,5 @@
 <script setup>
-const { $gsap } = useNuxtApp()
+// const { $gsap } = useNuxtApp()
 
 
 
@@ -8,7 +8,7 @@ onMounted(() => {
     const faq_headers = document.querySelectorAll('.faq-header');
     const faq_contents = document.querySelectorAll('.faq-content');
 
-    $gsap.set(faq_contents, { height: 0 });
+    gsap.set(faq_contents, { height: 0 });
     // $gsap.set(faq_contents[0], {height: 'auto'});   //一つ目だけ開いておく
     // faq_headers[0].classList.add('is-active')
 
@@ -20,7 +20,7 @@ onMounted(() => {
                 // headerにis-activeがついていたら
                 if (faq_header.classList.contains('is-active')) {
                     // 隣接するcontentを閉じて
-                    $gsap.to(faq_content, { height: 0 });
+                    gsap.to(faq_content, { height: 0 });
                     // is-activeを外す
                     faq_header.classList.remove('is-active');
                 } else {
@@ -28,12 +28,12 @@ onMounted(() => {
                     let delay = 0;
 
                     if (active_header) {
-                        $gsap.to(active_header.nextElementSibling, { height: 0 });
+                        gsap.to(active_header.nextElementSibling, { height: 0 });
                         active_header.classList.remove('is-active');
                         delay = 0;
                     }
 
-                    $gsap.timeline()
+                    gsap.timeline()
                         .to(faq_content, { height: 'auto', delay: delay })
                         .add(() => {
                             faq_header.classList.add('is-active')

@@ -30,7 +30,6 @@ useHead({
   ],
 });
 
-// const {$gsap} = useNuxtApp()
 const isOpening = ref(true);
 const durationMs = 3000;
 
