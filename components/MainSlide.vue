@@ -1,6 +1,6 @@
 <script setup>
 import { gsap } from 'gsap';
-// const { $gsap } = useNuxtApp()
+const { $gsap } = useNuxtApp()
 
 onMounted(() => {
 
@@ -11,7 +11,7 @@ onMounted(() => {
     const duration = 12;
 
     function firstslide(){
-        var tl = gsap.timeline({
+        var tl = $gsap.timeline({
             repeat: 0,
             delay: delay,
             defaults: {
@@ -47,7 +47,7 @@ onMounted(() => {
     };
 
     function middleslide(){
-        var tl = gsap.timeline({
+        var tl = $gsap.timeline({
             repeat: -1,
             delay: delay,
             defaults: {
@@ -83,7 +83,7 @@ onMounted(() => {
     }
 
 
-    var slide_master = gsap.timeline();
+    var slide_master = $gsap.timeline();
     slide_master.add(firstslide())
                 .add(middleslide(),'-=2.5');
 

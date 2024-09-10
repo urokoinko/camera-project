@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { gsap } from 'gsap';
 import { ScrollTrigger, ScrollToPlugin, MotionPathPlugin } from 'gsap/all';
+const { $gsap } = useNuxtApp()
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin);
 
@@ -85,7 +86,7 @@ onMounted(() => {
     function pathEase(path, config = {}) {
         let axis = config.axis || "y",
             precision = config.precision || 1,
-            rawPath = MotionPathPlugin.cacheRawPathMeasurements(MotionPathPlugin.getRawPath(gsap.utils.toArray(path)[0]), Math.round(precision * 12)),
+            rawPath = MotionPathPlugin.cacheRawPathMeasurements(MotionPathPlugin.getRawPath($gsap.utils.toArray(path)[0]), Math.round(precision * 12)),
             useX = axis === "x",
             start = rawPath[0][useX ? 0 : 1],
             end = rawPath[rawPath.length - 1][rawPath[rawPath.length - 1].length - (useX ? 2 : 1)],
