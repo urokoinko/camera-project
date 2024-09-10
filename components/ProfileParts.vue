@@ -12,8 +12,8 @@
                     そんな僕も大切な家族との大切な瞬間を残したいと思い、この仕事をしています。<br>
                     ご家族の思い出をかたちとして残すお手伝いが出来ましたら幸いです。
                 </p>
-                <div class="insta"><NuxtLink :to="{path:'/'}">instagram <font-awesome-icon :icon="['fab', 'instagram']" size="xl"
-                    class="insta-icon" /></NuxtLink></div>
+                <div class="insta"><a href="https://www.instagram.com/fl_8mm?igsh=dWV6ejRzbzdsMWp6">instagram <font-awesome-icon :icon="['fab', 'instagram']" size="xl"
+                    class="insta-icon" /></a></div>
             </div>
         </div>
     </div>

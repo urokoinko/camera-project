@@ -46,8 +46,8 @@ function closeMenu(){
                 <li><NuxtLink :to="{path: '/', hash: '#photographer'}" @click="closeMenu()">カメラマンについて</NuxtLink></li>
                 <li><NuxtLink :to="{path: '/', hash: '#QandA'}" @click="closeMenu()">Q＆A</NuxtLink></li>
                 <li><NuxtLink :to="{name: 'contact'}" @click="closeMenu()">お問い合わせ</NuxtLink></li>
-                <li><NuxtLink :to="{name: 'priceMenu'}"><font-awesome-icon :icon="['fab', 'instagram']"
-                    class="insta-icon" /></NuxtLink></li>
+                <li><a href="https://www.instagram.com/fl_8mm?igsh=dWV6ejRzbzdsMWp6"><font-awesome-icon :icon="['fab', 'instagram']"
+                    class="insta-icon" /></a></li>
             </ul>
         </nav>
     </div>

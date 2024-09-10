@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { gsap } from 'gsap';
 import { ScrollTrigger, ScrollToPlugin, MotionPathPlugin } from 'gsap/all';
-const { $gsap } = useNuxtApp()
+// const { $gsap } = useNuxtApp()
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin);
 
@@ -9,7 +9,7 @@ onMounted(() => {
 
     // ふわっと現れるアニメーション
     const contents = document.querySelectorAll('.box-inner');
-    const contentsArray = $gsap.utils.toArray(contents);
+    const contentsArray = gsap.utils.toArray(contents);
 
     contentsArray.forEach((content) => {
 
@@ -20,7 +20,7 @@ onMounted(() => {
             start = 'top bottom';
         }
 
-        $gsap.fromTo(
+        gsap.fromTo(
             content, // アニメーションさせる要素
             {
                 y: 300, // アニメーション開始前の縦位置(下に100px)
@@ -42,14 +42,14 @@ onMounted(() => {
 
     // スクロールに合わせて葉っぱが動くアニメーション
 
-    $gsap.set('#motionSVG', { scale: 0.85, autoAlpha: 1 });
-    $gsap.set('#leaf', { transformOrigin: '50% 50%', scaleX: -1 });
+    gsap.set('#motionSVG', { scale: 0.85, autoAlpha: 1 });
+    gsap.set('#leaf', { transformOrigin: '50% 50%', scaleX: -1 });
 
-    let getProp = $gsap.getProperty('#motionSVG'),
+    let getProp = gsap.getProperty('#motionSVG'),
         flippedX = false,
         flippedY = false;
 
-    $gsap.to('#motionSVG', {
+    gsap.to('#motionSVG', {
         keyframes: {
             '0%': { autoAlpha: 1 },
             '99%': { autoAlpha: 1 },
@@ -66,7 +66,7 @@ onMounted(() => {
                     flipX = self.direction === 1;
 
                 if (flipY !== flippedY || flipX !== flippedX) {
-                    $gsap.to('#leaf', { scaleY: flipY ? -1 : 1, scaleX: flipX ? -1 : 1, duration: 0.25 });
+                    gsap.to('#leaf', { scaleY: flipY ? -1 : 1, scaleX: flipX ? -1 : 1, duration: 0.25 });
                     flippedY = flipY;
                     flippedX = flipX;
                 }
