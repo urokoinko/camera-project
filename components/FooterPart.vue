@@ -117,23 +117,6 @@ small {
     background-size: contain;
 }
 
-/* ページトップボタン */
-.footer {
-    position: relative;
-}
-
-#page-top {
-    position: absolute;
-    bottom: 60px;
-    right: 40px;
-    opacity: 0.7;
-    z-index: 600;
-}
-
-#page-top:hover{
-    opacity: 1;
-}
-
 @media (max-width:430px) {
     #page-top {
         width: 60px;

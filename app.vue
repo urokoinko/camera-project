@@ -43,15 +43,15 @@ onMounted(() => {
   }, durationMs)
 
   const pageTopBtn = document.getElementById('page-top-btn');
-
-
-
+  
+  
   function PageTopAnime() {
-
+    
     // ページトップボタンの出現
-
+    
     var scroll = window.scrollY;
     if (scroll >= 200) {    //上から200pxスクロールしたら
+      pageTopBtn.style.opacity = 1;
       pageTopBtn?.classList.remove('DownMove');   //#page-topについているDownMoveというクラス名を除く
       pageTopBtn?.classList.add('UpMove');    //#page-topについているUpMoveというクラス名を付与
     } else {
@@ -109,7 +109,7 @@ onMounted(() => {
   bottom: 40px;
   right: 40px;
   z-index: 600;
-  opacity: 1;
+  opacity: 0;
 }
 
 .page-top:hover {
