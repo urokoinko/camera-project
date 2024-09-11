@@ -110,7 +110,7 @@ onMounted(() => {
     z-index: 10;
     background-color: #fff;
     padding-top: 15vw;
-    padding-bottom: 15vw;
+    margin-bottom: -200px;
     box-shadow: 0 -30px 30px -30px rgba(0, 0, 0, 0.25);
 }
 
