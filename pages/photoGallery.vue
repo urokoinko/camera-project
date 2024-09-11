@@ -141,19 +141,6 @@ const images = ref([
   background: #ccc;
 }
 
-/*横幅が480px以下になった際の指定*/
-@media only screen and (max-width: 480px) {
-  .sort-btn {
-    justify-content: space-between;
-  }
-
-  .sort-btn li {
-    width: 48%;
-    margin: 0 auto 10px auto;
-    text-align: center;
-  }
-}
-
 /*＝＝＝Muuriのレイアウトのための調整 */
 .grid {
   position: relative;
@@ -171,6 +158,7 @@ const images = ref([
   /*横並びで3つ表示*/
   z-index: 1;
   margin: 3px;
+  gap: 10px;
 }
 
 /*内側のボックスの高さが崩れないように維持*/
@@ -189,10 +177,11 @@ const images = ref([
 }
 
 /*横幅が768px以下になった際の指定*/
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .item {
-    width: 45%;
+    width: 48%;
     /*横並びで2つ表示*/
+  text-align: center;
   }
 }
 
