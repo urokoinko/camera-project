@@ -2,6 +2,7 @@
 import { gsap } from 'gsap';
 import { ScrollTrigger, ScrollToPlugin } from 'gsap/all';
 import Bgimg02 from '../components/Bgimg02.vue';
+const {$gsap} = useNuxtApp();
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
@@ -10,18 +11,18 @@ onMounted(() => {
 
     /* 背景　スクロールアニメーション01 */
 
-    let windowSize = window.innerWidth;
+    // let windowSize = window.innerWidth;
     let top1 = '-300px';
     let end1 ='bottom -500px top'
     let end2 = 'bottom -300px bottom';
 
-    if (windowSize < 430) {   //430px以下でアニメーションの開始位置を変える
-        top1 = '0px';
-        end1 = 'top -1000px top';
-        end2 = 'center center';
-    }
+    // if (windowSize < 430) {   //430px以下でアニメーションの開始位置を変える
+    //     top1 = '0px';
+    //     end1 = 'top -1000px top';
+    //     end2 = 'center center';
+    // }
 
-    gsap.to('.scrollAnime', {
+    $gsap.to('.scrollAnime', {
         // アニメーション終了時
         height: 0,
         top: top1,
@@ -33,7 +34,7 @@ onMounted(() => {
         }
     });
 
-    gsap.to('.section03', {
+    $gsap.to('.section03', {
         // アニメーション終了時
         // height: ,
         top: top1,
