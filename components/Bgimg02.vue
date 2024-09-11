@@ -59,4 +59,17 @@
         background-position: center;
     }
 }
+
+@media (max-width:600px) {
+    .bg-img02-images-one {
+        background: url(../assets/img/m_A7306792.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .bg-img02-images-twe {
+        background: url(../assets/img/m_A7306778.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+}
 </style>
