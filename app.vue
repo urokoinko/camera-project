@@ -24,10 +24,6 @@ useHead({
       rel: "stylesheet",
       href: "//unpkg.com/viewerjs/dist/viewer.css"
     },
-    {
-      rel: "stylesheet",
-      href: "https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"
-    }
   ],
 });
 

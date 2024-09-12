@@ -4,13 +4,16 @@ import vuetify, { transformAssetUrls} from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   css: [
     "@/assets/main.css",
     '@fortawesome/fontawesome-svg-core/styles.css'
   ],
+
   build: {
     transpile: ['vuetify'],
   },
+
   modules: [
     '@hypernym/nuxt-gsap',
     (_options, nuxt)=>{
@@ -19,6 +22,7 @@ export default defineNuxtConfig({
       })
     },
   ],
+
   vite:{
     vue:{
       template:{
@@ -26,12 +30,14 @@ export default defineNuxtConfig({
       }
     }
   },
+
   gsap: {
     extraPlugins: {
       scrollTrigger: true,
       scrollTo: true,
     }
   },
+
   plugins:[
     {src: '~/plugins/fontawesome.client.ts'},
     {src: '~/plugins/lottie.client.ts'},
@@ -39,6 +45,6 @@ export default defineNuxtConfig({
     {src: '~/plugins/jquery.js', mode: 'client'},
 
   ],
+
+  compatibilityDate: '2024-09-12',
 })
-
-

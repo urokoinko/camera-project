@@ -1,5 +1,8 @@
 <script setup>
 import Muuri from 'muuri';
+import { Fancybox as NativeFancybox } from "@fancyapps/ui";
+import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import "https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js";
 
 const PAGE_TITLE = "写真ギャラリー";
 
@@ -7,17 +10,15 @@ definePageMeta({
   layout: false
 });
 
-import { Fancybox as NativeFancybox } from "@fancyapps/ui";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
 const props = defineProps({
-    options: Object,
+  options: Object,
 })
 onMounted(() => {
-    const opts = props.options || {}
-    NativeFancybox.bind('[data-fancybox]', opts)
-    return () => {
-        NativeFancybox.destroy()
-    }
+  const opts = props.options || {}
+  NativeFancybox.bind('[data-fancybox]', opts)
+  return () => {
+    NativeFancybox.destroy()
+  }
 })
 
 onMounted(() => {	//画面遷移時にギャラリーの画像が被らないように、すべての読み込みが終わった後に実行する
@@ -63,33 +64,66 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
     });
 
   })
+
+//   (async ()=>{
+//   for(img of imageName){
+//     console.log(image)
+//   }
+// })();
+
 })
 
-const images = ref([
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery01.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery02.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery03.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery04.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery05.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery06.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery07.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery08.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery09.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery10.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery11.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery12.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery13.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery14.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery15.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery11.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery16.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery17.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery18.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery19.jpg', group: 'g2' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery20.jpg', group: 'g3' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery21.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery22.jpg', group: 'g1' },
-]);
+const imageName = 'gallery01';
+let image = await import(`~/assets/img/${imageName}.jpg`);
+
+// const imageName = [
+//    'gallery01',
+//    'gallery02',
+//    'gallery03',
+//    'gallery04',
+//    'gallery05',
+//    'gallery06',
+//    'gallery07',
+//    'gallery08',
+//   'gallery09',
+// ];
+
+
+
+// let image = {}
+// try {
+
+
+// } catch (e) {
+//   console.log(e)
+// }
+
+// const images = [
+// { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery01.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery02.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery03.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery04.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery05.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery06.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery07.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery08.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery09.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery10.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery11.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery12.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery13.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery14.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery15.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery11.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery16.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery17.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery18.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery19.jpg', group: 'g2' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery20.jpg', group: 'g3' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery21.jpg', group: 'g1' },
+//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery22.jpg', group: 'g1' },
+// ];
+
 
 </script>
 
@@ -107,19 +141,27 @@ const images = ref([
     <li class="portraitPhoto">ポートレート</li>
   </ul>
   <ul class="grid">
-    <li v-for="image in images" :class="image.kind" class="item active">
+    <li v-for="img in image" class="item active familyPhoto" >
       <div class="item-content">
-      <a :href="image.url"  :data-fancybox="image.group" >
-        <img :src="image.url" alt="">
-      </a>
-    </div>
-  </li>
+        <a :href="img" :data-fancybox="img">
+          <img :src="img" alt="">
+        </a>
+      </div>
+    </li>
   </ul>
-  <!-- <img src="/assets/img/gallery01.jpg" alt=""> -->
+  <!-- <ul class="grid">
+    <li v-for="img in images" class="item active familyPhoto" >
+      <div class="item-content">
+        <a :href="img.url" :data-fancybox="img.kind">
+          <img :src="img.url" alt="">
+        </a>
+      </div>
+    </li>
+  </ul> -->
+  <!-- <img :src="image" alt=""> -->
 </template>
 
 <style scoped>
-
 /*＝＝＝並び替えボタンのCSS*/
 .sort-btn {
   display: flex;
@@ -181,8 +223,7 @@ const images = ref([
   .item {
     width: 48%;
     /*横並びで2つ表示*/
-  text-align: center;
+    text-align: center;
   }
 }
-
 </style>
