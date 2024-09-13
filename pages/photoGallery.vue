@@ -65,64 +65,34 @@ onMounted(() => {	//画面遷移時にギャラリーの画像が被らないよ
 
   })
 
-//   (async ()=>{
-//   for(img of imageName){
-//     console.log(image)
-//   }
-// })();
-
 })
 
-const imageName = 'gallery01';
-let image = await import(`~/assets/img/${imageName}.jpg`);
 
-// const imageName = [
-//    'gallery01',
-//    'gallery02',
-//    'gallery03',
-//    'gallery04',
-//    'gallery05',
-//    'gallery06',
-//    'gallery07',
-//    'gallery08',
-//   'gallery09',
-// ];
-
-
-
-// let image = {}
-// try {
-
-
-// } catch (e) {
-//   console.log(e)
-// }
-
-// const images = [
-// { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery01.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery02.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery03.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery04.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery05.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery06.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery07.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery08.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery09.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery10.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery11.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery12.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery13.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery14.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery15.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery11.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery16.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery17.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery18.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery19.jpg', group: 'g2' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery20.jpg', group: 'g3' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery21.jpg', group: 'g1' },
-//   { kind: 'familyPhoto', url: '/_nuxt/assets/img/gallery22.jpg', group: 'g1' },
-// ];
+const images = [
+  { kind: 'familyPhoto', url: '/img/gallery01.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery02.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery03.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery04.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery05.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery06.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery07.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery08.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery09.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery10.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery11.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery12.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery13.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery14.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery15.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery11.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery16.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery17.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery18.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery19.jpg', group: 'g2' },
+  { kind: 'familyPhoto', url: '/img/gallery20.jpg', group: 'g3' },
+  { kind: 'familyPhoto', url: '/img/gallery21.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery22.jpg', group: 'g1' },
+];
 
 
 </script>
@@ -141,24 +111,14 @@ let image = await import(`~/assets/img/${imageName}.jpg`);
     <li class="portraitPhoto">ポートレート</li>
   </ul>
   <ul class="grid">
-    <li v-for="img in image" class="item active familyPhoto" >
+    <li v-for="img in images" class="item active" :class="img.kind">
       <div class="item-content">
-        <a :href="img" :data-fancybox="img">
-          <img :src="img" alt="">
-        </a>
-      </div>
-    </li>
-  </ul>
-  <!-- <ul class="grid">
-    <li v-for="img in images" class="item active familyPhoto" >
-      <div class="item-content">
-        <a :href="img.url" :data-fancybox="img.kind">
+        <a :href="img.url" :data-fancybox="img.group">
           <img :src="img.url" alt="">
         </a>
       </div>
     </li>
-  </ul> -->
-  <!-- <img :src="image" alt=""> -->
+  </ul>
 </template>
 
 <style scoped>
