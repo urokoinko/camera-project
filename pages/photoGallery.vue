@@ -84,14 +84,14 @@ const images = [
   { kind: 'familyPhoto', url: '/img/gallery13.jpg', group: 'g1' },
   { kind: 'familyPhoto', url: '/img/gallery14.jpg', group: 'g1' },
   { kind: 'familyPhoto', url: '/img/gallery15.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/img/gallery11.jpg', group: 'g1' },
   { kind: 'familyPhoto', url: '/img/gallery16.jpg', group: 'g1' },
   { kind: 'familyPhoto', url: '/img/gallery17.jpg', group: 'g1' },
   { kind: 'familyPhoto', url: '/img/gallery18.jpg', group: 'g1' },
-  { kind: 'familyPhoto', url: '/img/gallery19.jpg', group: 'g2' },
-  { kind: 'familyPhoto', url: '/img/gallery20.jpg', group: 'g3' },
+  { kind: 'familyPhoto', url: '/img/gallery19.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery20.jpg', group: 'g1' },
   { kind: 'familyPhoto', url: '/img/gallery21.jpg', group: 'g1' },
   { kind: 'familyPhoto', url: '/img/gallery22.jpg', group: 'g1' },
+  { kind: 'familyPhoto', url: '/img/gallery23.jpg', group: 'g1' },
 ];
 
 
